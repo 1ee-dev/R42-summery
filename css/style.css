@@ -1,50 +1,42 @@
 /* Topbar */
 .topbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  width: 100%;
   height: 60px;
   display: flex;
   align-items: center;
   gap: 1rem;
-  padding: 0 2rem;
+  padding: 0 1rem;
   background-color: var(--w3-green);
-  color: white;
+  color: var(--white);
 }
 
 .site-title {
   font-size: 1.25rem;
-  font-weight: 600;
 }
 
 .hamburger {
-  width: 42px;
-  height: 36px;
   background: transparent;
   border: none;
-  display: inline-flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 5px;
-  padding: 6px;
-  cursor: pointer;
-}
-
-.hamburger span {
-  display: block;
-  height: 3px;
-  background: rgba(255, 255, 255, 0.95);
-  border-radius: 3px;
-}
-
-.layout {
-  display: flex;
-  min-height: calc(100vh - 60px);
-  background: var(--bg);
+  font-size: 1.25em;
+  color: var(--white);
+  display: none;
 }
 
 .sidebar {
-  width: 280px;
-  background: var(--card);
-  padding: 1.25rem;
-  border-right: 1px solid rgba(0, 0, 0, 0.06);
+  position: fixed;
+  top: 60px;
+  left: 0;
+  z-index: 50;
+  width: 14rem;
+  height: calc(100vh - 60px);
+  height: calc(100dvh - 60px);
+  overflow: auto;
+  padding: 1rem;
+  background: var(--white);
   box-shadow: var(--shadow);
 }
 
@@ -52,110 +44,140 @@
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+  padding-left: 1rem;
 }
-.sidebar .lecture-item {
+
+.lecture-list {
+  /* Use max-height + opacity for a smooth transition (grid-template-rows doesn't animate well)
+     Keep overflow hidden so content collapses cleanly. */
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 320ms ease, opacity 220ms ease;
+}
+
+.active-list + .lecture-list {
+  /* large enough to contain the list; adjust if you have very long lists */
+  max-height: 2000px;
+  opacity: 1;
+}
+
+.toggle-list i {
+  transition: transform 0.3s ease-in-out;
+}
+
+.active-list i {
+  transform: rotate(90deg);
+}
+
+.sidebar .toggle-list {
   width: 100%;
   text-align: left;
-  padding: 0.75rem 0.9rem;
-  border-radius: 8px;
+  font-weight: 600;
+  padding: 0.75rem 1rem;
+  margin-bottom: 0.5rem;
+  border-radius: 0.5rem;
   background: transparent;
   border: 1px solid transparent;
   color: var(--w3-dark);
-  font-weight: 500;
   cursor: pointer;
 }
+
+.sidebar .toggle-list:hover,
+.sidebar .toggle-list:focus {
+  background: linear-gradient(
+    90deg,
+    hsla(from var(--w3-green) h s l / 0.05),
+    hsla(from var(--w3-blue) h s l / 0.05)
+  );
+  outline: none;
+  border-color: hsla(from var(--w3-blue) h s l / 0.05);
+}
+
+.sidebar .toggle-list:active {
+  color: var(--w3-blue);
+}
+
+.sidebar .lecture-item {
+  width: 100%;
+  font-size: 0.875rem;
+  text-align: left;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  background: transparent;
+  border: 1px solid transparent;
+  color: var(--w3-dark);
+  cursor: pointer;
+}
+
 .sidebar .lecture-item:hover,
 .sidebar .lecture-item:focus {
-  background: linear-gradient(90deg, rgba(33, 150, 243, 0.06), rgba(4, 170, 109, 0.06));
+  background: linear-gradient(
+    90deg,
+    hsla(from var(--w3-green) h s l / 0.05),
+    hsla(from var(--w3-blue) h s l / 0.05)
+  );
   outline: none;
-  border-color: rgba(33, 150, 243, 0.12);
+  border-color: hsla(from var(--w3-blue) h s l / 0.05);
+}
+
+.sidebar .lecture-item:active {
+  color: var(--w3-blue);
+}
+
+.sidebar .lecture-item.active {
+  background: linear-gradient(
+    90deg,
+    hsla(from var(--w3-blue) h s l / 0.05),
+    hsla(from var(--w3-green) h s l / 0.05)
+  );
+  border-color: hsla(from var(--w3-blue) h s l / 0.05);
+  color: var(--w3-blue);
+}
+
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease-in-out;
 }
 
 .content {
-  flex: 1 1 auto;
   padding: 2rem;
-  overflow: auto;
 }
 
-.article {
-  max-width: 900px;
-  background: var(--card);
-  padding: 1.5rem;
-  border-radius: 10px;
-  box-shadow: var(--shadow);
-}
-
-.article h2 {
-  color: var(--w3-dark);
-  margin-bottom: 0.5rem;
-}
-.article p {
-  color: var(--muted);
-}
-
-/* Overlay for small screens */
-.overlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.35);
-  z-index: 40;
-  opacity: 0;
-  transition: opacity 180ms ease-in-out;
-  pointer-events: none;
-}
-.overlay.show {
-  opacity: 1;
-  pointer-events: auto;
-}
-
-/* Off-canvas behavior for small screens */
-@media (max-width: 800px) {
-  .sidebar {
-    position: fixed;
-    left: -320px;
-    top: 60px;
-    height: calc(100% - 60px);
-    width: 280px;
-    transition: left 220ms ease-in-out;
-    z-index: 50;
+/* Media Queries */
+@media (max-width: 768px) {
+  .hamburger {
+    display: inline-block;
   }
+
+  .sidebar {
+    left: -16rem;
+    transition: left 0.3s ease-in-out;
+  }
+
   .sidebar.open {
     left: 0;
   }
 
-  .hamburger {
-    display: inline-flex;
-  }
-
-  .site-title {
-    font-size: 1rem;
-  }
-
-  .layout {
-    position: relative;
-  }
-
-  /* reduce padding on small screens */
-  .content {
-    padding: 1rem;
-  }
-}
-
-@media (min-width: 801px) {
-  .hamburger {
-    display: none;
-  }
   .overlay {
-    display: none;
+    display: block;
   }
-}
 
-/* small helpers */
-.visually-hidden {
-  position: absolute !important;
-  height: 1px;
-  width: 1px;
-  overflow: hidden;
-  clip: rect(1px, 1px, 1px, 1px);
-  white-space: nowrap;
+  .overlay.show {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  body {
+    padding-left: 0;
+  }
 }

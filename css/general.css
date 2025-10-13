@@ -8,28 +8,28 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: calc(60px + 2rem);
 }
 
 :root {
   /* W3Schools inspired palette */
-  --ff-primary: 'Poppins', sans-serif;
-  --w3-red: #f44336;
-  --w3-yellow: #ffeb3b;
+  --ff-primary: 'Montserrat', sans-serif;
   --w3-blue: #2196f3;
   --w3-green: #04aa6d;
   --w3-dark: #23364a;
-  --bg: #f7fbff;
-  --card: #ffffff;
-  --muted: #6b7280;
+  --bg: #fefefe;
+  --white: #fff;
+  --muted: #777;
   --shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  font-size: clamp(1rem, 2vw, 1.25rem);
 }
 
 body {
   font-family: var(--ff-primary);
   color: var(--w3-dark);
   background-color: var(--bg);
-  font-size: clamp(1rem, 3vw, 1.5rem);
   line-height: 1.5;
+  padding: 60px 0 0 14rem;
 }
 
 h1,
@@ -43,35 +43,35 @@ h6 {
 }
 
 h1 {
-  font-size: 3em;
+  font-size: 3rem;
 }
 
 h2 {
-  font-size: 2em;
+  font-size: 2rem;
 }
 
 h3 {
-  font-size: 1.5em;
+  font-size: 1.5rem;
 }
 
 h4 {
-  font-size: 1.25em;
+  font-size: 1.25rem;
 }
 
 h5 {
-  font-size: 1em;
+  font-size: 1rem;
 }
 
 h6 {
-  font-size: 0.875em;
+  font-size: 0.875rem;
 }
 
 p {
-  font-size: 1em;
+  font-size: 1rem;
 }
 
 small {
-  font-size: 0.875em;
+  font-size: 0.875rem;
 }
 
 a {
@@ -93,4 +93,19 @@ img {
   max-width: 100%;
   height: auto;
   object-fit: cover;
+}
+
+input,
+button,
+textarea,
+select {
+  outline: none;
+  font: inherit;
+  cursor: pointer;
+}
+
+article {
+  scroll-snap-type: mandatory;
+  min-height: 100vh;
+  min-height: 100dvh;
 }
