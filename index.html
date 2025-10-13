@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link rel="stylesheet" href="css/general.css" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <button
+        id="menu-btn"
+        class="hamburger"
+        aria-label="Open menu"
+        aria-expanded="false"
+        aria-controls="sidebar">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <h1 class="site-title">Lecture Summaries</h1>
+    </header>
+
+    <div class="layout">
+      <aside id="sidebar" class="sidebar" aria-label="Lecture navigation">
+        <nav>
+          <ul>
+            <li><button class="lecture-item" data-id="lec1">Lecture 1 — Introduction</button></li>
+            <li><button class="lecture-item" data-id="lec2">Lecture 2 — Key Concepts</button></li>
+            <li><button class="lecture-item" data-id="lec3">Lecture 3 — Examples</button></li>
+            <li>
+              <button class="lecture-item" data-id="lec4">Lecture 4 — Advanced Topics</button>
+            </li>
+            <li>
+              <button class="lecture-item" data-id="lec5">Lecture 5 — Summary & Next Steps</button>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+
+      <main id="content" class="content" tabindex="-1">
+        <article id="article" class="article">
+          <h2>Welcome</h2>
+          <p>
+            Select a lecture from the list to the left (or tap the menu on smaller screens) to view
+            its summary here.
+          </p>
+        </article>
+      </main>
+
+      <div id="overlay" class="overlay" hidden></div>
+    </div>
+
+    <script src="js/main.js" defer></script>
+  </body>
+</html>
