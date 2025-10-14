@@ -3,11 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <title>R42 Summaries</title>
 
     <!-- CSS -->
     <link rel="stylesheet" href="css/all.css" />
-    <link rel="stylesheet" href="css/articles.css" />
     <link rel="stylesheet" href="css/general.css" />
     <link rel="stylesheet" href="css/style.css" />
 
@@ -18,249 +18,41 @@
       href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet" />
   </head>
+
   <body>
-    <header class="topbar">
-      <button id="hamburger" class="hamburger"><i class="fa-solid fa-bars"></i></button>
-      <a href="#welcome"><h1 class="site-title">SEF R42 Summaries</h1></a>
+    <header>
+      <button id="hamburger" class="hamburger">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+      <h1>SEF R42 Summaries</h1>
     </header>
 
-    <aside id="sidebar" class="sidebar">
+    <aside class="sidebar">
       <nav>
-        <button class="toggle-list">HTML & CSS <i class="fa-solid fa-angle-right"></i></button>
-        <div class="lecture-list">
+        <!-- <button>group <i class="fa-solid fa-angle-right"></i></button>
+        <div>
           <ul>
-            <li><button class="lecture-item" data-id="lec1">lecture 1</button></li>
-            <li><button class="lecture-item" data-id="lec2">lecture 2</button></li>
-            <li><button class="lecture-item" data-id="lec3">lecture 3</button></li>
-            <li><button class="lecture-item" data-id="lec4">lecture 4</button></li>
-            <li><button class="lecture-item" data-id="lec5">lecture 5</button></li>
-            <li><button class="lecture-item" data-id="lec6">lecture 6</button></li>
-            <li><button class="lecture-item" data-id="lec7">lecture 7</button></li>
-            <li><button class="lecture-item" data-id="lec8">lecture 8</button></li>
-            <li><button class="lecture-item" data-id="lec9">lecture 9</button></li>
-            <li><button class="lecture-item" data-id="lec10">lecture 10</button></li>
-            <li><button class="lecture-item" data-id="lec11">lecture 11</button></li>
-            <li><button class="lecture-item" data-id="lec12">lecture 12</button></li>
-            <li><button class="lecture-item" data-id="lec13">lecture 13</button></li>
-            <li><button class="lecture-item" data-id="lec14">lecture 14</button></li>
-            <li><button class="lecture-item" data-id="lec15">lecture 15</button></li>
-            <li><button class="lecture-item" data-id="lec16">lecture 16</button></li>
+            <li><button data-id="lec-id">title</button></li>
           </ul>
-        </div>
-        <button class="toggle-list">GitHub <i class="fa-solid fa-angle-right"></i></button>
-        <div class="lecture-list">
-          <ul>
-            <li><button class="lecture-item" data-id="lec17">lecture 17</button></li>
-          </ul>
-        </div>
-        <button class="toggle-list">HTML5 & CSS3 <i class="fa-solid fa-angle-right"></i></button>
-        <div class="lecture-list">
-          <ul>
-            <li><button class="lecture-item" data-id="lec18">lecture 18</button></li>
-          </ul>
-        </div>
+        </div> -->
       </nav>
     </aside>
-    <div id="overlay" class="overlay"></div>
 
-    <main id="content" class="content" tabindex="-1">
-      <article class="welcome" id="welcome">
-        <h2>Welcome</h2>
-        <p>
-          Select a lecture from the list to the left (or tap the menu on smaller screens) to view
-          its summary here.
-        </p>
-      </article>
+    <div id="overlay" class="overlay""></div>
 
-      <article class="lecture" id="lec1">
-        <h2>
-          Lecture 1
-          <p>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nemo recusandae aspernatur
-            totam ad, quaerat commodi voluptatibus consequatur modi asperiores voluptate aperiam
-            nisi id earum est aliquid deserunt sunt eligendi illum?
-          </p>
-        </h2>
-      </article>
-
-      <article class="lecture" id="lec2">
-        <h2>
-          Lecture 2
-          <p>
-            Perspiciatis ex voluptatem maiores illo ipsam fugit inventore sed magni, veritatis
-            temporibus consequuntur libero non eligendi architecto nostrum et, distinctio odio
-            labore autem ullam totam? Minima labore beatae ducimus autem.
-          </p>
-        </h2>
-      </article>
-
-      <article class="lecture" id="lec3">
-        <h2>
-          Lecture 3
-          <p>
-            Doloribus consequuntur amet ducimus sint quas illo ex doloremque natus repellat officia
-            saepe laudantium quidem et, atque recusandae dignissimos unde, corrupti debitis.
-            Voluptas impedit accusamus earum! Numquam excepturi suscipit recusandae.
-          </p>
-        </h2>
-      </article>
-
-      <article class="lecture" id="lec4">
-        <h2>
-          Lecture 4
-          <p>
-            Ut inventore molestiae ipsum at officiis obcaecati reiciendis tempore, repellat voluptas
-            aspernatur illum cumque quas consequatur nisi error temporibus cum sit? Dicta eos quo
-            dolorum aspernatur aut autem repellat suscipit?
-          </p>
-        </h2>
-      </article>
-
-      <article class="lecture" id="lec5">
-        <h2>
-          Lecture 5
-          <p>
-            Sit perferendis nam ullam eaque temporibus. Tempora reprehenderit culpa hic obcaecati
-            itaque inventore minus! Laudantium earum cum sapiente eius velit quidem sint doloribus,
-            quia a sed labore neque eum alias.
-          </p>
-        </h2>
-      </article>
-
-      <article class="lecture" id="lec6">
-        <h2>
-          Lecture 6
-          <p>
-            Dolores illum amet quod obcaecati, minima autem dolor beatae totam nesciunt omnis
-            ratione optio. Rerum sint officia ad voluptas illo vitae facere, delectus veniam quos
-            ipsam, voluptatum voluptatibus inventore reprehenderit?
-          </p>
-        </h2>
-      </article>
-
-      <article class="lecture" id="lec7">
-        <h2>
-          Lecture 7
-          <p>
-            Quidem veritatis aliquid error incidunt voluptates ad quasi explicabo iusto officia
-            voluptas, odio quibusdam minus eum fuga laboriosam optio? Possimus nostrum inventore
-            aspernatur aliquam voluptatem deserunt blanditiis libero alias! Numquam!
-          </p>
-        </h2>
-      </article>
-
-      <article class="lecture" id="lec8">
-        <h2>
-          Lecture 8
-          <p>
-            Saepe tenetur odit magni itaque ducimus nobis mollitia facilis quod exercitationem
-            sequi, sit ullam praesentium, explicabo facere ad quibusdam omnis id? Ut aliquam ab non
-            voluptatem dolor recusandae cum itaque.
-          </p>
-        </h2>
-      </article>
-
-      <article class="lecture" id="lec9">
-        <h2>
-          Lecture 9
-          <p>
-            Aliquam provident assumenda explicabo saepe, eaque perferendis enim non, delectus quia
-            autem rem libero? Perspiciatis voluptate, consequuntur sunt qui optio neque voluptatem
-            natus sit fugit aperiam nemo odit repellat error?
-          </p>
-        </h2>
-      </article>
-
-      <article class="lecture" id="lec10">
-        <h2>
-          Lecture 10
-          <p>
-            Fugit deserunt consectetur nisi soluta earum ipsam, autem quia ea porro expedita? Ipsa
-            id perferendis officiis ducimus! Ab laboriosam, soluta eaque accusantium deserunt fugiat
-            itaque recusandae a tempore, cum quam?
-          </p>
-        </h2>
-      </article>
-
-      <article class="lecture" id="lec11">
-        <h2>
-          Lecture 11
-          <p>
-            Necessitatibus, totam tempore. Inventore error, sequi nostrum debitis nemo tempora
-            consequuntur facere, minima aliquam iste harum nesciunt quisquam unde ipsam quia hic
-            numquam ducimus maxime consequatur. Odit fuga natus dicta!
-          </p>
-        </h2>
-      </article>
-
-      <article class="lecture" id="lec12">
-        <h2>
-          Lecture 12
-          <p>
-            Porro libero nisi voluptates dicta saepe, laborum accusamus, illum magni nam repellat,
-            quis voluptatum rerum nihil tempore tempora suscipit culpa? Sed est dicta officia ullam,
-            ipsam cumque enim iure ipsa.
-          </p>
-        </h2>
-      </article>
-
-      <article class="lecture" id="lec13">
-        <h2>
-          Lecture 13
-          <p>
-            Aspernatur totam id deleniti. Voluptas rem impedit sequi laborum ullam dolores error
-            recusandae non ducimus libero asperiores cupiditate soluta possimus eaque quas, itaque
-            vel labore porro, atque voluptatibus. Rerum, iste?
-          </p>
-        </h2>
-      </article>
-
-      <article class="lecture" id="lec14">
-        <h2>
-          Lecture 14
-          <p>
-            Voluptatem, vel a! Eligendi porro id quo commodi sed qui, quia quaerat dolor aperiam.
-            Veritatis voluptatibus illo dolorem vero quisquam hic. Excepturi voluptate blanditiis
-            maiores architecto distinctio consequuntur deleniti voluptatum!
-          </p>
-        </h2>
-      </article>
-
-      <article class="lecture" id="lec15">
-        <h2>
-          Lecture 15
-          <p>
-            Modi assumenda eveniet id doloribus quidem tenetur, unde iusto dicta distinctio
-            mollitia, nemo perferendis, sapiente minima ut debitis consectetur aspernatur suscipit
-            cupiditate at dolore non? Dolorem dicta in reprehenderit soluta.
-          </p>
-        </h2>
-      </article>
-
-      <article class="lecture" id="lec16">
-        <h2>
-          Lecture 16
-          <p>
-            Ducimus exercitationem quidem, nam cupiditate iste rem quos blanditiis, reprehenderit
-            quibusdam assumenda deserunt et quam voluptatibus earum vel, quia natus odit optio
-            praesentium. Incidunt quae dicta modi cumque, quos asperiores.
-          </p>
-        </h2>
-      </article>
-
-      <article class="lecture" id="lec17">
-        <h2>
-          Lecture 17
-          <p>
-            Facere reprehenderit corporis dolores voluptatum, iure, quia in ipsam modi porro iusto
-            totam nemo veniam. Repellendus debitis qui aperiam, sequi exercitationem vel illum
-            distinctio voluptatem similique! Nulla ex dignissimos iste?
-          </p>
-        </h2>
-      </article>
+    <main tabindex="-1">
+      <!-- <article id="lec-id">
+      </article> -->
     </main>
 
-    <script src="js/content.js"></script>
+    <footer>
+      <small>
+        &copy; 2025 - Made with <i class="fa-solid fa-heart"></i> by
+        <a href="https://github.com/1ee-dev" target="_blank">Ziad Aboughaleb</a>
+      </small>
+    </footer>
+
+    <script src="js/content-loader.js" defer></script>
     <script src="js/main.js" defer></script>
   </body>
 </html>
