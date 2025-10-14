@@ -1,6 +1,0 @@
-[
-  { "id": "lec1", "class":"lecture", "title": "Lecture 1", "group": "HTML & CSS", "file": "lec1.html" },
-  { "id": "lec2", "class":"lecture", "title": "Lecture 2", "group": "HTML & CSS", "file": "lec2.html" },
-  { "id": "lec3", "class":"lecture", "title": "Lecture 3", "group": "HTML & CSS", "file": "lec3.html" },
-  { "id": "lec4", "class":"lecture", "title": "Lecture 4", "group": "HTML & CSS", "file": "lec4.html" }
-]

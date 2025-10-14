@@ -87,20 +87,40 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // change active li depending on the current article in view
-  const op = new IntersectionObserver(
+  const observer = new IntersectionObserver(
     (entries) => {
-      entries.forEach((entry) => {
-        const id = entry.target.id;
-        const btn = document.querySelector(`[data-id="${id}"]`);
-        if (btn) {
-          activateListItem(btn);
+      // Get only intersecting entries
+      const visible = entries.filter(entry => entry.isIntersecting);
+      if (!visible.length) return;
+
+      // Find the most visible article (highest intersection ratio)
+      const topEntry = visible.reduce((a, b) => 
+        a.intersectionRatio > b.intersectionRatio ? a : b
+      );
+
+      if (!topEntry.target.id) return;
+
+      // Only activate the most visible article's button
+      const id = topEntry.target.id;
+      const btn = document.querySelector(`[data-id="${id}"]`);
+      if (btn) {
+        activateListItem(btn);
+        
+        // Ensure button is visible in sidebar
+        const listContainer = btn.closest('.sidebar');
+        if (listContainer) {
+          const btnTop = btn.offsetTop;
+          listContainer.scrollTop = btnTop - listContainer.offsetHeight / 4;
         }
-      });
+      }
     },
-    { threshold: [0.5] }
+    { 
+      threshold: [0.1, 0.5, 0.8], // Multiple thresholds for smoother transitions
+      rootMargin: '-10% 0px' // Slight margin to prevent premature activation
+    }
   );
 
   document.querySelectorAll('article').forEach((article) => {
-    op.observe(article);
+    if (article.id) observer.observe(article);
   });
 });
