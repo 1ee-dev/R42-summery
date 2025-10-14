@@ -20,7 +20,7 @@
   --w3-blue: hsl(207 90% 54%);
   --w3-green: hsl(158 95% 34%);
   --w3-dark: hsl(0 0% 15%);
-  --bg: hsl(0 0% 95%);
+  --bg: hsl(0 0% 98%);
   --white: hsl(0 0% 100%);
   --muted: hsl(0 0% 50%);
   --shadow: 0 0 10px hsla(0 0% 0% / 0.1);
@@ -212,7 +212,7 @@ header h1 {
   text-align: left;
   padding: var(--space-2);
   border-radius: var(--space-1);
-  background-color: hsl(from var(--w3-dark) h s l / 0.01);
+  background-color: var(--bg);
   border: 1px solid transparent;
   transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
