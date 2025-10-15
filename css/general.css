@@ -217,7 +217,8 @@ header h1 {
   transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
 
-.sidebar button:hover {
+.sidebar button:hover,
+.sidebar button:focus-visible {
   background-color: hsl(from var(--w3-green) h s l / 0.1);
   transform: scale(0.95);
 }

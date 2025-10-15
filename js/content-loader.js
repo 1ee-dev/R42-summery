@@ -58,8 +58,6 @@ function appendListItems() {
   document.querySelector('.sidebar nav').innerHTML = navHTML;
 }
 
-appendListItems();
-
 // Fetch content for each lecture
 async function fetchLectureContent() {
   const mainElement = document.querySelector('main');
@@ -73,4 +71,18 @@ async function fetchLectureContent() {
   mainElement.innerHTML = lectureContentHtml.join('');
 }
 
-fetchLectureContent();
+// Initialize content loading
+async function initializeContent() {
+  try {
+    // First append the sidebar structure
+    appendListItems();
+    // Then load all lecture content
+    await fetchLectureContent();
+    // Dispatch event when everything is loaded
+    document.dispatchEvent(new CustomEvent('contentLoaded'));
+  } catch (error) {
+    console.error('Error loading content:', error);
+  }
+}
+
+initializeContent();

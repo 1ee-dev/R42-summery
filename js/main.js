@@ -1,4 +1,6 @@
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('contentLoaded', () => {
+  console.log('Content loaded, initializing UI...');
+
   const sidebar = document.querySelector('.sidebar');
   const overlay = document.querySelector('.overlay');
   const hamburger = document.querySelector('.hamburger');
@@ -59,6 +61,7 @@ document.addEventListener('DOMContentLoaded', () => {
   sidebarListBtn.forEach((btn) => {
     btn.addEventListener('click', () => {
       activateListItem(btn);
+      hideMenu();
     });
   });
 
@@ -69,12 +72,15 @@ document.addEventListener('DOMContentLoaded', () => {
     btn.classList.add('active-li');
 
     updateCurrentList();
-    hideMenu();
+    setTimeout(() => {
+      scrollBtnIntoView(btn);
+    }, 300);
+  }
 
-    // scroll to selected lecture
-    const id = btn.getAttribute('data-id');
-    if (id) {
-      document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+  // scroll list button into view
+  function scrollBtnIntoView(btn) {
+    if (btn) {
+      btn.scrollIntoView({ behavior: 'smooth', block: 'center' });
     }
   }
 
@@ -88,7 +94,28 @@ document.addEventListener('DOMContentLoaded', () => {
       const list = btn.nextElementSibling;
       if (list && list.querySelector('.active-li')) {
         btn.classList.add('current-ul');
+        document.querySelectorAll('.active-ul').forEach((el) => {
+          if (el !== btn) el.classList.remove('active-ul');
+        });
+        btn.classList.add('active-ul');
       }
     });
   }
+
+  // observe lectures for intersection and activate list item
+  const lectures = document.querySelectorAll('article');
+
+  const observer = new IntersectionObserver(
+    (entry) => {
+      const btn = document.querySelector(`button[data-id="${entry[0].target.id}"]`);
+      if (btn) activateListItem(btn);
+    },
+    {
+      rootMargin: '-25% 0px -75% 0px',
+    }
+  );
+
+  lectures.forEach((lec) => {
+    if (lec.id) observer.observe(lec);
+  });
 });
