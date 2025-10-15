@@ -1,15 +1,78 @@
-<h2>lecture 12</h2>
-<div class="content">
-  <h3>Summary</h3>
-  <p>This is a placeholder for lecture 12 summary.</p>
-
-  <h3>Key Points</h3>
+<h2><bdi>Lecture 12</bdi></h2>
+<div class="content" dir="rtl">
+  <h3><bdi>Lecture 12: Hero Section, Overlay & Background Image</bdi></h3>
+  <h3><bdi>Summary</bdi></h3>
+  <p>
+    في المحاضرة دي بدأنا نشتغل على أول جزء فعلي من تصميم موقع حقيقي، وهو جزء الـ<bdi>Home</bdi> أو
+    الـ<bdi>Hero Section</bdi>. اتعلمنا إزاي نحط صورة خلفية كبيرة تغطي الشاشة بالكامل، ونضيف فوقها
+    طبقة شفافة (Overlay) علشان نغمق الصورة ونخلي الكلام واضح. بعد كده صممنا المحتوى اللي جوه الخلفية
+    باستخدام خاصية <bdi>position</bdi> و<bdi>transform</bdi> عشان نوسطن الكلام في نص الصفحة تمامًا.
+    كمان استخدمنا أزرار مختلفة فيها تأثير عند الـ<bdi>hover</bdi> عشان التصميم يكون تفاعلي واحترافي.
+  </p>
+  <h3><bdi>Key Points</bdi></h3>
   <ul>
-    <li data-order="1">Key point 1 for lecture 12</li>
-    <li data-order="2">Key point 2 for lecture 12</li>
-    <li data-order="3">Key point 3 for lecture 12</li>
-  </ul>
+    <li data-order="1">
+      <bdi>Full Screen Section</bdi>: <br />خلينا الجزء ياخد ارتفاع الشاشة بالكامل باستخدام الخاصية:
+      <br /><bdi>height: 100vh;</bdi> الـ<bdi>vh</bdi> معناها “View Height”، وده يعني نسبة مئوية من
+      ارتفاع الشاشة، فـ<bdi>100vh</bdi> بتخلي العنصر يغطي الشاشة كلها.
+    </li>
+    <li data-order="2">
+      <bdi>Background Image</bdi>: <br />استخدمنا <bdi>background-image</bdi> لإضافة الصورة الأساسية
+      للقسم، بالشكل ده: <br /><bdi>background-image: url(../Images/ddd.jpg);</bdi> وعلشان الصورة
+      تكون ورا كل حاجة، استخدمنا <bdi>position: relative;</bdi> للعنصر الأب.
+    </li>
 
-  <h3>Notes</h3>
-  <p>Additional notes and details for lecture 12 will be added here.</p>
+    <li data-order="3">
+      <bdi>Overlay Effect</bdi>: <br />عملنا طبقة شفافة فوق الصورة باستخدام عنصر <bdi>div</bdi> تاني
+      بخلفية شبه شفافة: <br /><bdi>background-color: rgba(0, 0, 0, 0.7);</bdi> الرقم الأخير في
+      الـ<bdi>rgba</bdi> (الـ0.7) هو الشفافية أو <bdi>opacity</bdi>، واللي بيخلي الصورة باينة لكن
+      مظلمة شوي علشان الكلام يوضح.
+    </li>
+
+    <li data-order="4">
+      <bdi>Centering the Content</bdi>: <br />وسطنا الكلام والأزرار في نص الصفحة بالضبط باستخدام:
+      <ul>
+        <li><bdi>position: absolute;</bdi></li>
+        <li><bdi>top: 50%;</bdi> و<bdi>left: 50%;</bdi></li>
+        <li><bdi>transform: translate(-50%, -50%);</bdi></li>
+      </ul>
+      التركيبة دي بتنقل العنصر لمركز الصفحة رأسيًا وأفقيًا بالضبط، ودي من أهم حركات الـ<bdi
+        >CSS</bdi
+      >
+      في التصميم.
+    </li>
+
+    <li data-order="5">
+      <bdi>Text Styling</bdi>: <br />العنوان الرئيسي استخدمنا له:
+      <ul>
+        <li><bdi>font-size: 65px;</bdi> علشان يكون كبير وواضح.</li>
+        <li><bdi>text-transform: uppercase;</bdi> لتحويل كل الحروف لكابيتال.</li>
+        <li><bdi>text-align: center;</bdi> لتوسيط النصوص جوه القسم.</li>
+      </ul>
+    </li>
+
+    <li data-order="6">
+      <bdi>Buttons Design</bdi>: <br />استخدمنا كلاس واحد مشترك اسمه <bdi>.home-btn</bdi> للأزرار
+      كلها، وبعدين خصصنا كل زرار بكلاس مختلف لتغيير اللون.
+      <ul>
+        <li><bdi>.home-btn1</bdi> – زرار أبيض.</li>
+        <li><bdi>.home-btn2</bdi> – زرار أزرق.</li>
+      </ul>
+      والأزرار كلها فيها تأثير عند الـ<bdi>hover</bdi> باستخدام: <br /><bdi
+        >.home-btn:hover { opacity: 0.5; }</bdi
+      >
+      علشان لما المستخدم يقرب الماوس، الزرار يخف شوية ويدي إحساس تفاعلي.
+    </li>
+  </ul>
+  <h3><bdi>Notes</bdi></h3>
+  <p>
+    💡 استخدم دايمًا <bdi>overlay</bdi> لو الصورة الخلفية غامقة أو فيها تفاصيل كتير. <br />⚙️ خاصية
+    <bdi>transform: translate</bdi> هي الطريقة الأدق لتوسيط العناصر أفقيًا ورأسيًا. <br />🎯 الـ<bdi
+      >100vh</bdi
+    >
+    بتخلي أي قسم يغطي الشاشة بالكامل من غير ما تعتمد على حجم المحتوى. <br />✨ تأثير الـ<bdi
+      >hover</bdi
+    >
+    البسيط بيخلي تصميمك يبدو احترافي أكتر.
+  </p>
 </div>

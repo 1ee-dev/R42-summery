@@ -1,15 +1,86 @@
-<h2>lecture 16</h2>
-<div class="content">
-  <h3>Summary</h3>
-  <p>This is a placeholder for lecture 16 summary.</p>
-
-  <h3>Key Points</h3>
+<h2><bdi>Lecture 16</bdi></h2>
+<div class="content" dir="rtl">
+  <h3><bdi>Lecture 16: Input Attributes, Required Fields &amp; HTML Entities</bdi></h3>
+  <h3><bdi>Summary</bdi></h3>
+  <p>
+    المحاضرة دي ركزت على خصائص جديدة ومهمة في <bdi>&lt;input&gt;</bdi>، واللي بتساعد في التحكم في
+    طريقة إدخال البيانات وتفاعل المستخدم معاها. كمان اتكلمنا عن عناصر إضافية زي
+    <bdi>&lt;video&gt;</bdi> و<bdi>&lt;audio&gt;</bdi> وشفنا ازاي نقدر نستخدم أكثر من مصدر في نفس
+    الوسائط. وأخيرًا، اتكلمنا عن HTML Entities اللي بنستخدمها لعرض رموز خاصة زي &lt;, &gt;, &copy;
+    من غير ما المتصفح يفسرها ككود.
+  </p>
+  <h3><bdi>Key Points</bdi></h3>
   <ul>
-    <li data-order="1">Key point 1 for lecture 16</li>
-    <li data-order="2">Key point 2 for lecture 16</li>
-    <li data-order="3">Key point 3 for lecture 16</li>
-  </ul>
+    <li data-order="1">
+      <bdi>Input Attributes</bdi>: <br />اتكلمنا عن خصائص كتير بتأثر على سلوك الحقول:
+      <ul>
+        <li><bdi>required</bdi> → بيجبر المستخدم يدخل قيمة قبل الإرسال.</li>
+        <li><bdi>readonly</bdi> → بيخلي الحقل قابل للقراءة فقط، لكن قيمته تتبعت مع الفورم.</li>
+        <li><bdi>disabled</bdi> → بيوقف الحقل تمامًا، ومش بيتبعت في الفورم.</li>
+        <li><bdi>multiple</bdi> → بيسمح باختيار أكتر من ملف أو قيمة (زي في <bdi>file</bdi>).</li>
+        <li><bdi>size</bdi> → بيحدد عرض الحقل بعدد الحروف الظاهرة.</li>
+        <li><bdi>value</bdi> → القيمة الافتراضية داخل الحقل.</li>
+      </ul>
+      مثال من الكود: <br /><bdi>&lt;input type="text" value="Pay attention!!" readonly&gt;</bdi>
+    </li>
+    <li data-order="2">
+      <bdi>:required &amp; :optional</bdi>: <br />دي <bdi>pseudo-classes</bdi> بنستخدمها علشان ننسق
+      الحقول الإلزامية أو الاختيارية.
+      <ul>
+        <li>
+          <bdi>input:required { background-color: red; }</bdi> → بيخلي الحقل الإجباري يظهر بلون
+          مختلف.
+        </li>
+        <li><bdi>input:optional { background-color: greenyellow; }</bdi> → للحقل الاختياري.</li>
+      </ul>
+    </li>
 
-  <h3>Notes</h3>
-  <p>Additional notes and details for lecture 16 will be added here.</p>
+    <li data-order="3">
+      <bdi>Input Validation Attributes</bdi>: <br />زي <bdi>minlength</bdi> و<bdi>maxlength</bdi>
+      لتحديد أقل وأقصى عدد حروف في الحقل. مثال: <br /><bdi
+        >&lt;input type="password" minlength="8" maxlength="16"&gt;</bdi
+      >
+      <br />لو المستخدم كتب أقل من 8 حروف، المتصفح هيعرض رسالة خطأ تلقائيًا.
+    </li>
+
+    <li data-order="4">
+      <bdi>Self-Closing Tags</bdi>: <br />اتكلمنا عن العناصر اللي بتقفل نفسها ومش بتحتاج تاج إغلاق،
+      زي:
+      <ul>
+        <li><bdi>&lt;img&gt;</bdi> – لعرض الصور.</li>
+        <li><bdi>&lt;source&gt;</bdi> – لتحديد مصدر الفيديو أو الصوت.</li>
+        <li><bdi>&lt;br&gt;</bdi> – للنزول لسطر جديد.</li>
+        <li><bdi>&lt;wbr&gt;</bdi> – بيسمح بكسر الكلمة الطويلة لو احتاج المتصفح.</li>
+      </ul>
+      <bdi>source</bdi> بتتكتب داخل <bdi>&lt;video&gt;</bdi> أو <bdi>&lt;audio&gt;</bdi> كالتالي:
+      <br />
+      <bdi
+        >&lt;video width="380" controls&gt;<br />
+        &nbsp;&nbsp;&lt;source src="videos/mov.mp4" type="video/mp4" /&gt;<br />
+        &nbsp;&nbsp;&lt;source src="videos/mov.ogg" type="video/ogg" /&gt;<br />
+        &lt;/video&gt;</bdi
+      >
+    </li>
+
+    <li data-order="5">
+      <bdi>HTML Entities</bdi>: <br />لما نحب نعرض رموز خاصة في الصفحة زي &lt; و &gt; أو علامات ©
+      و®, بنستخدم Entities بالشكل ده:
+      <ul>
+        <li><bdi>&amp;lt;</bdi> → &lt;</li>
+        <li><bdi>&amp;gt;</bdi> → &gt;</li>
+        <li><bdi>&amp;nbsp;</bdi> → مسافة إضافية.</li>
+        <li><bdi>&amp;copy;</bdi> → © (حقوق الملكية).</li>
+      </ul>
+      مثال:
+      <br /><bdi>&lt;h2&gt;Islam &amp;nbsp; &amp;nbsp; Mohamed&lt;/h2&gt;</bdi> <br />هتظهر في
+      المتصفح كده: <br /><bdi>Islam &nbsp; &nbsp; Mohamed</bdi>
+    </li>
+  </ul>
+  <h3><bdi>Notes</bdi></h3>
+  <p>
+    💡 دايمًا استخدم <bdi>required</bdi> مع الحقول المهمة في الفورم. <br />🎯 الفرق بين
+    <bdi>readonly</bdi> و<bdi>disabled</bdi> إن الأول بيتبعت في الفورم والتاني لا. <br />🎵 عناصر
+    <bdi>video</bdi> و<bdi>audio</bdi> بتحتاج مصادر بديلة علشان تشتغل في كل المتصفحات. <br />🧠
+    استخدم <bdi>&amp;entities;</bdi> لما تحب تكتب رموز خاصة من غير ما المتصفح يعتبرها كود.
+  </p>
 </div>

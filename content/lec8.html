@@ -1,15 +1,74 @@
-<h2>lecture 8</h2>
-<div class="content">
-  <h3>Summary</h3>
-  <p>This is a placeholder for lecture 8 summary.</p>
+<h2><bdi>Lecture 8</bdi></h2>
+<div class="content" dir="rtl">
+  <h3><bdi>Lecture 8: Float Layout & Grouping Selectors</bdi></h3>
 
-  <h3>Key Points</h3>
+  <h3><bdi>Summary</bdi></h3>
+  <p>
+    المحاضرة دي كانت عن ترتيب العناصر جنب بعض باستخدام خاصية <bdi>float</bdi>، ودي من الطرق القديمة
+    اللي كانت بتستخدم لتنظيم تصميم الصفحات قبل ما يظهر <bdi>flexbox</bdi> و<bdi>grid</bdi>. كمان
+    اتعلمنا إزاي نستخدم خاصية <bdi>overflow</bdi> عشان نمنع المشاكل اللي بتحصل لما العناصر تطلع برا
+    المساحة بتاعتها. وفي الجزء التاني من المحاضرة اتكلمنا عن grouping selectors اللي بنستخدمها
+    عشان نطبّق نفس التنسيق على أكتر من عنصر من غير ما نكرر الكود.
+  </p>
+
+  <h3><bdi>Key Points</bdi></h3>
   <ul>
-    <li data-order="1">Key point 1 for lecture 8</li>
-    <li data-order="2">Key point 2 for lecture 8</li>
-    <li data-order="3">Key point 3 for lecture 8</li>
+    <li data-order="1">
+      <bdi>Parent & Child Structure</bdi>: <br />في الكود استخدمنا
+      <bdi>&lt;div class="parent"&gt;</bdi> كعنصر رئيسي بيحتوي على 3 عناصر فرعية (<bdi>.div1</bdi>،
+      <bdi>.div2</bdi>، <bdi>.div3</bdi>). الفكرة إن <bdi>parent</bdi> بيجمع كل العناصر مع بعض عشان
+      نقدر نتحكم فيهم كمجموعة واحدة.
+    </li>
+
+    <li data-order="2">
+      <bdi>Float Property</bdi>: <br />اتكلمنا عن إن <bdi>float</bdi> بتخلي العناصر تتحرك ناحية
+      اليمين أو الشمال بدل ما تبقى تحت بعض. استخدمناها في <bdi>.div1</bdi>، <bdi>.div2</bdi>،
+      <bdi>.div3</bdi> علشان يظهروا جنب بعض في صف واحد. وعرفنا إن الخاصية دي كانت زمان بتستخدم في
+      إنشاء التخطيطات قبل ظهور الأدوات الأحدث.
+    </li>
+
+    <li data-order="3">
+      <bdi>Overflow Property</bdi>: <br />بعد ما استخدمنا <bdi>float</bdi>، العناصر اللي جوا
+      <bdi>parent</bdi> ممكن تخرج برا المساحة بتاعته، فبنستخدم <bdi>overflow: auto;</bdi> عشان نمنع
+      المشكلة دي ويظهر المحتوى مظبوط.
+    </li>
+
+    <li data-order="4">
+      <bdi>Margin</bdi>: <br />استخدمنا الـ<bdi>margin</bdi> لتحديد المسافات بين الصناديق
+      (<bdi>divs</bdi>)، زي ما حصل في <bdi>margin: 0px 70px;</bdi> اللي خلت المسافة بين كل
+      <bdi>div</bdi> والتاني متساوية.
+    </li>
+
+    <li data-order="5">
+      <bdi>Grouping Selectors</bdi>: <br />اتعلمنا إننا ممكن نختصر الكود لما يكون فيه عناصر كتير
+      ليها نفس التنسيق، بدل ما نكرر الكود لكل واحدة، بنكتبهم كلهم في سطر واحد مفصولين بفاصلة. مثال
+      من المحاضرة:
+      <bdi
+        >.btn1, .btn2, .btn3 { width: 140px; height: 35px; color: #fff; border-radius: 5px; }</bdi
+      >
+      وده بيوفر وقت وبيخلي الكود أنضف وأسهل في الصيانة.
+    </li>
+
+    <li data-order="6">
+      <bdi>Button Colors</bdi>: <br />كل زرار خَد لون مختلف عن التاني عن طريق كلاس خاص بيه (<bdi
+        >.btn1</bdi
+      >
+      أحمر، <bdi>.btn2</bdi> أخضر فاتح، <bdi>.btn3</bdi> أزرق). وده عرّفنا فكرة التخصيص الفردي بعد
+      ما نطبّق التنسيق العام.
+    </li>
+
+    <li data-order="7">
+      <bdi>Text Alignment</bdi>: <br />كل <bdi>div</bdi> جوه الصفحة استخدمنا فيه
+      <bdi>text-align: center;</bdi>
+      علشان العنوان، الفقرة، والزرار يكونوا في النص بشكل منسق.
+    </li>
   </ul>
 
-  <h3>Notes</h3>
-  <p>Additional notes and details for lecture 8 will be added here.</p>
+  <h3><bdi>Notes</bdi></h3>
+  <p>
+    💡 خاصية <bdi>float</bdi> كانت الأساس في تصميم المواقع زمان، بس لسه مفيدة في بعض الحالات.
+    <br />⚙️ دايمًا استخدم <bdi>overflow: auto;</bdi> لما تشتغل بـ<bdi>float</bdi> علشان تمنع
+    المشاكل في الترتيب. <br />🎨 استخدم <bdi>grouping selectors</bdi> عشان الكود يكون أنظف وأقصر.
+    <br />🧠 حاول تجرب تعمل تصميم فيه 4 صناديق جنب بعض بنفس الفكرة عشان تثبت المعلومة بإيدك.
+  </p>
 </div>

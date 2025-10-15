@@ -1,15 +1,79 @@
-<h2>lecture 13</h2>
-<div class="content">
-  <h3>Summary</h3>
-  <p>This is a placeholder for lecture 13 summary.</p>
-
-  <h3>Key Points</h3>
+<h2><bdi>Lecture 13</bdi></h2>
+<div class="content" dir="rtl">
+  <h3><bdi>Lecture 13: Team Section & Hover Overlay</bdi></h3>
+  <h3><bdi>Summary</bdi></h3>
+  <p>
+    المحاضرة دي ركّزنا فيها على تصميم جزء <bdi>Team</bdi> اللي بيعرض أعضاء الفريق في الموقع. اتعلمنا
+    إزاي ننظم العناصر في صف واحد باستخدام خاصية <bdi>float</bdi>، وازاي نخلي الصورة يظهر فوقها طبقة
+    شفافة فيها أيقونات التواصل الاجتماعي لما نعمل <bdi>hover</bdi>. كمان اتكلمنا عن تنسيق النصوص
+    الخاصة بالاسم والمهنة، وعن تأثير تغيير الألوان لما نمرر الماوس على العنصر علشان نخلي التصميم
+    ديناميكي واحترافي.
+  </p>
+  <h3><bdi>Key Points</bdi></h3>
   <ul>
-    <li data-order="1">Key point 1 for lecture 13</li>
-    <li data-order="2">Key point 2 for lecture 13</li>
-    <li data-order="3">Key point 3 for lecture 13</li>
-  </ul>
+    <li data-order="1">
+      <bdi>Team Structure</bdi>: <br />قسم الفريق بيتكون من عنصر أساسي اسمه
+      <bdi>.team-container</bdi> جواه عنصر أب <bdi>.team-parent</bdi> بيحتوي على مجموعة عناصر
+      <bdi>.team-item</bdi>، وكل عنصر بيمثل فرد من الفريق.
+    </li>
+    <li data-order="2">
+      <bdi>Layout with Float</bdi>: <br />استخدمنا خاصية <bdi>float: left;</bdi> علشان نخلي كل كارت
+      يقف جنب التاني في صف واحد، وبالنسبة للعنصر الأوسط ضفنا له <bdi>margin</bdi> علشان يبعد عن
+      الباقيين: <br /><bdi>.team-item-2 { margin: 0px 5%; }</bdi>
+    </li>
 
-  <h3>Notes</h3>
-  <p>Additional notes and details for lecture 13 will be added here.</p>
+    <li data-order="3">
+      <bdi>Image and Overlay</bdi>: <br />كل صورة جوه <bdi>.team-img</bdi>، وعلشان نضيف الطبقة
+      الشفافة فوقها استخدمنا عنصر <bdi>.team-icons</bdi> بخاصية <bdi>position: absolute;</bdi> مع:
+      <ul>
+        <li><bdi>top: 0; left: 0; right: 0; bottom: 0;</bdi> علشان تغطي الصورة كلها.</li>
+        <li><bdi>background-color: rgba(0, 0, 0, 0.5);</bdi> لعمل طبقة شفافة.</li>
+        <li><bdi>visibility: hidden;</bdi> علشان تختفي في الحالة العادية.</li>
+      </ul>
+      وبعدين استخدمنا <bdi>.team-item:hover .team-icons { visibility: visible; }</bdi>
+      علشان الطبقة تظهر لما نمرر الماوس على الصورة.
+    </li>
+
+    <li data-order="4">
+      <bdi>Social Icons</bdi>: <br />جوه الطبقة الشفافة ضفنا 3 أيقونات باستخدام
+      <bdi>Font Awesome</bdi> (فيسبوك، تويتر، لينكدإن). تم تنسيقهم بالشكل ده:
+      <ul>
+        <li><bdi>a</bdi> بياخد عرض وارتفاع <bdi>40px</bdi> وخلفية <bdi>rgb(3, 238, 255)</bdi>.</li>
+        <li><bdi>i</bdi> بياخد <bdi>line-height: 40px;</bdi> علشان الأيقونة تتوسطن جوه الزر.</li>
+      </ul>
+      وده كله بيظهر لما المستخدم يعمل <bdi>hover</bdi> على الكارت.
+    </li>
+
+    <li data-order="5">
+      <bdi>Text Styling</bdi>: <br />بعد الصورة عندنا جزء <bdi>.team-info</bdi> اللي فيه اسم الشخص
+      ووظيفته. استخدمنا:
+      <ul>
+        <li>
+          <bdi>.team-info-title</bdi> بلون رمادي غامق <bdi>rgb(75, 75, 75)</bdi> وحروف
+          <bdi>capitalize</bdi>.
+        </li>
+        <li>
+          <bdi>.team-info-p</bdi> بلون رمادي فاتح <bdi>rgb(156, 156, 156)</bdi> وحروف
+          <bdi>uppercase</bdi>.
+        </li>
+      </ul>
+      عند الـ<bdi>hover</bdi> بيتغير اللون لـ<bdi>white</bdi> و<bdi>blue</bdi> علشان نعمل تأثير جميل
+      عند المرور.
+    </li>
+
+    <li data-order="6">
+      <bdi>Heading & Line Decoration</bdi>: <br />في أول الكود كان في عنوان <bdi>Our Team</bdi> وتحت
+      منه خط أزرق بنستخدمه كـ<bdi>section title</bdi>. الخط اتعمل بعنصر
+      <bdi>&lt;span class="team-line"&gt;</bdi> وعرضه <bdi>75px</bdi> وارتفاعه <bdi>4px</bdi> بخلفية
+      زرقاء، ومتمركز في النص باستخدام <bdi>margin: auto;</bdi>.
+    </li>
+  </ul>
+  <h3><bdi>Notes</bdi></h3>
+  <p>
+    💡 استخدم <bdi>position: relative</bdi> على العنصر الأب دايمًا قبل استخدام
+    <bdi>absolute</bdi> في العناصر الداخلية. <br />⚙️ خاصية <bdi>visibility</bdi> بتخلي العنصر يختفي
+    أو يظهر من غير ما تغير مكانه في الصفحة. <br />🎨 لما تستخدم <bdi>rgba()</bdi> تقدر تتحكم في درجة
+    الشفافية بكل سهولة. <br />🧠 التنسيق بالألوان المتناسقة مع التأثيرات البسيطة بيخلي شكل الموقع
+    احترافي جدًا.
+  </p>
 </div>

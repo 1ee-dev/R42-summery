@@ -1,15 +1,98 @@
-<h2>lecture 11</h2>
-<div class="content">
-  <h3>Summary</h3>
-  <p>This is a placeholder for lecture 11 summary.</p>
-
-  <h3>Key Points</h3>
+<h2><bdi>Lecture 11</bdi></h2>
+<div class="content" dir="rtl">
+  <h3><bdi>Lecture 11: Specificity, Pseudo Classes & Attribute Selectors</bdi></h3>
+  <h3><bdi>Summary</bdi></h3>
+  <p>
+    المحاضرة دي كانت عن أولوية الأكواد في <bdi>CSS</bdi>، وازاي المتصفح بيختار أي تنسيق يطبقه لما
+    يكون في أكتر من قاعدة بتأثر على نفس العنصر. كمان اتكلمنا عن <bdi>Pseudo Classes</bdi> و<bdi
+      >Pseudo Elements</bdi
+    >، واللي بيخلونا ننسق العنصر في حالات معينة أو نضيف عليه عناصر قبل وبعد من غير ما نلمس كود
+    الـ<bdi>HTML</bdi>. وفي آخر المحاضرة، اتعرفنا على <bdi>Attribute Selectors</bdi> اللي بنستخدمها
+    علشان ننسق العناصر على حسب الـ<bdi>Attributes</bdi> بتاعتها.
+  </p>
+  <h3><bdi>Key Points</bdi></h3>
   <ul>
-    <li data-order="1">Key point 1 for lecture 11</li>
-    <li data-order="2">Key point 2 for lecture 11</li>
-    <li data-order="3">Key point 3 for lecture 11</li>
-  </ul>
+    <li data-order="1">
+      <bdi>CSS Specificity</bdi>: <br />هي الطريقة اللي بيحسب بيها المتصفح الأولوية بين القواعد. لما
+      يكون في أكتر من كود بيأثر على نفس العنصر، المتصفح بيختار الأقوى حسب الترتيب ده:
+      <ul>
+        <li><bdi>Inline Style</bdi> — أعلى أولوية (اللي مكتوب جوه التاج نفسه).</li>
+        <li><bdi>ID Selector</bdi> — بعده في القوة.</li>
+        <li><bdi>Class / Pseudo Class / Attribute Selector</bdi> — أقل من الـ<bdi>ID</bdi>.</li>
+        <li>
+          <bdi>Element Selector</bdi> (زي <bdi>&lt;h2&gt;</bdi> أو <bdi>&lt;p&gt;</bdi>) — الأضعف.
+        </li>
+      </ul>
+      مثال: <br />
+      <bdi
+        >&lt;h2 id="title11" class="title10" style="background-color: brown;"&gt;Islam
+        Mohamed&lt;/h2&gt;</bdi
+      >
+      اللون اللي هيظهر هو البني لأن <bdi>inline style</bdi> أقوى من أي حاجة تانية.
+    </li>
+    <li data-order="2">
+      <bdi>Pseudo Classes</bdi>: <br />دي حالات معينة بتحصل للعنصر زي لما المستخدم يمرر الماوس أو
+      يضغطه أو يكتف فيه.
+      <ul>
+        <li><bdi>:hover</bdi> → لما الماوس يقف على العنصر.</li>
+        <li><bdi>:active</bdi> → لما العنصر بيتضغط.</li>
+        <li><bdi>:focus</bdi> → لما العنصر زي input يكون جاهز للكتابة.</li>
+      </ul>
+      مثال عملي من المحاضرة:
+      <br />
+      <bdi>.a1:hover { color: red; }</bdi>
+      <br />
+      يعني لما الماوس يقف على اللينك، لونه هيتحول لأحمر.
+    </li>
 
-  <h3>Notes</h3>
-  <p>Additional notes and details for lecture 11 will be added here.</p>
+    <li data-order="3">
+      <bdi>Pseudo Elements</bdi>: <br />دي بتخلينا نضيف جزء قبل أو بعد العنصر من غير ما نعدل في كود
+      الـHTML.
+      <ul>
+        <li><bdi>::before</bdi> → بيضيف محتوى قبل العنصر.</li>
+        <li><bdi>::after</bdi> → بيضيف محتوى بعد العنصر.</li>
+      </ul>
+      وغالبًا بنستخدمها مع الخاصية <bdi>content:</bdi> لتزيين العناصر أو إضافة رموز شكلية.
+    </li>
+
+    <li data-order="4">
+      <bdi>Attribute Selectors</bdi>: <br />بنستخدمها لما نحب ننسق عناصر معينة على حسب الـAttribute
+      اللي فيها. مثال من المحاضرة:
+      <ul>
+        <li><bdi>[type="password"] { background-color: red; }</bdi></li>
+        <li><bdi>[type="text"] { background-color: greenyellow; }</bdi></li>
+      </ul>
+      كده كل <bdi>&lt;input&gt;</bdi> نوعه <bdi>password</bdi> هيكون لونه أحمر، وكل
+      <bdi>&lt;input&gt;</bdi> نوعه <bdi>text</bdi> هيكون أخضر فاتح.
+    </li>
+
+    <li data-order="5">
+      <bdi>Display vs Visibility vs Opacity</bdi>: <br />الخصائص دي كلها بتتحكم في ظهور العنصر لكن
+      كل واحدة بتشتغل بطريقة مختلفة:
+      <ul>
+        <li><bdi>display: none;</bdi> → العنصر بيختفي تمامًا ومش بياخد مساحة.</li>
+        <li><bdi>visibility: hidden;</bdi> → العنصر بيختفي لكن لسه واخد مكانه.</li>
+        <li><bdi>opacity: 0;</bdi> → العنصر بيبقى شفاف لكن لسه موجود في الصفحة.</li>
+      </ul>
+    </li>
+
+    <li data-order="6">
+      <bdi>Specificity Calculation</bdi>: <br />المتصفح بيحسب الأولوية بالأرقام بالشكل ده:
+      <ul>
+        <li><bdi>Inline Style</bdi> = 1000 نقطة.</li>
+        <li><bdi>ID</bdi> = 100 نقطة.</li>
+        <li><bdi>Class / Pseudo / Attribute</bdi> = 10 نقاط.</li>
+        <li><bdi>Element</bdi> = 1 نقطة.</li>
+      </ul>
+      وبيجمع الأرقام وبيطبّق القاعدة الأعلى. شفنا مثالين في الكود النتيجة فيهم كانت 476 مقابل 264
+      عشان نعرف طريقة الحساب.
+    </li>
+  </ul>
+  <h3><bdi>Notes</bdi></h3>
+  <p>
+    💡 استخدم أقل عدد ممكن من ال<bdi>selectors</bdi> علشان الكود يبقى بسيط وسهل التعديل. <br />⚙️
+    الـ<bdi>inline style</bdi> دايمًا أقوى من أي كود تاني إلا لو استخدمت <bdi>!important</bdi>.
+    <br />🎯 استخدم <bdi>pseudo-classes</bdi> علشان تخلي الموقع تفاعلي من غير جافاسكريبت. <br />🧠
+    فهم <bdi>specificity</bdi> هيساعدك تحل مشاكل تضارب التنسيقات بسرعة واحترافية.
+  </p>
 </div>

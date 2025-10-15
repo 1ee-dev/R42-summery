@@ -1,15 +1,109 @@
-<h2>lecture 15</h2>
-<div class="content">
-  <h3>Summary</h3>
-  <p>This is a placeholder for lecture 15 summary.</p>
-
-  <h3>Key Points</h3>
+<h2><bdi>Lecture 15</bdi></h2>
+<div class="content" dir="rtl">
+  <h3><bdi>Lecture 15: HTML5 Semantic Elements, Input Types & Pseudo Classes</bdi></h3>
+  <h3><bdi>Summary</bdi></h3>
+  <p>
+    المحاضرة دي كانت بداية التعامل مع مميزات <bdi>HTML5</bdi> الحديثة. اتكلمنا عن العناصر الدلالية
+    (semantic elements) اللي بتوضح معنى كل جزء في الصفحة بدل ما نستخدم <bdi>&lt;div&gt;</bdi> في كل
+    حاجة. كمان اتكلمنا عن أنواع الإدخالات الجديدة في <bdi>&lt;input&gt;</bdi> زي <bdi>email</bdi>،
+    <bdi>date</bdi>، <bdi>search</bdi>، وغيرها. واتعرفنا على خصائص <bdi>:in-range</bdi> و<bdi
+      >:out-of-range</bdi
+    >
+    اللي بتستخدم لتلوين الحقول حسب القيم اللي يدخلها المستخدم. أخيرًا، شفنا عنصر
+    <bdi>&lt;progress&gt;</bdi> المستخدم لعرض مدى التقدم بطريقة رسومية.
+  </p>
+  <h3><bdi>Key Points</bdi></h3>
   <ul>
-    <li data-order="1">Key point 1 for lecture 15</li>
-    <li data-order="2">Key point 2 for lecture 15</li>
-    <li data-order="3">Key point 3 for lecture 15</li>
-  </ul>
+    <li data-order="1">
+      <bdi>Semantic Elements</bdi>: <br />هي عناصر بتدي معنى واضح للمتصفح والمطور عن وظيفة كل جزء في
+      الصفحة. من أهمها:
+      <ul>
+        <li><bdi>&lt;header&gt;</bdi> – الجزء العلوي للموقع (غالبًا فيه اللوجو والقائمة).</li>
+        <li><bdi>&lt;nav&gt;</bdi> – بيحتوي على روابط التنقل.</li>
+        <li><bdi>&lt;main&gt;</bdi> – بيضم المحتوى الرئيسي.</li>
+        <li><bdi>&lt;section&gt;</bdi> – لتقسيم الصفحة لأقسام مستقلة.</li>
+        <li><bdi>&lt;article&gt;</bdi> – للمقالات أو المحتوى المنفصل.</li>
+        <li><bdi>&lt;aside&gt;</bdi> – للمحتوى الجانبي.</li>
+        <li><bdi>&lt;footer&gt;</bdi> – الجزء السفلي (حقوق أو روابط).</li>
+        <li>
+          <bdi>&lt;figure&gt;</bdi> و<bdi>&lt;figcaption&gt;</bdi> – للصور والتعليقات التوضيحية.
+        </li>
+      </ul>
+      العناصر دي بتخلي الكود منظم وسهل القراءة لمحركات البحث والمبرمجين.
+    </li>
+    <li data-order="2">
+      <bdi>Custom Elements</bdi>: <br />في المثال شفنا إنشاء عنصر جديد باسم
+      <bdi>&lt;islam&gt;</bdi> وده باستخدام <bdi>document.createElement("islam")</bdi> داخل
+      <bdi>&lt;script&gt;</bdi>. الهدف منه هو تعريف المتصفح بأي عنصر مخصص علشان يقدر يتعامل معاه
+      بشكل طبيعي.
+    </li>
 
-  <h3>Notes</h3>
-  <p>Additional notes and details for lecture 15 will be added here.</p>
+    <li data-order="3">
+      <bdi>HTML5shiv</bdi>: <br />دي مكتبة كانت بتستخدم زمان علشان متصفحات قديمة زي
+      <bdi>Internet Explorer 9</bdi> تقدر تقرأ عناصر <bdi>HTML5</bdi> الجديدة. اتكلمنا عنها في الكود
+      التعليقي باستخدام الشرط: <br /><bdi
+        >&lt;!-- [if it IE 9] --&gt; &lt;script src="js/html5shiv.js"&gt;&lt;/script&gt;
+        &lt;![endif]--&gt;</bdi
+      >
+    </li>
+
+    <li data-order="4">
+      <bdi>BDI Element</bdi>: <br /><bdi>&lt;bdi&gt;</bdi> معناها
+      <bdi>Bi-Directional Isolation</bdi>
+      وبتُستخدم لما ندمج نصوص بلغتين مختلفتين (زي العربي والإنجليزي) علشان الاتجاه ما يتلخبطش. مثال:
+      <bdi>&lt;p&gt; islam &lt;bdi&gt;إسلام&lt;/bdi&gt; : 90 points &lt;/p&gt;</bdi>
+      بيخلي الكلمة العربية تظهر باتجاهها الصحيح جوه النص الإنجليزي.
+    </li>
+
+    <li data-order="5">
+      <bdi>Progress Element</bdi>: <br />العنصر <bdi>&lt;progress&gt;</bdi> بيعرض نسبة التقدم في
+      عملية معينة، زي تحميل أو إنجاز مهمة. بيتكتب بالشكل ده: <br /><bdi
+        >&lt;progress value="75" max="100"&gt;&lt;/progress&gt;</bdi
+      >
+      ممكن تغير اللون والتصميم عن طريق الـ<bdi>CSS</bdi>:
+      <br /><bdi>progress { width: 400px; height: 40px; }</bdi>
+    </li>
+
+    <li data-order="6">
+      <bdi>New Input Types</bdi>: <br />اتكلمنا عن أنواع إدخال جديدة اتضافت في
+      <bdi>HTML5</bdi> لتسهيل التعامل مع البيانات:
+      <ul>
+        <li><bdi>email</bdi> – يتحقق من وجود <bdi>@</bdi> في البريد.</li>
+        <li><bdi>url</bdi> – يقبل روابط فقط.</li>
+        <li><bdi>search</bdi> – لحقل بحث مخصص.</li>
+        <li><bdi>date</bdi> و<bdi>datetime-local</bdi> – لاختيار تاريخ ووقت.</li>
+        <li>
+          <bdi>number</bdi> – للأرقام فقط مع خصائص <bdi>min</bdi> و<bdi>max</bdi> و<bdi>step</bdi>.
+        </li>
+        <li><bdi>file</bdi> – لاختيار ملفات من الجهاز.</li>
+      </ul>
+      كمان اتكلمنا عن الأنواع القديمة زي <bdi>text</bdi>، <bdi>password</bdi>، <bdi>radio</bdi>،
+      <bdi>checkbox</bdi>، <bdi>submit</bdi>، و<bdi>button</bdi>.
+    </li>
+
+    <li data-order="7">
+      <bdi>:in-range & :out-of-range</bdi>: <br />دي <bdi>pseudo-classes</bdi> بتغير تنسيق الحقول
+      بناءً على القيمة اللي يدخلها المستخدم.
+      <ul>
+        <li>
+          <bdi>input:in-range { background-color: green; }</bdi> → بيتلوّن بالأخضر لما القيمة ضمن
+          النطاق.
+        </li>
+        <li>
+          <bdi>input:out-of-range { background-color: red; }</bdi> → بيتلوّن بالأحمر لما القيمة خارج
+          النطاق.
+        </li>
+      </ul>
+      دي بتفيد جدًا في التحقق من البيانات بطريقة تفاعلية من غير جافاسكريبت.
+    </li>
+  </ul>
+  <h3><bdi>Notes</bdi></h3>
+  <p>
+    💡 العناصر الدلالية بتخلي موقعك منظم وسهل الفهم لمحركات البحث. <br />⚙️ استخدم عناصر
+    <bdi>input</bdi> الحديثة علشان تحسّن تجربة المستخدم. <br />🎨 خاصية <bdi>:in-range</bdi> و<bdi
+      >:out-of-range</bdi
+    >
+    ممكن تستخدمها لأي نوع أرقام أو تواريخ. <br />🧠 العنصر <bdi>&lt;bdi&gt;</bdi> مفيد جدًا في
+    المواقع اللي فيها لغتين (زي عربي وإنجليزي).
+  </p>
 </div>
