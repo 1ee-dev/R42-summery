@@ -60,29 +60,26 @@ function appendListItems() {
 
 // Fetch content for each lecture
 async function fetchLectureContent() {
-  const mainElement = document.querySelector('main');
-  const lectureContentPromises = lectures.map(async (lecture) => {
-    const response = await fetch(`../content/${lecture.file}`);
+  const main = document.querySelector('main');
+  const lectureContentPromises = lectures.map(async (lec) => {
+    const response = await fetch(`../content/${lec.file}`);
     const content = await response.text();
-    return `<article id="${lecture.id}">${content}</article>`;
+    return `<article id="${lec.id}">${content}</article>`;
   });
 
   const lectureContentHtml = await Promise.all(lectureContentPromises);
-  mainElement.innerHTML = lectureContentHtml.join('');
+  main.innerHTML = lectureContentHtml.join('');
 }
 
 // Initialize content loading
 async function initializeContent() {
-  try {
-    // First append the sidebar structure
-    appendListItems();
-    // Then load all lecture content
-    await fetchLectureContent();
-    // Dispatch event when everything is loaded
-    document.dispatchEvent(new CustomEvent('contentLoaded'));
-  } catch (error) {
-    console.error('Error loading content:', error);
-  }
+
+  // First append the sidebar structure
+  appendListItems();
+  // Then load all lecture content
+  await fetchLectureContent();
+  // Dispatch event when everything is loaded
+  document.dispatchEvent(new CustomEvent('contentLoaded'));
 }
 
 initializeContent();

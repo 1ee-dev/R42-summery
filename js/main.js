@@ -61,6 +61,7 @@ document.addEventListener('contentLoaded', () => {
   sidebarListBtn.forEach((btn) => {
     btn.addEventListener('click', () => {
       activateListItem(btn);
+      scrollLectureIntoView(btn);
       hideMenu();
     });
   });
@@ -72,15 +73,21 @@ document.addEventListener('contentLoaded', () => {
     btn.classList.add('active-li');
 
     updateCurrentList();
-    setTimeout(() => {
-      scrollBtnIntoView(btn);
-    }, 300);
   }
 
   // scroll list button into view
   function scrollBtnIntoView(btn) {
     if (btn) {
       btn.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+  }
+
+  // scroll article into view
+  function scrollLectureIntoView(btn) {
+    const id = btn.getAttribute('data-id');
+    const lec = document.getElementById(id);
+    if (lec) {
+      lec.scrollIntoView({ behavior: 'smooth' });
     }
   }
 
@@ -108,7 +115,12 @@ document.addEventListener('contentLoaded', () => {
   const observer = new IntersectionObserver(
     (entry) => {
       const btn = document.querySelector(`button[data-id="${entry[0].target.id}"]`);
-      if (btn) activateListItem(btn);
+      if (btn) {
+        activateListItem(btn);
+        setTimeout(() => {
+          scrollBtnIntoView(btn);
+        }, 300);
+      }
     },
     {
       rootMargin: '-25% 0px -75% 0px',
@@ -116,6 +128,6 @@ document.addEventListener('contentLoaded', () => {
   );
 
   lectures.forEach((lec) => {
-    if (lec.id) observer.observe(lec);
+    observer.observe(lec);
   });
 });
