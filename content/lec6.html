@@ -1,15 +1,88 @@
-<h2>lecture 6</h2>
-<div class="content">
-  <h3>Summary</h3>
-  <p>This is a placeholder for lecture 6 summary.</p>
+<h2><bdi>Lecture 6</bdi></h2>
+<div class="content" dir="rtl">
+  <h3><bdi>Lecture 6: Text Formatting & Background Styling</bdi></h3>
 
-  <h3>Key Points</h3>
+  <h3><bdi>Summary</bdi></h3>
+  <p>
+    المحاضرة دي كانت عن تنسيق النصوص باستخدام وسوم <bdi>HTML</bdi> الخاصة بالشكل، واتكلمنا عن الفرق
+    بين الوسوم اللي بتأثر على الشكل فقط، واللي كمان بتدي معنى أقوى لمحركات البحث زي
+    <bdi>&lt;strong&gt;</bdi> و<bdi>&lt;em&gt;</bdi>. بعد كده دخلنا على الجزء الخاص بخلفيات الصفحة
+    في <bdi>CSS</bdi>، واتعرفنا على خصائص الخلفية زي اللون، الصورة، طريقة التكرار، والموضع، وكمان
+    شفنا إزاي ندمجهم كلهم في سطر واحد باستخدام خاصية <bdi>background</bdi> المختصرة.
+  </p>
+
+  <h3><bdi>Key Points</bdi></h3>
   <ul>
-    <li data-order="1">Key point 1 for lecture 6</li>
-    <li data-order="2">Key point 2 for lecture 6</li>
-    <li data-order="3">Key point 3 for lecture 6</li>
+    <li data-order="1">
+      <bdi>Formatting Tags</bdi>: <br />الوسوم دي بتتحكم في شكل النصوص داخل الصفحة، ومن أهمها:
+      <ul>
+        <li>
+          <bdi>&lt;i&gt;</bdi> و<bdi>&lt;em&gt;</bdi>: بيخلوا النص مائل، بس <bdi>em</bdi> ليه معنى
+          تأكيدي أقوى.
+        </li>
+        <li>
+          <bdi>&lt;b&gt;</bdi> و<bdi>&lt;strong&gt;</bdi>: بيخلوا النص عريض (bold)، و<bdi
+            >strong</bdi
+          >
+          بتدل على أهمية أكتر.
+        </li>
+        <li><bdi>&lt;mark&gt;</bdi>: لتظليل النص كأنه متعلم عليه بالهايلايتر.</li>
+        <li><bdi>&lt;small&gt;</bdi>: لتصغير حجم النص.</li>
+        <li><bdi>&lt;del&gt;</bdi>: لخط على النص (زي الأسعار القديمة).</li>
+        <li>
+          <bdi>&lt;ins&gt;</bdi> و<bdi>&lt;u&gt;</bdi>: لتحت خط (underline)، و<bdi>ins</bdi> بتستخدم
+          لإضافة نص جديد.
+        </li>
+        <li>
+          <bdi>&lt;sub&gt;</bdi> و<bdi>&lt;sup&gt;</bdi>: لكتابة النص تحت أو فوق السطر، زي المعادلات
+          الكيميائية أو الأسس الرياضية (<bdi>H<sub>2</sub>O</bdi>، <bdi>9<sup>3</sup></bdi
+          >).
+        </li>
+      </ul>
+    </li>
+
+    <li data-order="2">
+      <bdi>Textarea</bdi>: <br />اتكلمنا عن الوسم <bdi>&lt;textarea&gt;</bdi> اللي بنستخدمه لما
+      نحتاج مساحة كبيرة لكتابة نص، زي الرسائل أو التعليقات. نقدر نتحكم في عدد الصفوف
+      (<bdi>rows</bdi>) والأعمدة (<bdi>cols</bdi>)، وكمان نحط <bdi>placeholder</bdi> كإرشاد
+      للمستخدم.
+    </li>
+
+    <li data-order="3">
+      <bdi>CSS Background</bdi>: <br />الجزء العملي في المحاضرة كان عن الخلفيات، واتعرفنا على خصائص
+      مهمة زي:
+      <ul>
+        <li><bdi>background-color</bdi>: لتغيير لون الخلفية.</li>
+        <li><bdi>background-image</bdi>: لإضافة صورة كخلفية للعنصر أو الصفحة.</li>
+        <li>
+          <bdi>background-repeat</bdi>: بتحدد هل الصورة تتكرر ولا لأ (مثلاً <bdi>no-repeat</bdi>).
+        </li>
+        <li>
+          <bdi>background-attachment</bdi>: بتخلي الخلفية ثابتة مع التمرير أو تتحرك مع الصفحة (زي
+          <bdi>fixed</bdi>).
+        </li>
+        <li>
+          <bdi>background-position</bdi>: لتحديد مكان الصورة في الصفحة (زي <bdi>center</bdi>).
+        </li>
+      </ul>
+      وبعدين شفنا الطريقة المختصرة باستخدام خاصية واحدة اسمها <bdi>background</bdi>
+      نكتب فيها كل القيم في سطر واحد زي المثال:
+      <bdi>background: blue url(../images/trainer-1.jpg) no-repeat fixed center;</bdi>
+    </li>
+
+    <li data-order="4">
+      <bdi>Background in Elements</bdi>: <br />جربنا نحط خلفية جوه <bdi>div</bdi> باستخدام
+      <bdi>background-image</bdi> وكمان استخدمنا <bdi>background-size: cover;</bdi> علشان الصورة
+      تملأ المساحة كلها بشكل مناسب.
+    </li>
   </ul>
 
-  <h3>Notes</h3>
-  <p>Additional notes and details for lecture 6 will be added here.</p>
+  <h3><bdi>Notes</bdi></h3>
+  <p>
+    💡 استخدم الوسوم الدلالية زي <bdi>&lt;strong&gt;</bdi> و<bdi>&lt;em&gt;</bdi> بدل
+    <bdi>&lt;b&gt;</bdi> و<bdi>&lt;i&gt;</bdi> لأنها مفيدة لمحركات البحث. <br />🎨 الخلفيات بتدي روح
+    للتصميم، بس حاول تستخدم صور خفيفة الحجم عشان الصفحة تفتح بسرعة. <br />⚙️ لما تستخدم
+    <bdi>background-size: cover;</bdi> هتضمن إن الصورة تملأ العنصر كله بدون تشويه. <br />🧠 التنسيق
+    مش بس شكل — كل خاصية ليها تأثير على تجربة المستخدم وشكل الموقع النهائي.
+  </p>
 </div>
