@@ -1,8 +1,8 @@
-// set groups
+// set groups (use simple { end, name } entries)
 const groups = [
   { end: 14, name: 'HTML & CSS' },
   { end: 17, name: 'GitHub' },
-  { end1: 16, end2: 24, name: 'HTML5 & CSS3' },
+  { end: 24, name: 'HTML5 & CSS3' },
   { end: 28, name: 'JavaScript' },
 ];
 
@@ -10,17 +10,13 @@ const groups = [
 function generateLectures(numberOfLectures) {
   const lectures = [];
   for (let i = 1; i <= numberOfLectures; i++) {
-    // Determine group based on lecture number
-    let group;
-    if (i <= groups[0].end) group = groups[0].name;
-    else if (i <= groups[2].end1) group = groups[2].name;
-    else if (i <= groups[1].end) group = groups[1].name;
-    else if (i <= groups[2].end2) group = groups[2].name;
-    else if (i <= groups[3].end) group = groups[3].name;
-    else group = 'Not Assigned';
+    // Determine group by checking the first group whose end >= i
+    const matched = groups.find((g) => i <= g.end);
+    const group = matched ? matched.name : 'Not Assigned';
 
+    // Use plain id (no leading '#') so getElementById works and data-id matches
     lectures.push({
-      id: `#lec${i}`,
+      id: `lec${i}`,
       title: `Lecture ${i}`,
       group: group,
       file: `lec${i}.html`,
@@ -63,8 +59,16 @@ function appendListItems() {
 async function fetchLectureContent() {
   const main = document.querySelector('main');
   const lectureContentPromises = lectures.map(async (lec) => {
-    const response = await fetch(`/content/${lec.file}`);
+    // fetch relative to the site root (index.html), not relative to this JS file
+    const response = await fetch(`content/${lec.file}`);
     const content = await response.text();
+    // If the fetched file already contains an <article> element, prefer to reuse it
+    // and ensure it has the expected id. Otherwise wrap the content in an article.
+    const hasArticle = /<article\b/i.test(content);
+    if (hasArticle) {
+      // try to inject or replace the id attribute on the first <article>
+      return content.replace(/<article(.*?)>/i, `<article$1 id="${lec.id}">`);
+    }
     return `<article id="${lec.id}">${content}</article>`;
   });
 
