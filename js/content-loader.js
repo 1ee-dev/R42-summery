@@ -63,7 +63,7 @@ function appendListItems() {
 async function fetchLectureContent() {
   const main = document.querySelector('main');
   const lectureContentPromises = lectures.map(async (lec) => {
-    const response = await fetch(`https://1ee-dev.github.io/content/${lec.file}`);
+    const response = await fetch(`/content/${lec.file}`);
     const content = await response.text();
     return `<article id="${lec.id}">${content}</article>`;
   });
