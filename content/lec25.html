@@ -1,15 +1,92 @@
-<h2>lecture 25</h2>
-<div class="content">
-  <h3>Summary</h3>
-  <p>This is a placeholder for lecture 25 summary.</p>
+<h2><bdi>Lecture 25</bdi></h2>
+<div class="content" dir="rtl">
+  <h3><bdi>Lecture 25: Introduction to JavaScript &amp; First Interaction</bdi></h3>
+  <h3><bdi>Summary</bdi></h3>
+  <p>
+    المحاضرة دي كانت أول خطوة في تعلم <bdi>JavaScript</bdi>، اللغة اللي بتخلي صفحات الويب
+    <bdi>تتحرك وتتفاعل</bdi> مع المستخدم. عرفنا يعني إيه <bdi>JS</bdi> وليه بنستخدمها، واتكلمنا عن
+    أماكن كتابة الكود، إزاي نربط ملف <bdi>.js</bdi> بالصفحة، وإزاي نتعامل مع العناصر عن طريق
+    <bdi>DOM</bdi>.
+  </p>
+  <h3><bdi>Key Points</bdi></h3>
+  <ol>
+    <li>
+      <h4 data-order="1"><bdi>ما هي JavaScript؟</bdi>:</h4>
+      <p>
+        <bdi>JavaScript</bdi> هي لغة برمجة بتشتغل على جانب المستخدم (<bdi>Client Side</bdi>) داخل
+        المتصفح، وبتسمحلك تضيف تفاعل للموقع زي الأزرار، التنبيهات، وحساب النتائج. كمان ممكن تُستخدم
+        في مجالات تانية زي:
+      </p>
+      <ul>
+        <li>تطوير مواقع الويب (<bdi>Front-End &amp; Back-End</bdi>)</li>
+        <li>تطبيقات الموبايل</li>
+        <li>الألعاب</li>
+        <li>تطبيقات سطح المكتب</li>
+      </ul>
+    </li>
+    <li>
+      <h4 data-order="2"><bdi>أماكن كتابة كود JavaScript</bdi>:</h4>
+      <p>عندنا كذا طريقة نكتب بيها كود JS:</p>
+      <ul>
+        <li>جوه وسم <bdi>&lt;script&gt;</bdi> في نفس ملف <bdi>HTML</bdi>.</li>
+        <li>في ملف خارجي (زي <bdi>script.js</bdi>) وبتربطه في الصفحة عن طريق:</li>
+      </ul>
+      <p><bdi>&lt;script src="js/script.js"&gt;&lt;/script&gt;</bdi></p>
+      <p>
+        والأفضل دايمًا نحط الكود في آخر <bdi>body</bdi> علشان الصفحة تحمل الأول قبل ما الكود يشتغل.
+      </p>
+    </li>
 
-  <h3>Key Points</h3>
+    <li>
+      <h4 data-order="3"><bdi>التعامل مع العناصر باستخدام DOM</bdi>:</h4>
+      <p>
+        استخدمنا دالة <bdi>document.getElementById()</bdi> علشان نوصل لأي عنصر عن طريق
+        <bdi>id</bdi>، زي:
+      </p>
+      <p><bdi>var btn = document.getElementById("btn1")</bdi></p>
+      <p>وبعدين ربطنا حدث (<bdi>Event</bdi>) بالزر:</p>
+      <p><bdi>btn.onclick = function() { div.innerHTML = "islam mohamed" }</bdi></p>
+      <p>
+        كده لما المستخدم يضغط على الزرار، الكود جوه الـ <bdi>function</bdi> بيتنفذ ويغيّر محتوى
+        <bdi>div</bdi>.
+      </p>
+    </li>
+
+    <li>
+      <h4 data-order="4"><bdi>أنواع الإخراج (Output Methods)</bdi>:</h4>
+      <ul>
+        <li><bdi>document.write()</bdi> – بيطبع نص على الصفحة مباشرة.</li>
+        <li><bdi>alert()</bdi> – بيظهر رسالة تنبيه للمستخدم.</li>
+        <li><bdi>confirm()</bdi> – بيسأل المستخدم بـ (<bdi>OK / Cancel</bdi>).</li>
+        <li><bdi>prompt()</bdi> – بياخد إدخال من المستخدم.</li>
+        <li><bdi>console.log()</bdi> – بيطبع في <bdi>Console</bdi> للمطورين.</li>
+      </ul>
+    </li>
+
+    <li>
+      <h4 data-order="5"><bdi>تعريف المتغيرات (Variables)</bdi>:</h4>
+      <p>المتغير هو مكان في الذاكرة بنخزن فيه قيمة. بنستخدم الكلمة <bdi>var</bdi> للتعريف، زي:</p>
+      <p><bdi>var num = 10;</bdi></p>
+      <p>ملاحظات مهمة:</p>
+      <ul>
+        <li>مينفعش نبدأ المتغير برقم.</li>
+        <li>مينفعش نستخدم كلمة محجوزة في اللغة.</li>
+        <li>اختار أسماء تدل على المعنى.</li>
+      </ul>
+    </li>
+
+    <li>
+      <h4 data-order="6"><bdi>الدوال (Functions)</bdi>:</h4>
+      <p>اتعلمنا إزاي نكتب دالة ونستدعيها:</p>
+      <p><bdi>function sum() { console.log(9 + 8); }</bdi></p>
+      <p><bdi>sum();</bdi> ← استدعاء الدالة وتشغيلها.</p>
+    </li>
+  </ol>
+  <h3><bdi>Notes</bdi></h3>
   <ul>
-    <li data-order="1">Key point 1 for lecture 25</li>
-    <li data-order="2">Key point 2 for lecture 25</li>
-    <li data-order="3">Key point 3 for lecture 25</li>
+    <li>💡 استخدم <bdi>console.log()</bdi> علشان تتابع نتايج الكود خطوة بخطوة.</li>
+    <li>⚙️ دايمًا اربط ملف <bdi>script.js</bdi> في آخر <bdi>body</bdi> عشان الصفحة تحمل الأول.</li>
+    <li>🚫 متستخدمش أسماء محجوزة زي <bdi>var</bdi> أو <bdi>function</bdi> كأسماء متغيرات.</li>
+    <li>🧠 افهم الكود قبل ما تنسخه — التجربة أهم حاجة في تعلم <bdi>JavaScript</bdi>.</li>
   </ul>
-
-  <h3>Notes</h3>
-  <p>Additional notes and details for lecture 25 will be added here.</p>
 </div>

@@ -1,15 +1,88 @@
-<h2>lecture 22</h2>
-<div class="content">
-  <h3>Summary</h3>
-  <p>This is a placeholder for lecture 22 summary.</p>
+<h2><bdi>Lecture 22</bdi></h2>
+<div class="content" dir="rtl">
+  <h3><bdi>Lecture 22: 3D Transform & Flip Card Effect</bdi></h3>
+  <h3><bdi>Summary</bdi></h3>
+  <p>
+    المحاضرة دي كانت عن التحويلات الثلاثية الأبعاد (<bdi>3D Transform</bdi>) في <bdi>CSS</bdi>،
+    وازاي نقدر نستخدمها لعمل تأثيرات عميقة زي قلب الكروت (<bdi>Flip Card</bdi>). اتعلمنا إزاي نستخدم
+    <bdi>perspective</bdi> لإضافة عمق للمشهد، وكمان خاصية
+    <bdi>transform-style: preserve-3d;</bdi> علشان العناصر الداخلية تحافظ على شكلها الثلاثي أثناء
+    الدوران. في النهاية طبقنا التأثير على كارت بيقلب 180 درجة عند مرور الماوس عليه.
+  </p>
+  <h3><bdi>Key Points</bdi></h3>
+  <ol>
+    <li>
+      <h4 data-order="1"><bdi>perspective</bdi>:</h4>
+      <p>
+        الخاصية دي بنضيفها على العنصر الأب (زي <bdi>body</bdi>) علشان نتحكم في عمق الرؤية. كل ما
+        القيمة تزيد، التأثير الثلاثي الأبعاد بيكون أوضح.
+      </p>
+      <p>مثال: <bdi>perspective: 600px;</bdi></p>
+    </li>
+    <li>
+      <h4 data-order="2"><bdi>transform-style: preserve-3d;</bdi>:</h4>
+      <p>
+        بنضيفها على العنصر الحاوي (زي <bdi>&lt;section&gt;</bdi>) علشان نحافظ على البنية الثلاثية
+        للعناصر الداخلية (الوجه الأمامي والخلفي للكارت).
+      </p>
+    </li>
 
-  <h3>Key Points</h3>
+    <li>
+      <h4 data-order="3"><bdi>Backface Visibility</bdi>:</h4>
+      <p>
+        الخاصية <bdi>backface-visibility</bdi> بتتحكم في ظهور خلفية العنصر لما يدور. لو استخدمنا
+        <bdi>hidden</bdi>، الجزء الخلفي مش هيظهر أثناء الدوران.
+      </p>
+      <p>مثال: <bdi>.front { backface-visibility: hidden; }</bdi></p>
+    </li>
+
+    <li>
+      <h4 data-order="4"><bdi>Front & Back Faces</bdi>:</h4>
+      <p>الكارت بيتكوّن من وجهين:</p>
+      <ul>
+        <li><bdi>.front</bdi> — الوجه الأمامي، بيكون ظاهر في البداية.</li>
+        <li>
+          <bdi>.back</bdi> — الوجه الخلفي، بنلفه بـ <bdi>rotateY(180deg);</bdi> علشان يظهر بعد
+          الدوران.
+        </li>
+      </ul>
+    </li>
+
+    <li>
+      <h4 data-order="5"><bdi>3D Rotation</bdi>:</h4>
+      <p>
+        استخدمنا <bdi>transform: rotateY(180deg);</bdi> علشان نخلي العنصر يدور حول المحور الأفقي
+        (يمين–شمال). التأثير بيظهر عند تمرير الماوس بفضل كود:
+      </p>
+      <p><bdi>section:hover { transform: rotateY(180deg); }</bdi></p>
+    </li>
+
+    <li>
+      <h4 data-order="6"><bdi>Transition</bdi>:</h4>
+      <p>
+        أضفنا <bdi>transition: all 2s;</bdi> على <bdi>section</bdi> علشان دوران الكارت يحصل بشكل
+        ناعم خلال ثانيتين.
+      </p>
+    </li>
+
+    <li>
+      <h4 data-order="7"><bdi>Positioning &amp; z-index</bdi>:</h4>
+      <p>
+        كل من الوجه الأمامي والخلفي متوضعين فوق بعض باستخدام <bdi>position: absolute;</bdi> داخل
+        العنصر الأب. استخدمنا <bdi>z-index: 1;</bdi> للوجه الأمامي علشان يفضل ظاهر في البداية.
+      </p>
+    </li>
+  </ol>
+  <h3><bdi>Notes</bdi></h3>
   <ul>
-    <li data-order="1">Key point 1 for lecture 22</li>
-    <li data-order="2">Key point 2 for lecture 22</li>
-    <li data-order="3">Key point 3 for lecture 22</li>
+    <li>💡 دايمًا استخدم <bdi>perspective</bdi> على العنصر الأب علشان التأثير الثلاثي يبان.</li>
+    <li>
+      🎯 <bdi>backface-visibility: hidden;</bdi> ضرورية علشان الوجه الخلفي ما يظهرش أثناء الدوران.
+    </li>
+    <li>
+      ⚙️ ممكن تغير الاتجاه من <bdi>rotateY</bdi> إلى <bdi>rotateX</bdi> لو عايز الكارت يقلب لأعلى أو
+      لأسفل.
+    </li>
+    <li>🧠 التأثير ده ممكن تستخدمه لبطاقات تعريف أو صفحات “About Me” بشكل احترافي جدًا.</li>
   </ul>
-
-  <h3>Notes</h3>
-  <p>Additional notes and details for lecture 22 will be added here.</p>
 </div>

@@ -1,15 +1,118 @@
-<h2>lecture 24</h2>
-<div class="content">
-  <h3>Summary</h3>
-  <p>This is a placeholder for lecture 24 summary.</p>
+<h2><bdi>Lecture 24</bdi></h2>
+<div class="content" dir="rtl">
+  <h3><bdi>Lecture 24: Media Queries &amp; CSS Selectors / Pseudo Elements</bdi></h3>
+  <h3><bdi>Summary</bdi></h3>
+  <p>
+    المحاضرة دي كانت مليانة معلومات أساسية عن تصميم المواقع المتجاوبة (<bdi>Responsive Design</bdi>)
+    باستخدام <bdi>Media Queries</bdi>، واتكلمنا كمان عن كل أنواع الـ<bdi>Selectors</bdi> في
+    <bdi>CSS</bdi> والـ<bdi>Pseudo Classes</bdi> و<bdi>Pseudo Elements</bdi>. الهدف إننا نقدر نتحكم
+    في شكل العناصر بدقة ونخلي التصميم يتكيف مع كل أحجام الشاشات.
+  </p>
+  <h3><bdi>Key Points</bdi></h3>
+  <ol>
+    <li>
+      <h4 data-order="1"><bdi>Media Queries Basics</bdi>:</h4>
+      <p>
+        <bdi>Media Queries</bdi> بتخلي الموقع <bdi>responsive</bdi> يعني بيتأقلم مع حجم الشاشة
+        (موبايل، تابلت، لابتوب...). بنستخدمها بالشكل ده:
+      </p>
+      <p>
+        <bdi>@media (max-width: 768px) { ... }</bdi> ← الأكواد اللي جواها بتتطبق فقط لما الشاشة أقل
+        من 768px.
+      </p>
+      <p>
+        <bdi>@media (min-width: 992px) { ... }</bdi> ← الأكواد دي بتشتغل لما الشاشة أكبر من 992px.
+      </p>
+    </li>
+    <li>
+      <h4 data-order="2"><bdi>Min-width vs Max-width</bdi>:</h4>
+      <ul>
+        <li>
+          <bdi>min-width</bdi> → بتستخدم لما نبدأ من الشاشات الصغيرة للأكبر (<bdi>Mobile First</bdi
+          >).
+        </li>
+        <li>
+          <bdi>max-width</bdi> → بتستخدم لما نبدأ من الشاشات الكبيرة وننزل للأصغر (<bdi
+            >Desktop First</bdi
+          >).
+        </li>
+      </ul>
+      <p>💡 الأفضل إنك ترتب الـ <bdi>media queries</bdi> تصاعديًا حسب حجم الشاشة لتجنب التعارض.</p>
+    </li>
 
-  <h3>Key Points</h3>
+    <li>
+      <h4 data-order="3"><bdi>Common Breakpoints</bdi>:</h4>
+      <ul>
+        <li><bdi>max-width: 576px</bdi> → للموبايلات الصغيرة.</li>
+        <li><bdi>max-width: 768px</bdi> → للأجهزة المتوسطة (تابلت).</li>
+        <li><bdi>max-width: 992px</bdi> → للشاشات الكبيرة.</li>
+        <li><bdi>max-width: 1200px</bdi> → للشاشات العريضة (ديسكتوب).</li>
+      </ul>
+    </li>
+
+    <li>
+      <h4 data-order="4"><bdi>Selectors in CSS</bdi>:</h4>
+      <p>اتكلمنا عن أنواع الـ<bdi>selectors</bdi> اللي بنستخدمها لتحديد العناصر:</p>
+      <ul>
+        <li><bdi>Element Selector</bdi> → <bdi>p { }</bdi> يختار كل الفقرات.</li>
+        <li><bdi>Class Selector</bdi> → <bdi>.box { }</bdi> يختار العناصر اللي فيها الكلاس ده.</li>
+        <li><bdi>ID Selector</bdi> → <bdi>#main { }</bdi> يختار عنصر واحد بالـID.</li>
+        <li><bdi>Universal Selector</bdi> → <bdi>* { }</bdi> يختار كل العناصر في الصفحة.</li>
+        <li>
+          <bdi>Group Selector</bdi> → <bdi>h1, h2, h3 { }</bdi> يطبق نفس التنسيق على أكتر من عنصر.
+        </li>
+        <li>
+          <bdi>Descendant Selector</bdi> → <bdi>div p { }</bdi> ينسق الـ &lt;p&gt; اللي جواه
+          &lt;div&gt;.
+        </li>
+        <li><bdi>Child Selector</bdi> → <bdi>div &gt; p { }</bdi> ينسق الأبناء المباشرين فقط.</li>
+        <li>
+          <bdi>Adjacent Sibling</bdi> → <bdi>h2 + p { }</bdi> ينسق العنصر اللي جاي بعد &lt;h2&gt;
+          مباشرة.
+        </li>
+        <li>
+          <bdi>General Sibling</bdi> → <bdi>h2 ~ p { }</bdi> ينسق كل العناصر اللي بعده في نفس
+          المستوى.
+        </li>
+      </ul>
+    </li>
+
+    <li>
+      <h4 data-order="5"><bdi>Pseudo Classes</bdi>:</h4>
+      <p>هي حالات خاصة بنطبقها على العناصر حسب التفاعل:</p>
+      <ul>
+        <li><bdi>:hover</bdi> → لما المستخدم يمرر الماوس على العنصر.</li>
+        <li><bdi>:focus</bdi> → لما العنصر زي <bdi>&lt;input&gt;</bdi> يكون نشط وجاهز للكتابة.</li>
+        <li><bdi>:active</bdi> → أثناء الضغط على العنصر.</li>
+        <li><bdi>:visited</bdi> → للروابط اللي المستخدم زارها قبل كده.</li>
+        <li><bdi>:first-child</bdi> و<bdi>:last-child</bdi> → لتنسيق أول وآخر عنصر داخل الأب.</li>
+        <li><bdi>:nth-child(2)</bdi> → لتحديد عنصر حسب ترتيبه.</li>
+      </ul>
+    </li>
+
+    <li>
+      <h4 data-order="6"><bdi>Pseudo Elements</bdi>:</h4>
+      <p>بتُستخدم لإضافة محتوى أو تنسيق وهمي من غير ما نضيف عناصر في الـ<bdi>HTML</bdi>:</p>
+      <ul>
+        <li><bdi>::before</bdi> → يضيف محتوى قبل العنصر.</li>
+        <li><bdi>::after</bdi> → يضيف محتوى بعد العنصر.</li>
+        <li><bdi>::first-letter</bdi> → لتنسيق أول حرف.</li>
+        <li><bdi>::first-line</bdi> → لتنسيق أول سطر.</li>
+        <li><bdi>::selection</bdi> → لتغيير شكل النص أثناء تحديده.</li>
+      </ul>
+    </li>
+  </ol>
+  <h3><bdi>Notes</bdi></h3>
   <ul>
-    <li data-order="1">Key point 1 for lecture 24</li>
-    <li data-order="2">Key point 2 for lecture 24</li>
-    <li data-order="3">Key point 3 for lecture 24</li>
+    <li>💡 استخدم <bdi>Mobile First</bdi> approach باستخدام <bdi>min-width</bdi> لترتيب أفضل.</li>
+    <li>
+      ⚙️ دايمًا حط الـ <bdi>media queries</bdi> في آخر ملف <bdi>CSS</bdi> علشان متغطيش التنسيقات
+      السابقة.
+    </li>
+    <li>🎨 الـ <bdi>pseudo elements</bdi> بتساعدك تعمل تأثيرات احترافية من غير عناصر إضافية.</li>
+    <li>
+      🧠 الجمع بين الـ <bdi>selectors</bdi> و <bdi>pseudo classes</bdi> بيخليك تتحكم في أدق تفاصيل
+      الصفحة.
+    </li>
   </ul>
-
-  <h3>Notes</h3>
-  <p>Additional notes and details for lecture 24 will be added here.</p>
 </div>

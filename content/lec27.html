@@ -1,15 +1,108 @@
-<h2>lecture 27</h2>
-<div class="content">
-  <h3>Summary</h3>
-  <p>This is a placeholder for lecture 27 summary.</p>
+<h2><bdi>Lecture 27</bdi></h2>
+<div class="content" dir="rtl">
+  <h3><bdi>Lecture 27: Conditions, Logical Operators &amp; Functions in JavaScript</bdi></h3>
+  <h3><bdi>Summary</bdi></h3>
+  <p>
+    في المحاضرة دي اتعلمنا إزاي نتحكم في سير البرنامج باستخدام الشروط (<bdi>conditions</bdi>) زي
+    <bdi>if</bdi> و<bdi>switch</bdi>، واتكلمنا كمان عن العمليات المنطقية
+    <bdi>(Logical Operators)</bdi> اللي بتخلينا نربط أكتر من شرط مع بعض. وفي الجزء التاني من
+    المحاضرة بدأنا نفهم يعني إيه <bdi>functions</bdi> وليه بنستخدمها لتقسيم الكود وتنظيمه.
+  </p>
+  <h3><bdi>Key Points</bdi></h3>
+  <ol>
+    <li>
+      <h4 data-order="1"><bdi>If Condition</bdi>:</h4>
+      <p>بنستخدمها علشان ننفّذ جزء معين من الكود لو الشرط اتحقق. الصيغة العامة:</p>
+      <p><bdi>if (condition) { ... } else if (...) { ... } else { ... }</bdi></p>
+      <p>مثال:</p>
+      <p>
+        <bdi>
+          var deg = prompt("enter the degree");<br />
+          if (deg &gt;= 85) { console.log("Excellent"); }<br />
+          else if (deg &gt;= 75) { console.log("Very Good"); }<br />
+          else if (deg &gt;= 65) { console.log("Good"); }<br />
+          else if (deg &gt;= 50) { console.log("Accepted"); }<br />
+          else { console.log("Failed"); }
+        </bdi>
+      </p>
+    </li>
+    <li>
+      <h4 data-order="2"><bdi>Logical Operators</bdi>:</h4>
+      <p>العمليات المنطقية بتستخدم لدمج الشروط داخل <bdi>if</bdi>، وهي:</p>
+      <ul>
+        <li><bdi>&amp;&amp;</bdi> → AND (كل الشروط لازم تكون صحيحة)</li>
+        <li><bdi>||</bdi> → OR (يكفي شرط واحد يكون صحيح)</li>
+        <li><bdi>!</bdi> → NOT (يعكس النتيجة المنطقية)</li>
+      </ul>
+      <p>
+        مثال:
+        <br />
+        <bdi>
+          var x = 50, y = 100;<br />
+          if (x == 50 &amp;&amp; y == 100) { console.log("True"); }<br />
+          else { console.log("False"); }
+        </bdi>
+      </p>
+    </li>
 
-  <h3>Key Points</h3>
+    <li>
+      <h4 data-order="3"><bdi>Comparison Operators</bdi>:</h4>
+      <ul>
+        <li><bdi>==</bdi> → مقارنة القيم فقط</li>
+        <li><bdi>===</bdi> → مقارنة القيم والنوع معًا</li>
+        <li><bdi>!=</bdi> → لا يساوي</li>
+        <li><bdi>&gt; , &lt; , &gt;= , &lt;=</bdi> → للمقارنات الحسابية</li>
+      </ul>
+    </li>
+
+    <li>
+      <h4 data-order="4"><bdi>Switch Case</bdi>:</h4>
+      <p>بنستخدم <bdi>switch</bdi> لما يكون عندنا قيم متعددة ممكن يحصل بناءً عليها تنفيذ مختلف.</p>
+      <p>مثال:</p>
+      <p>
+        <bdi>
+          var x = prompt("enter your choice");<br />
+          switch(x) {<br />
+          &nbsp;&nbsp;case "a": console.log("Car"); break;<br />
+          &nbsp;&nbsp;case "b": console.log("iPhone 17"); break;<br />
+          &nbsp;&nbsp;case "c": console.log("10,000 LE"); break;<br />
+          &nbsp;&nbsp;default: console.log("Invalid choice");<br />
+          }
+        </bdi>
+      </p>
+    </li>
+
+    <li>
+      <h4 data-order="5"><bdi>Functions</bdi>:</h4>
+      <p>
+        <bdi>Functions</bdi> هي وسيلة لإعادة استخدام الكود بدل ما نكرره، وبتتكون من تعريف
+        (definition) واستدعاء (call).
+      </p>
+      <p>الصيغة:</p>
+      <p><bdi>function name(parameter1, parameter2) { ... }</bdi></p>
+      <p>
+        مثال:
+        <br />
+        <bdi>
+          function multiply(a, b) { console.log(a * b); }<br />
+          multiply(8, 10);
+        </bdi>
+      </p>
+      <p>
+        كمان ممكن نعمل دوال بتجمع أو تطرح أو تقسم بنفس الطريقة:
+        <br />
+        <bdi>
+          function sum(x, y) { console.log(x + y); }<br />
+          function divide(a, b) { console.log(a / b); }
+        </bdi>
+      </p>
+    </li>
+  </ol>
+  <h3><bdi>Notes</bdi></h3>
   <ul>
-    <li data-order="1">Key point 1 for lecture 27</li>
-    <li data-order="2">Key point 2 for lecture 27</li>
-    <li data-order="3">Key point 3 for lecture 27</li>
+    <li>🧠 استخدم <bdi>if</bdi> لما يكون عندك شرط واحد أو أكتر بشكل بسيط.</li>
+    <li>💡 استخدم <bdi>switch</bdi> بدل <bdi>if</bdi> لما تكون القيم محددة مسبقًا.</li>
+    <li>⚙️ الدوال بتخليك تعيد استخدام الكود وتخليه منظم أكتر.</li>
+    <li>🚀 جرب تعمل دالة تجمع بين شرط ودالة – زي دالة بتحسب النتيجة وتطبع التقدير.</li>
   </ul>
-
-  <h3>Notes</h3>
-  <p>Additional notes and details for lecture 27 will be added here.</p>
 </div>

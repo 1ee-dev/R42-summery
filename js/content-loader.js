@@ -3,7 +3,7 @@ const groups = [
   { end: 14, name: 'HTML & CSS' },
   { end: 17, name: 'GitHub' },
   { end1: 16, end2: 24, name: 'HTML5 & CSS3' },
-  { end: 27, name: 'JavaScript' },
+  { end: 28, name: 'JavaScript' },
 ];
 
 // generate array of lectures

@@ -1,15 +1,115 @@
-<h2>lecture 28</h2>
-<div class="content">
-  <h3>Summary</h3>
-  <p>This is a placeholder for lecture 28 summary.</p>
+<h2><bdi>Lecture 28</bdi></h2>
+<div class="content" dir="rtl">
+  <h3><bdi>Lecture 28: IIFE, Events &amp; Loops in JavaScript</bdi></h3>
+  <h3><bdi>Summary</bdi></h3>
+  <p>
+    المحاضرة دي كانت مليانة مفاهيم مهمة في الجافاسكريبت زي الـ<bdi>IIFE</bdi> أو الـ<bdi
+      >Self Invoked Function</bdi
+    >، وبدأنا نتعامل مع الأحداث (<bdi>Events</bdi>) زي الكليك وحركات الماوس والكيبورد. وفي الجزء
+    الأخير اتكلمنا عن الحلقات التكرارية <bdi>(Loops)</bdi> اللي بنستخدمها علشان نكرر كود معين أكتر
+    من مرة بشكل منظم.
+  </p>
+  <h3><bdi>Key Points</bdi></h3>
+  <ol>
+    <li>
+      <h4 data-order="1"><bdi>IIFE (Self Invoked Function)</bdi>:</h4>
+      <p>
+        اختصار لـ <bdi>Immediately Invoked Function Expression</bdi>، وهي دالة بتتكتب وبتتنفّذ في
+        نفس اللحظة، ومش بتحتاج استدعاء.
+      </p>
+      <p>
+        بتستخدمها علشان تعزل الكود (<bdi>Encapsulation</bdi>) وتمنع تداخل المتغيرات بين الملفات.
+      </p>
+      <p>مثال:</p>
+      <p>
+        <bdi>
+          (function code1() {<br />
+          &nbsp;&nbsp;console.log("islam");<br />
+          })();
+        </bdi>
+      </p>
+    </li>
+    <li>
+      <h4 data-order="2"><bdi>Events</bdi> (الأحداث):</h4>
+      <p>
+        الأحداث بتخليك تتفاعل مع المستخدم — زي لما يضغط على زر، أو يمر الماوس على عنصر، أو يكتب حاجة
+        في حقل إدخال.
+      </p>
+      <ul>
+        <li><bdi>click</bdi> → عند الضغط مرة واحدة</li>
+        <li><bdi>dblclick</bdi> → عند الضغط مرتين</li>
+        <li><bdi>mouseenter</bdi> و<bdi>mouseleave</bdi> → دخول وخروج الماوس</li>
+        <li><bdi>mousemove</bdi> → حركة الماوس</li>
+        <li><bdi>keydown</bdi> و<bdi>keyup</bdi> → عند الضغط على لوحة المفاتيح</li>
+      </ul>
+      <p>أمثلة:</p>
+      <p>
+        <bdi>
+          var button = document.getElementById("btn1");<br />
+          var div = document.getElementById("div1");<br /><br />
+          function code1() { div.innerHTML = "islam"; }<br /><br />
+          button.onclick = code1;<br />
+          // أو<br />
+          button.addEventListener("click", code1);
+        </bdi>
+      </p>
+      <p>مثال آخر باستخدام الماوس:</p>
+      <p>
+        <bdi>
+          var x = 0;<br />
+          button.onmousemove = function() {<br />
+          &nbsp;&nbsp;div.innerHTML = x++;<br />
+          };
+        </bdi>
+      </p>
+    </li>
 
-  <h3>Key Points</h3>
+    <li>
+      <h4 data-order="3"><bdi>Loops</bdi> (الحلقات التكرارية):</h4>
+      <p>
+        بنستخدم الحلقات علشان ننفّذ نفس الكود أكتر من مرة، بدل ما نكرره يدويًا. عندنا 3 أنواع
+        رئيسية:
+      </p>
+      <ul>
+        <li>
+          <bdi>for loop</bdi>: لما نعرف عدد التكرارات مسبقًا.
+          <br />
+          <bdi>for (var x = 40; x &lt;= 80; x++) { console.log(x); }</bdi>
+        </li>
+        <li>
+          <bdi>while loop</bdi>: بتستمر طول ما الشرط صحيح.
+          <br />
+          <bdi>
+            var x = 40;<br />
+            while (x &lt;= 80) {<br />
+            &nbsp;&nbsp;console.log(x);<br />
+            &nbsp;&nbsp;x++;<br />
+            }
+          </bdi>
+        </li>
+        <li>
+          <bdi>do...while loop</bdi>: بتتنفّذ مرة واحدة على الأقل قبل ما تتحقق من الشرط.
+          <br />
+          <bdi>
+            var x = 40;<br />
+            do {<br />
+            &nbsp;&nbsp;console.log(x);<br />
+            &nbsp;&nbsp;x++;<br />
+            } while (x &lt;= 80);
+          </bdi>
+        </li>
+      </ul>
+      <p>
+        ⚠️ لو نسيت تحديث الشرط (زي <bdi>x++</bdi>) ممكن تقع في <bdi>infinite loop</bdi> (حلقة لا
+        نهائية).
+      </p>
+    </li>
+  </ol>
+  <h3><bdi>Notes</bdi></h3>
   <ul>
-    <li data-order="1">Key point 1 for lecture 28</li>
-    <li data-order="2">Key point 2 for lecture 28</li>
-    <li data-order="3">Key point 3 for lecture 28</li>
+    <li>💡 استخدم <bdi>IIFE</bdi> لما تكون عايز تعزل الكود عن باقي الصفحة.</li>
+    <li>🧠 الأحداث هي أساس التفاعل مع المستخدم في صفحات الويب.</li>
+    <li>⚙️ جرب تدمج الأحداث مع الحلقات — زي مثلاً زرار بيزود العداد كل مرة المستخدم يضغط عليه.</li>
+    <li>🚫 دايمًا تأكد إن الحلقات فيها شرط خروج علشان متدخلش في <bdi>infinite loop</bdi>.</li>
   </ul>
-
-  <h3>Notes</h3>
-  <p>Additional notes and details for lecture 28 will be added here.</p>
 </div>

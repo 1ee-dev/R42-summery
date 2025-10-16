@@ -1,15 +1,94 @@
-<h2>lecture 20</h2>
-<div class="content">
-  <h3>Summary</h3>
-  <p>This is a placeholder for lecture 20 summary.</p>
+<h2><bdi>Lecture 20</bdi></h2>
+<div class="content" dir="rtl">
+  <h3><bdi>Lecture 20: CSS Grid Layout</bdi></h3>
+  <h3><bdi>Summary</bdi></h3>
+  <p>
+    المحاضرة دي كانت عن واحدة من أقوى وأحدث أدوات تنسيق الصفحات في <bdi>CSS</bdi> وهي
+    <bdi>Grid Layout</bdi>. اتعلمنا إزاي ننظم العناصر داخل الصفحة في شبكة مكونة من صفوف وأعمدة
+    بطريقة مرنة وسهلة، بدل ما نستخدم <bdi>float</bdi> أو <bdi>flexbox</bdi> في التنسيقات المعقدة.
+    شفنا كمان إزاي نتحكم في حجم الأعمدة والصفوف، والمسافات بينهم، وإزاي نخلي عناصر معينة تمتد على
+    أكتر من عمود أو صف.
+  </p>
+  <h3><bdi>Key Points</bdi></h3>
+  <ol>
+    <li>
+      <h4 data-order="1"><bdi>display: grid;</bdi>:</h4>
+      <p>
+        أول خطوة لازم نعملها علشان نفعل شبكة <bdi>grid</bdi> هي نضيف الخاصية
+        <bdi>display: grid;</bdi> للعنصر الأب، وده بيخلي كل العناصر اللي جواه تتحول تلقائيًا إلى
+        <bdi>grid items</bdi>.
+      </p>
+    </li>
+    <li>
+      <h4 data-order="2"><bdi>grid-template-columns</bdi> و<bdi>grid-template-rows</bdi>:</h4>
+      <p>الخصائص دي بتحدد عدد الأعمدة والصفوف وحجمهم داخل الشبكة.</p>
+      <ul>
+        <li><bdi>grid-template-columns: repeat(4, 25%);</bdi> → 4 أعمدة كل واحد بعرض 25%.</li>
+        <li><bdi>grid-template-rows: repeat(3, 150px);</bdi> → 3 صفوف ارتفاع كل صف 150px.</li>
+      </ul>
+      <p>
+        ممكن كمان نستخدم <bdi>fr</bdi> لتقسيم المساحة بالتساوي زي:
+        <bdi>grid-template-columns: repeat(3, 1fr);</bdi>.
+      </p>
+    </li>
 
-  <h3>Key Points</h3>
+    <li>
+      <h4 data-order="3"><bdi>grid-gap</bdi>:</h4>
+      <p>
+        الخاصية <bdi>grid-gap</bdi> (أو <bdi>gap</bdi> في الإصدارات الحديثة) بتضيف مسافات بين الصفوف
+        والأعمدة. مثال:
+        <bdi>grid-gap: 10px 25px;</bdi>
+        الرقم الأول للمسافة الرأسية، والتاني للأفقية.
+      </p>
+    </li>
+
+    <li>
+      <h4 data-order="4"><bdi>grid-column</bdi> و<bdi>grid-row</bdi>:</h4>
+      <p>
+        الخصائص دي بتتحكم في مكان كل عنصر داخل الشبكة، وتقدر تخلي عنصر يمتد على أكتر من عمود أو صف.
+      </p>
+      <ul>
+        <li><bdi>grid-row: 1 / 4;</bdi> → العنصر يبدأ من الصف الأول وينتهي عند الرابع.</li>
+        <li><bdi>grid-column: 1 / 3;</bdi> → العنصر يمتد على أول عمودين.</li>
+      </ul>
+      <p>
+        مثال من الكود:
+        <bdi>.div2 { grid-row: 1 / 4; grid-column: 1 / 3; }</bdi>
+      </p>
+    </li>
+
+    <li>
+      <h4 data-order="5"><bdi>minmax()</bdi> و<bdi>auto</bdi>:</h4>
+      <p>
+        بنستخدم <bdi>minmax(min, max)</bdi> لما نحب نخلي حجم الصف أو العمود مرن بين حد أدنى وحد
+        أقصى. مثال: <bdi>grid-auto-rows: minmax(150px, auto);</bdi>
+        يعني أقل ارتفاع للصف 150px، لكن ممكن يزيد لو المحتوى أكبر.
+      </p>
+    </li>
+
+    <li>
+      <h4 data-order="6"><bdi>repeat()</bdi>:</h4>
+      <p>
+        بدل ما نكتب نفس القيمة أكتر من مرة، بنستخدم <bdi>repeat()</bdi> لتكرارها بسهولة.
+        <br />
+        مثال: <bdi>grid-template-columns: repeat(4, 25%);</bdi>
+      </p>
+    </li>
+
+    <li>
+      <h4 data-order="7"><bdi>grid-template-areas</bdi> (مقدمة):</h4>
+      <p>
+        اتكلمنا بشكل سريع عن <bdi>grid-template-areas</bdi> واللي بتسمح لنا نرسم التخطيط الكامل
+        للشبكة بأسماء منطقية زي <bdi>header</bdi> و<bdi>main</bdi> و<bdi>footer</bdi> — هنشرحها
+        بالتفصيل في المحاضرة الجاية.
+      </p>
+    </li>
+  </ol>
+  <h3><bdi>Notes</bdi></h3>
   <ul>
-    <li data-order="1">Key point 1 for lecture 20</li>
-    <li data-order="2">Key point 2 for lecture 20</li>
-    <li data-order="3">Key point 3 for lecture 20</li>
+    <li>💡 استخدم <bdi>fr</bdi> بدل النسب المئوية علشان الشبكة تكون مرنة مع تغيير حجم الشاشة.</li>
+    <li>🧩 تقدر تدمج <bdi>grid</bdi> مع <bdi>flexbox</bdi> لعمل تصميمات أكثر احترافية.</li>
+    <li>⚙️ خاصية <bdi>grid-auto-rows</bdi> مفيدة لما العناصر أكتر من عدد الصفوف المحدد.</li>
+    <li>🎨 <bdi>CSS Grid</bdi> بتديك تحكم كامل في تخطيط الصفحة بسهولة ووضوح.</li>
   </ul>
-
-  <h3>Notes</h3>
-  <p>Additional notes and details for lecture 20 will be added here.</p>
 </div>

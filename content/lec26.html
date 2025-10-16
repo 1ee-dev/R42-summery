@@ -1,15 +1,99 @@
-<h2>lecture 26</h2>
-<div class="content">
-  <h3>Summary</h3>
-  <p>This is a placeholder for lecture 26 summary.</p>
+<h2><bdi>Lecture 26</bdi></h2>
+<div class="content" dir="rtl">
+  <h3><bdi>Lecture 26: Data Types &amp; Operators in JavaScript</bdi></h3>
+  <h3><bdi>Summary</bdi></h3>
+  <p>
+    في المحاضرة دي بدأنا نتعمق في لغة <bdi>JavaScript</bdi> واتكلمنا عن أنواع البيانات المختلفة اللي
+    ممكن نخزنها في المتغيرات، واتعرفنا على أهم العمليات الحسابية والمنطقية اللي بنستخدمها داخل
+    الكود. الهدف كان إننا نفهم إزاي الـ <bdi>JavaScript</bdi> بتتعامل مع القيم وأنواعها.
+  </p>
+  <h3><bdi>Key Points</bdi></h3>
+  <ol>
+    <li>
+      <h4 data-order="1">أنواع البيانات (<bdi>Data Types</bdi>):</h4>
+      <p>
+        أنواع البيانات في JavaScript بتحدد شكل القيمة اللي بنخزنها في المتغير، وأشهر الأنواع هي:
+      </p>
+      <ul>
+        <li><bdi>Number</bdi> – الأرقام زي 10 أو 3.14</li>
+        <li><bdi>String</bdi> – النصوص بين علامات تنصيص زي "<bdi>Hello</bdi>"</li>
+        <li><bdi>Boolean</bdi> – القيم المنطقية (<bdi>true / false</bdi>)</li>
+        <li><bdi>Array</bdi> – مجموعة بيانات مرتبة داخل أقواس مربعة [ ]</li>
+        <li><bdi>Object</bdi> – بيانات غير مرتبة داخل أقواس معقوفة { }</li>
+        <li><bdi>Null</bdi> – قيمة فارغة (لا شيء)</li>
+        <li><bdi>Undefined</bdi> – متغير متعرف لكن لم يُسند له أي قيمة</li>
+      </ul>
+    </li>
+    <li>
+      <h4 data-order="2">المصفوفات (<bdi>Arrays</bdi>):</h4>
+      <p>المصفوفة هي مجموعة من القيم المرتبة، كل عنصر له رقم فهرس (index) يبدأ من 0.</p>
+      <p><bdi>var x = ["ahmed", "islam", 500, true, "eman"];</bdi></p>
+      <p><bdi>x[0]</bdi> → ترجع أول عنصر في المصفوفة، و<bdi>x.length</bdi> → ترجع عدد العناصر.</p>
+    </li>
 
-  <h3>Key Points</h3>
+    <li>
+      <h4 data-order="3">الكائنات (<bdi>Objects</bdi>):</h4>
+      <p>الكائن بيخزن بيانات في شكل أزواج (اسم وقيمة)، وبيُستخدم لتنظيم المعلومات بشكل أوضح.</p>
+      <p><bdi>var person = { name: "islam", age: 29, city: "mansoura" };</bdi></p>
+      <p>الوصول لأي خاصية بيكون عن طريق النقطة: <bdi>person.city</bdi></p>
+    </li>
+
+    <li>
+      <h4 data-order="4">القيم الخاصة <bdi>Null</bdi> و <bdi>Undefined</bdi>:</h4>
+      <ul>
+        <li><bdi>null</bdi> معناها إن القيمة فاضية تمامًا.</li>
+        <li><bdi>undefined</bdi> معناها إن المتغير اتعرف لكن ملحقش ياخد قيمة.</li>
+      </ul>
+      <p>
+        مثال:
+        <br /><bdi>var x = null;</bdi> ← القيمة فاضية <br /><bdi>var y;</bdi> ← القيمة undefined
+      </p>
+    </li>
+
+    <li>
+      <h4 data-order="5">العمليات الحسابية (<bdi>Arithmetic Operators</bdi>):</h4>
+      <p>دي العمليات اللي بنستخدمها في الحساب داخل الكود:</p>
+      <ul>
+        <li><bdi>+</bdi> → الجمع</li>
+        <li><bdi>-</bdi> → الطرح</li>
+        <li><bdi>*</bdi> → الضرب</li>
+        <li><bdi>/</bdi> → القسمة</li>
+        <li><bdi>%</bdi> → باقي القسمة</li>
+        <li><bdi>++</bdi> → زيادة واحد (<bdi>increment</bdi>)</li>
+        <li><bdi>--</bdi> → نقصان واحد (<bdi>decrement</bdi>)</li>
+        <li><bdi>**</bdi> → الأس (<bdi>exponent</bdi>)</li>
+      </ul>
+      <p>
+        مثال:
+        <br />
+        <bdi>var num1 = 10;</bdi><br />
+        <bdi>var num2 = 4;</bdi><br />
+        <bdi>console.log(num1 ** num2); // 10000</bdi>
+      </p>
+    </li>
+
+    <li>
+      <h4 data-order="6">العمليات المختصرة (<bdi>Assignment Operators</bdi>):</h4>
+      <p>
+        دي طريقة مختصرة للجمع أو الطرح والتخزين في نفس الوقت.
+        <br />زي:
+      </p>
+      <ul>
+        <li><bdi>x += 5</bdi> ← نفس معنى <bdi>x = x + 5</bdi></li>
+        <li><bdi>x -= 3</bdi> ← نفس معنى <bdi>x = x - 3</bdi></li>
+        <li><bdi>x *= 2</bdi> ← نفس معنى <bdi>x = x * 2</bdi></li>
+        <li><bdi>x /= 4</bdi> ← نفس معنى <bdi>x = x / 4</bdi></li>
+      </ul>
+    </li>
+  </ol>
+  <h3><bdi>Notes</bdi></h3>
   <ul>
-    <li data-order="1">Key point 1 for lecture 26</li>
-    <li data-order="2">Key point 2 for lecture 26</li>
-    <li data-order="3">Key point 3 for lecture 26</li>
+    <li>🧠 استخدم <bdi>typeof</bdi> علشان تعرف نوع أي متغير.</li>
+    <li>⚙️ <bdi>Array</bdi> بتتعامل بترتيب، أما <bdi>Object</bdi> فغير مرتب.</li>
+    <li>
+      💡 الفرق بين <bdi>null</bdi> و <bdi>undefined</bdi> إن الأولى فاضية عمدًا، والتانية لسه متحطش
+      فيها قيمة.
+    </li>
+    <li>💪 جرب العمليات بنفسك في <bdi>console</bdi> علشان تتعود على النتايج.</li>
   </ul>
-
-  <h3>Notes</h3>
-  <p>Additional notes and details for lecture 26 will be added here.</p>
 </div>

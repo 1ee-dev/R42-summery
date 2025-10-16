@@ -1,15 +1,124 @@
-<h2>lecture 18</h2>
-<div class="content">
-  <h3>Summary</h3>
-  <p>This is a placeholder for lecture 18 summary.</p>
+<h2><bdi>Lecture 18</bdi></h2>
+<div class="content" dir="rtl">
+  <h3><bdi>Lecture 18: CSS Gradients, Units & Vendor Prefixes</bdi></h3>
+  <h3><bdi>Summary</bdi></h3>
+  <p>
+    في المحاضرة دي اتكلمنا عن مفاهيم متقدمة شوية في الـ<bdi>CSS</bdi> زي وحدات القياس المختلفة (<bdi
+      >px, %, em, rem, vh, vw</bdi
+    >)، وكمان اتعرفنا على الـ<bdi>Vendor Prefixes</bdi> اللي بتستخدمها المتصفحات علشان تدعم الخصائص
+    الحديثة. بعد كده جربنا عمليًا تأثيرات <bdi>text-shadow</bdi> و<bdi>box-shadow</bdi>، واتعلمنا
+    إزاي نعمل خلفيات باستخدام <bdi>linear-gradient</bdi> و<bdi>radial-gradient</bdi> لتصميمات جذابة
+    واحترافية.
+  </p>
+  <h3><bdi>Key Points</bdi></h3>
+  <ol>
+    <li>
+      <h4 data-order="1"><bdi>Vendor Prefix</bdi>:</h4>
+      <p>
+        بعض الخصائص الحديثة في الـ<bdi>CSS</bdi> مش بتكون مدعومة في كل المتصفحات بشكل مباشر، وعلشان
+        تشتغل لازم نضيف قبلها بادئة (Prefix) خاصة بكل متصفح:
+      </p>
+      <ul>
+        <li><bdi>-webkit-</bdi> → لمتصفح <bdi>Chrome</bdi> و<bdi>Safari</bdi>.</li>
+        <li><bdi>-moz-</bdi> → لمتصفح <bdi>Firefox</bdi>.</li>
+        <li><bdi>-ms-</bdi> → لمتصفح <bdi>Internet Explorer</bdi>.</li>
+        <li><bdi>-o-</bdi> → لمتصفح <bdi>Opera</bdi>.</li>
+      </ul>
+      <p>
+        مثال: <bdi>-webkit-linear-gradient(top, blue, yellow)</bdi> علشان تعمل تدرج لوني مدعوم على
+        متصفحات <bdi>Chrome</bdi> و<bdi>Safari</bdi>.
+      </p>
+    </li>
+    <li>
+      <h4 data-order="2"><bdi>Box Shadow &amp; Text Shadow</bdi>:</h4>
+      <p>اتعلمنا إزاي نضيف تأثير ظل على العناصر أو النصوص لتدي إحساس عمق في التصميم:</p>
+      <ul>
+        <li>
+          <bdi>text-shadow: 1px 1px 6px rgb(94, 255, 0);</bdi> — بيضيف ظل للنص بلون محدد وتأثير
+          ناعم.
+        </li>
+        <li>
+          <bdi>box-shadow: 1px 1px 35px 15px rgb(124, 247, 1);</bdi> — بيضيف ظل حول الصندوق
+          (العنصر).
+        </li>
+      </ul>
+      <p>الصيغة العامة لأي ظل: <bdi>box-shadow: horizontal vertical blur spread color;</bdi></p>
+    </li>
 
-  <h3>Key Points</h3>
+    <li>
+      <h4 data-order="3"><bdi>CSS Units</bdi>:</h4>
+      <p>اتعرفنا على أهم وحدات القياس في الـ<bdi>CSS</bdi>:</p>
+      <ul>
+        <li><bdi>px</bdi> → وحدة ثابتة، بتحدد حجم العنصر بالبكسل.</li>
+        <li><bdi>%</bdi> → نسبة مئوية من حجم العنصر الأب.</li>
+        <li><bdi>em</bdi> → نسبة لحجم الخط في العنصر الأب (مثلاً 2em = ضعف حجم خط الأب).</li>
+        <li><bdi>rem</bdi> → نسبة لحجم الخط في الـ<bdi>root</bdi> (<bdi>html</bdi>)، مش الأب.</li>
+        <li><bdi>vh</bdi> → نسبة من ارتفاع الشاشة.</li>
+        <li><bdi>vw</bdi> → نسبة من عرض الشاشة.</li>
+      </ul>
+      <p>
+        مثال: <bdi>font-size: 3rem;</bdi> يعني 3 × 16 = <bdi>48px</bdi> (لأن الـ<bdi>root</bdi> عادة
+        حجمه <bdi>16px</bdi>).
+      </p>
+    </li>
+
+    <li>
+      <h4 data-order="4"><bdi>Linear Gradient</bdi>:</h4>
+      <p>
+        استخدمنا الخاصية <bdi>background: -webkit-linear-gradient()</bdi> لعمل تدرج لوني من الأعلى
+        للأسفل. مثال:
+      </p>
+      <p>
+        <bdi>background: -webkit-linear-gradient(top, rgb(0, 238, 255), rgb(238, 255, 0));</bdi>
+      </p>
+      <p>
+        ممكن تغير الاتجاه (<bdi>top, left, right, bottom</bdi>) أو تستخدم زوايا زي
+        <bdi>45deg</bdi> لتخصيص الاتجاه.
+      </p>
+    </li>
+
+    <li>
+      <h4 data-order="5"><bdi>Radial Gradient</bdi>:</h4>
+      <p>التدرج الدائري أو الإشعاعي بيبدأ من نقطة في المنتصف أو أي مكان تحدده. مثال من الكود:</p>
+      <p>
+        <bdi
+          >background: -webkit-radial-gradient(50% 80%, circle, rgb(0, 238, 255), rgb(238, 255, 0),
+          red, brown, black, green);</bdi
+        >
+      </p>
+      <p>
+        النوع <bdi>circle</bdi> بيخلي التدرج دائري، وممكن تستخدم <bdi>farthest-corner</bdi> أو
+        <bdi>closest-corner</bdi> للتحكم في المدى.
+      </p>
+    </li>
+
+    <li>
+      <h4 data-order="6"><bdi>Practical Example</bdi>:</h4>
+      <p>
+        في المثال العملي طبقنا كل المفاهيم دي على عناصر <bdi>.div1</bdi> و<bdi>.title1</bdi>
+        و<bdi>.div2</bdi>:
+      </p>
+      <ul>
+        <li><bdi>.div1</bdi> فيها تدرج لوني باستخدام <bdi>radial-gradient</bdi>.</li>
+        <li><bdi>.title1</bdi> استخدمنا له <bdi>text-shadow</bdi>.</li>
+        <li>
+          <bdi>.div2</bdi> استخدمنا فيها وحدات <bdi>%</bdi> و<bdi>rem</bdi> لتوضيح الفرق بينهم.
+        </li>
+      </ul>
+    </li>
+  </ol>
+  <h3><bdi>Notes</bdi></h3>
   <ul>
-    <li data-order="1">Key point 1 for lecture 18</li>
-    <li data-order="2">Key point 2 for lecture 18</li>
-    <li data-order="3">Key point 3 for lecture 18</li>
+    <li>
+      💡 استخدم الـ<bdi>rem</bdi> بدل <bdi>em</bdi> لو عايز تحافظ على تناسق الخطوط في الصفحة كلها.
+    </li>
+    <li>
+      ⚙️ الـ<bdi>Vendor Prefix</bdi> مهم جدًا خصوصًا لما تستخدم خصائص حديثة زي
+      <bdi>gradients</bdi> أو <bdi>flexbox</bdi>.
+    </li>
+    <li>🎨 التدرجات اللونية (<bdi>gradients</bdi>) بتدي شكل احترافي جدًا بدون صور.</li>
+    <li>
+      🧠 افهم دايمًا الفرق بين الوحدات النسبية والثابتة علشان التصميم يكون متجاوب على كل الشاشات.
+    </li>
   </ul>
-
-  <h3>Notes</h3>
-  <p>Additional notes and details for lecture 18 will be added here.</p>
 </div>

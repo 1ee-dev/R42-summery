@@ -1,15 +1,97 @@
-<h2>lecture 21</h2>
-<div class="content">
-  <h3>Summary</h3>
-  <p>This is a placeholder for lecture 21 summary.</p>
+<h2><bdi>Lecture 21</bdi></h2>
+<div class="content" dir="rtl">
+  <h3><bdi>Lecture 21: CSS Transform & 2D Transformations</bdi></h3>
+  <h3><bdi>Summary</bdi></h3>
+  <p>
+    المحاضرة دي كانت عن خاصية <bdi>transform</bdi> في <bdi>CSS</bdi>، واللي بنستخدمها لتغيير شكل
+    العناصر وتحريكها أو تدويرها أو تكبيرها أو إمالتها على الصفحة. الخاصية دي قوية جدًا لأنها بتدي
+    تأثيرات بصرية احترافية من غير ما نحتاج أكواد جافاسكريبت. بدأنا بشرح التحويلات الثنائية الأبعاد
+    (<bdi>2D transforms</bdi>) زي <bdi>translate</bdi>، <bdi>rotate</bdi>، <bdi>scale</bdi>،
+    و<bdi>skew</bdi>، وكمان شفنا الصيغة الرياضية <bdi>matrix()</bdi> اللي بتجمعهم كلهم في سطر واحد.
+  </p>
+  <h3><bdi>Key Points</bdi></h3>
+  <ol>
+    <li>
+      <h4 data-order="1"><bdi>transform Property</bdi>:</h4>
+      <p>
+        الخاصية الأساسية اللي بنستخدمها لأي تحويل، سواء كان حركة أو تدوير أو تكبير أو إمالة. <br />
+        الصيغة العامة: <bdi>transform: function(value);</bdi>
+      </p>
+    </li>
+    <li>
+      <h4 data-order="2"><bdi>translate()</bdi>:</h4>
+      <p>بتحرك العنصر في الاتجاه الأفقي أو الرأسي.</p>
+      <ul>
+        <li><bdi>transform: translate(200px, 100px);</bdi> → تحريك 200px يمين و100px لأسفل.</li>
+        <li><bdi>transform: translateX(200px);</bdi> → تحريك أفقي فقط.</li>
+        <li><bdi>transform: translateY(100px);</bdi> → تحريك رأسي فقط.</li>
+      </ul>
+    </li>
 
-  <h3>Key Points</h3>
+    <li>
+      <h4 data-order="3"><bdi>rotate()</bdi>:</h4>
+      <p>
+        بتلف العنصر بدرجة معينة حول مركزه.
+        <br />
+        مثال:
+        <bdi>transform: rotate(180deg);</bdi>
+        كده العنصر بيلف 180 درجة.
+      </p>
+    </li>
+
+    <li>
+      <h4 data-order="4"><bdi>scale()</bdi>:</h4>
+      <p>بتكبر أو تصغر العنصر على محور <bdi>X</bdi> أو <bdi>Y</bdi>.</p>
+      <ul>
+        <li><bdi>transform: scale(1.5, 1.5);</bdi> → تكبير بنسبة 150%.</li>
+        <li><bdi>transform: scaleX(2);</bdi> → تمديد أفقي.</li>
+        <li><bdi>transform: scaleY(0.5);</bdi> → تقليص رأسي.</li>
+      </ul>
+    </li>
+
+    <li>
+      <h4 data-order="5"><bdi>skew()</bdi>:</h4>
+      <p>بتميل العنصر على محور معين علشان تعطي تأثير “الانحدار”.</p>
+      <ul>
+        <li><bdi>transform: skewX(30deg);</bdi> → ميل أفقي.</li>
+        <li><bdi>transform: skewY(20deg);</bdi> → ميل رأسي.</li>
+      </ul>
+    </li>
+
+    <li>
+      <h4 data-order="6"><bdi>matrix()</bdi>:</h4>
+      <p>
+        دي طريقة متقدمة بتسمح بجمع أكتر من تحويل (translate, scale, skew) في سطر واحد.
+        <br />
+        الشكل العام:
+        <bdi>transform: matrix(scaleX, skewY, skewX, scaleY, translateX, translateY);</bdi>
+        <br />
+        مثال من الكود:
+        <bdi>transform: matrix(0.57, 1.13, -0.78, 0.92, 14, -9);</bdi>
+      </p>
+    </li>
+
+    <li>
+      <h4 data-order="7"><bdi>transition + hover Effects</bdi>:</h4>
+      <p>
+        استخدمنا <bdi>transition: all 2s;</bdi> علشان التحويلات تحصل بسلاسة على مدار ثانيتين.
+        <br />
+        ومع <bdi>:hover</bdi> طبقنا <bdi>transform: rotate(180deg);</bdi> لما الماوس يمر فوق العنصر.
+      </p>
+    </li>
+  </ol>
+  <h3><bdi>Notes</bdi></h3>
   <ul>
-    <li data-order="1">Key point 1 for lecture 21</li>
-    <li data-order="2">Key point 2 for lecture 21</li>
-    <li data-order="3">Key point 3 for lecture 21</li>
+    <li>
+      💡 خاصية <bdi>transform</bdi> لا تؤثر على العناصر الأخرى حولها — التغيير بيكون بصري فقط.
+    </li>
+    <li>🎯 دايمًا استخدم <bdi>transition</bdi> علشان الحركة تكون ناعمة وجذابة.</li>
+    <li>
+      ⚙️ ممكن تدمج أكتر من تحويل في سطر واحد: <bdi>transform: rotate(45deg) scale(1.2);</bdi>.
+    </li>
+    <li>
+      🧠 التحويلات <bdi>2D</bdi> بتتعامل مع المحاور <bdi>X</bdi> و<bdi>Y</bdi> فقط، بينما
+      <bdi>3D</bdi> تضيف العمق (<bdi>Z</bdi>) — هنتكلم عنها لاحقًا.
+    </li>
   </ul>
-
-  <h3>Notes</h3>
-  <p>Additional notes and details for lecture 21 will be added here.</p>
 </div>

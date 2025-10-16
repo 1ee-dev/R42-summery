@@ -1,15 +1,93 @@
-<h2>lecture 23</h2>
-<div class="content">
-  <h3>Summary</h3>
-  <p>This is a placeholder for lecture 23 summary.</p>
+<h2><bdi>Lecture 23</bdi></h2>
+<div class="content" dir="rtl">
+  <h3><bdi>Lecture 23: Flexbox Layout & Alignment</bdi></h3>
+  <h3><bdi>Summary</bdi></h3>
+  <p>
+    في المحاضرة دي بدأنا نتعلم نظام <bdi>Flexbox</bdi> في <bdi>CSS</bdi> واللي بيستخدم لترتيب
+    العناصر بسهولة ومرونة في الاتجاهات المختلفة من غير ما نحتاج نستخدم <bdi>float</bdi> أو
+    <bdi>position</bdi>. عرفنا إزاي نتحكم في الاتجاه، المحاذاة، المسافات، وترتيب العناصر داخل
+    الحاوية الرئيسية (<bdi>parent</bdi>).
+  </p>
+  <h3><bdi>Key Points</bdi></h3>
+  <ol>
+    <li>
+      <h4 data-order="1"><bdi>Display: flex;</bdi>:</h4>
+      <p>
+        الخاصية دي بنضيفها على العنصر الأب علشان نخلي العناصر اللي جواه (الأبناء) تشتغل بنظام
+        <bdi>Flexbox</bdi>.
+      </p>
+    </li>
+    <li>
+      <h4 data-order="2"><bdi>Flex Direction</bdi>:</h4>
+      <p>بتحدد اتجاه العناصر داخل الحاوية:</p>
+      <ul>
+        <li><bdi>row</bdi> (افتراضي) — العناصر جنب بعض من اليسار لليمين.</li>
+        <li><bdi>column</bdi> — العناصر فوق بعض من الأعلى للأسفل.</li>
+      </ul>
+      <p>مثال: <bdi>flex-direction: row;</bdi></p>
+    </li>
 
-  <h3>Key Points</h3>
+    <li>
+      <h4 data-order="3"><bdi>Justify-Content</bdi>:</h4>
+      <p>بتتحكم في محاذاة العناصر على المحور الرئيسي (<bdi>main axis</bdi>):</p>
+      <ul>
+        <li><bdi>flex-start</bdi> — كل العناصر ناحية البداية.</li>
+        <li><bdi>flex-end</bdi> — كل العناصر ناحية النهاية.</li>
+        <li><bdi>center</bdi> — العناصر في المنتصف.</li>
+        <li><bdi>space-between</bdi> — توزيع العناصر بأطراف متباعدة.</li>
+        <li><bdi>space-around</bdi> — مسافات متساوية حوالين كل عنصر.</li>
+        <li><bdi>space-evenly</bdi> — مسافات متساوية بين كل العناصر.</li>
+      </ul>
+    </li>
+
+    <li>
+      <h4 data-order="4"><bdi>Align-Items</bdi>:</h4>
+      <p>بتتحكم في محاذاة العناصر على المحور العمودي (<bdi>cross axis</bdi>):</p>
+      <ul>
+        <li><bdi>flex-start</bdi> — العناصر في أعلى الحاوية.</li>
+        <li><bdi>flex-end</bdi> — العناصر في أسفل الحاوية.</li>
+        <li><bdi>center</bdi> — العناصر في منتصف الارتفاع.</li>
+        <li><bdi>stretch</bdi> — العناصر تمتد لتملأ المساحة.</li>
+        <li><bdi>baseline</bdi> — محاذاة على أساس الخط النصي.</li>
+      </ul>
+    </li>
+
+    <li>
+      <h4 data-order="5"><bdi>Order</bdi>:</h4>
+      <p>
+        الخاصية <bdi>order</bdi> بتغير ترتيب ظهور العناصر في الصفحة من غير ما نغيّر مكانها في الكود.
+        القيمة الأصغر بتظهر أولاً.
+      </p>
+      <p>مثال: <bdi>.div2 { order: 1; }</bdi></p>
+    </li>
+
+    <li>
+      <h4 data-order="6"><bdi>Align-Self</bdi>:</h4>
+      <p>بتُستخدم لتغيير محاذاة عنصر معين فقط داخل الحاوية، من غير ما تأثر على الباقيين.</p>
+      <p>مثال: <bdi>.div1 { align-self: flex-start; }</bdi></p>
+    </li>
+
+    <li>
+      <h4 data-order="7"><bdi>Flex-Grow / Flex-Shrink / Flex-Basis</bdi>:</h4>
+      <p>خصائص مهمة للتحكم في تمدد أو تقلص حجم العناصر:</p>
+      <ul>
+        <li><bdi>flex-grow</bdi> — يحدد مدى تمدد العنصر لملء المساحة الفارغة.</li>
+        <li><bdi>flex-shrink</bdi> — يحدد مدى تقلص العنصر عند ضيق المساحة.</li>
+        <li><bdi>flex-basis</bdi> — يحدد الحجم الأساسي للعنصر قبل حساب التمدد أو التقلص.</li>
+      </ul>
+      <p>
+        ممكن نكتبهم مع بعض في خاصية واحدة:
+        <bdi>flex: grow shrink basis;</bdi>
+      </p>
+    </li>
+  </ol>
+  <h3><bdi>Notes</bdi></h3>
   <ul>
-    <li data-order="1">Key point 1 for lecture 23</li>
-    <li data-order="2">Key point 2 for lecture 23</li>
-    <li data-order="3">Key point 3 for lecture 23</li>
+    <li>💡 <bdi>main axis</bdi> بيتحدد حسب اتجاه <bdi>flex-direction</bdi>.</li>
+    <li>
+      🎯 استخدم <bdi>justify-content</bdi> للمحور الرئيسي و<bdi>align-items</bdi> للمحور العمودي.
+    </li>
+    <li>⚙️ <bdi>order</bdi> مفيد جدًا لما تحب تغيّر ترتيب العناصر من غير تعديل الكود.</li>
+    <li>🧠 خاصية <bdi>flex</bdi> بتختصر 3 خصائص في سطر واحد لتسهيل كتابة الكود.</li>
   </ul>
-
-  <h3>Notes</h3>
-  <p>Additional notes and details for lecture 23 will be added here.</p>
 </div>
