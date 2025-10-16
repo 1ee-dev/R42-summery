@@ -11,10 +11,13 @@
     علشان ننسق العناصر على حسب الـ<bdi>Attributes</bdi> بتاعتها.
   </p>
   <h3><bdi>Key Points</bdi></h3>
-  <ul>
-    <li data-order="1">
-      <bdi>CSS Specificity</bdi>: <br />هي الطريقة اللي بيحسب بيها المتصفح الأولوية بين القواعد. لما
-      يكون في أكتر من كود بيأثر على نفس العنصر، المتصفح بيختار الأقوى حسب الترتيب ده:
+  <ol>
+    <li>
+      <h4 data-order="1"><bdi>CSS Specificity</bdi>:</h4>
+      <p>
+        هي الطريقة اللي بيحسب بيها المتصفح الأولوية بين القواعد. لما يكون في أكتر من كود بيأثر على
+        نفس العنصر، المتصفح بيختار الأقوى حسب الترتيب ده:
+      </p>
       <ul>
         <li><bdi>Inline Style</bdi> — أعلى أولوية (اللي مكتوب جوه التاج نفسه).</li>
         <li><bdi>ID Selector</bdi> — بعده في القوة.</li>
@@ -23,52 +26,59 @@
           <bdi>Element Selector</bdi> (زي <bdi>&lt;h2&gt;</bdi> أو <bdi>&lt;p&gt;</bdi>) — الأضعف.
         </li>
       </ul>
-      مثال: <br />
-      <bdi
-        >&lt;h2 id="title11" class="title10" style="background-color: brown;"&gt;Islam
-        Mohamed&lt;/h2&gt;</bdi
-      >
-      اللون اللي هيظهر هو البني لأن <bdi>inline style</bdi> أقوى من أي حاجة تانية.
+      <p>
+        مثال: <br />
+        <bdi
+          >&lt;h2 id="title11" class="title10" style="background-color: brown;"&gt;Islam
+          Mohamed&lt;/h2&gt;</bdi
+        >
+        اللون اللي هيظهر هو البني لأن <bdi>inline style</bdi> أقوى من أي حاجة تانية.
+      </p>
     </li>
-    <li data-order="2">
-      <bdi>Pseudo Classes</bdi>: <br />دي حالات معينة بتحصل للعنصر زي لما المستخدم يمرر الماوس أو
-      يضغطه أو يكتف فيه.
+    <li>
+      <h4 data-order="2"><bdi>Pseudo Classes</bdi>:</h4>
+      <p>دي حالات معينة بتحصل للعنصر زي لما المستخدم يمرر الماوس أو يضغطه أو يكتف فيه.</p>
       <ul>
         <li><bdi>:hover</bdi> → لما الماوس يقف على العنصر.</li>
         <li><bdi>:active</bdi> → لما العنصر بيتضغط.</li>
-        <li><bdi>:focus</bdi> → لما العنصر زي input يكون جاهز للكتابة.</li>
+        <li><bdi>:focus</bdi> → لما العنصر زي <bdi>input</bdi> يكون جاهز للكتابة.</li>
       </ul>
-      مثال عملي من المحاضرة:
-      <br />
-      <bdi>.a1:hover { color: red; }</bdi>
-      <br />
-      يعني لما الماوس يقف على اللينك، لونه هيتحول لأحمر.
+      <p>
+        مثال عملي من المحاضرة:
+        <bdi>.a1:hover { color: red; }</bdi>
+        يعني لما الماوس يقف على اللينك، لونه هيتحول لأحمر.
+      </p>
     </li>
 
-    <li data-order="3">
-      <bdi>Pseudo Elements</bdi>: <br />دي بتخلينا نضيف جزء قبل أو بعد العنصر من غير ما نعدل في كود
-      الـHTML.
+    <li>
+      <h4 data-order="3"><bdi>Pseudo Elements</bdi>:</h4>
+      <p>دي بتخلينا نضيف جزء قبل أو بعد العنصر من غير ما نعدل في كود الـ<bdi>HTML</bdi>.</p>
       <ul>
         <li><bdi>::before</bdi> → بيضيف محتوى قبل العنصر.</li>
         <li><bdi>::after</bdi> → بيضيف محتوى بعد العنصر.</li>
       </ul>
-      وغالبًا بنستخدمها مع الخاصية <bdi>content:</bdi> لتزيين العناصر أو إضافة رموز شكلية.
+      <p>وغالبًا بنستخدمها مع الخاصية <bdi>content:</bdi> لتزيين العناصر أو إضافة رموز شكلية.</p>
     </li>
 
-    <li data-order="4">
-      <bdi>Attribute Selectors</bdi>: <br />بنستخدمها لما نحب ننسق عناصر معينة على حسب الـAttribute
-      اللي فيها. مثال من المحاضرة:
+    <li>
+      <h4 data-order="4"><bdi>Attribute Selectors</bdi>:</h4>
+      <p>
+        بنستخدمها لما نحب ننسق عناصر معينة على حسب الـ<bdi>Attribute</bdi> اللي فيها. مثال من
+        المحاضرة:
+      </p>
       <ul>
         <li><bdi>[type="password"] { background-color: red; }</bdi></li>
         <li><bdi>[type="text"] { background-color: greenyellow; }</bdi></li>
       </ul>
-      كده كل <bdi>&lt;input&gt;</bdi> نوعه <bdi>password</bdi> هيكون لونه أحمر، وكل
-      <bdi>&lt;input&gt;</bdi> نوعه <bdi>text</bdi> هيكون أخضر فاتح.
+      <p>
+        كده كل <bdi>&lt;input&gt;</bdi> نوعه <bdi>password</bdi> هيكون لونه أحمر، وكل
+        <bdi>&lt;input&gt;</bdi> نوعه <bdi>text</bdi> هيكون أخضر فاتح.
+      </p>
     </li>
 
-    <li data-order="5">
-      <bdi>Display vs Visibility vs Opacity</bdi>: <br />الخصائص دي كلها بتتحكم في ظهور العنصر لكن
-      كل واحدة بتشتغل بطريقة مختلفة:
+    <li>
+      <h4 data-order="5"><bdi>Display vs Visibility vs Opacity</bdi>:</h4>
+      <p>الخصائص دي كلها بتتحكم في ظهور العنصر لكن كل واحدة بتشتغل بطريقة مختلفة:</p>
       <ul>
         <li><bdi>display: none;</bdi> → العنصر بيختفي تمامًا ومش بياخد مساحة.</li>
         <li><bdi>visibility: hidden;</bdi> → العنصر بيختفي لكن لسه واخد مكانه.</li>
@@ -76,23 +86,28 @@
       </ul>
     </li>
 
-    <li data-order="6">
-      <bdi>Specificity Calculation</bdi>: <br />المتصفح بيحسب الأولوية بالأرقام بالشكل ده:
+    <li>
+      <h4 data-order="6"><bdi>Specificity Calculation</bdi>:</h4>
+      <p>المتصفح بيحسب الأولوية بالأرقام بالشكل ده:</p>
       <ul>
         <li><bdi>Inline Style</bdi> = 1000 نقطة.</li>
         <li><bdi>ID</bdi> = 100 نقطة.</li>
         <li><bdi>Class / Pseudo / Attribute</bdi> = 10 نقاط.</li>
         <li><bdi>Element</bdi> = 1 نقطة.</li>
       </ul>
-      وبيجمع الأرقام وبيطبّق القاعدة الأعلى. شفنا مثالين في الكود النتيجة فيهم كانت 476 مقابل 264
-      عشان نعرف طريقة الحساب.
+      <p>
+        وبيجمع الأرقام وبيطبّق القاعدة الأعلى. شفنا مثالين في الكود النتيجة فيهم كانت 476 مقابل 264
+        عشان نعرف طريقة الحساب.
+      </p>
     </li>
-  </ul>
+  </ol>
   <h3><bdi>Notes</bdi></h3>
-  <p>
-    💡 استخدم أقل عدد ممكن من ال<bdi>selectors</bdi> علشان الكود يبقى بسيط وسهل التعديل. <br />⚙️
-    الـ<bdi>inline style</bdi> دايمًا أقوى من أي كود تاني إلا لو استخدمت <bdi>!important</bdi>.
-    <br />🎯 استخدم <bdi>pseudo-classes</bdi> علشان تخلي الموقع تفاعلي من غير جافاسكريبت. <br />🧠
-    فهم <bdi>specificity</bdi> هيساعدك تحل مشاكل تضارب التنسيقات بسرعة واحترافية.
-  </p>
+  <ul>
+    <li>💡 استخدم أقل عدد ممكن من <bdi>selectors</bdi> علشان الكود يبقى بسيط وسهل التعديل.</li>
+    <li>
+      ⚙️ الـ<bdi>inline style</bdi> دايمًا أقوى من أي كود تاني إلا لو استخدمت <bdi>!important</bdi>.
+    </li>
+    <li>🎯 استخدم <bdi>pseudo-classes</bdi> علشان تخلي الموقع تفاعلي من غير جافاسكريبت.</li>
+    <li>🧠 فهم <bdi>specificity</bdi> هيساعدك تحل مشاكل تضارب التنسيقات بسرعة واحترافية.</li>
+  </ul>
 </div>

@@ -119,7 +119,7 @@ document.addEventListener('contentLoaded', () => {
         activateListItem(btn);
         setTimeout(() => {
           scrollBtnIntoView(btn);
-        }, 300);
+        }, 400);
       }
     },
     {

@@ -1,81 +1,81 @@
 <h2><bdi>Lecture 7</bdi></h2>
 <div class="content" dir="rtl">
   <h3><bdi>Lecture 7: Text Formatting & Font Styling in CSS</bdi></h3>
-
   <h3><bdi>Summary</bdi></h3>
   <p>
     المحاضرة دي كانت عن تنسيق النصوص بخواص <bdi>CSS</bdi> اللي بتتحكم في شكل الكتابة، زي المسافات
-    بين الحروف والكلمات، ارتفاع السطر، حجم ونوع الخط، وكمان التحويل بين الحروف الكبيرة والصغيرة.
-    اتكلمنا كمان عن خاصية <bdi>text-decoration</bdi> اللي بتضيف خطوط للنص (تحت أو فوق أو في النص)،
+    بين الحروف والكلمات، ارتفاع السطر، حجم ونوع الخط، وكمان تحويل الحروف بين الكبيرة والصغيرة. كمان
+    اتكلمنا عن خاصية <bdi>text-decoration</bdi> اللي بتضيف خطوط للنص (تحت أو فوق أو في النص)،
     واتعلمنا نستخدم خاصية <bdi>font</bdi> المختصرة اللي بتجمع كل خصائص الخط في سطر واحد.
   </p>
-
   <h3><bdi>Key Points</bdi></h3>
-  <ul>
-    <li data-order="1">
-      <bdi>Letter & Word Spacing</bdi>: <br />الخصائص دي بتتحكم في المسافات داخل النص:
+  <ol>
+    <li>
+      <h4 data-order="1"><bdi>Letter & Word Spacing</bdi>:</h4>
+      <p>الخصائص دي بتتحكم في المسافات داخل النص:</p>
       <ul>
         <li><bdi>letter-spacing</bdi>: بتزود أو تقلل المسافة بين كل حرف والتاني.</li>
         <li><bdi>word-spacing</bdi>: بتتحكم في المسافة بين الكلمات.</li>
-        <li>
-          <bdi>line-height</bdi>: بتحدد المسافة الرأسية بين السطور، وبتخلي النص شكله منسق ومريح
-          للعين أثناء القراءة.
-        </li>
+        <li><bdi>line-height</bdi>: بتحدد المسافة الرأسية بين السطور وبتخلي النص مريح للقراءة.</li>
       </ul>
     </li>
-
-    <li data-order="2">
-      <bdi>Text Transform</bdi>: <br />بتتحكم في شكل الحروف داخل النص:
+    <li>
+      <h4 data-order="2"><bdi>Text Transform</bdi>:</h4>
+      <p>بتتحكم في شكل الحروف داخل النص:</p>
       <ul>
         <li><bdi>lowercase</bdi>: يحوّل كل الحروف لصغيرة.</li>
         <li><bdi>uppercase</bdi>: يحوّل كل الحروف لكبيرة.</li>
         <li><bdi>capitalize</bdi>: يخلي أول حرف من كل كلمة كبير.</li>
       </ul>
-      الخاصية دي مفيدة جدًا في العناوين أو النصوص اللي عايزها تطلع بشكل موحد.
+      <p>الخاصية دي مفيدة جدًا في العناوين أو النصوص اللي عايزها تطلع بشكل موحد.</p>
     </li>
 
-    <li data-order="3">
-      <bdi>Text Decoration</bdi>: <br />اتكلمنا عن تزيين النص بخطوط، ودي الخصائص اللي بنقدر نطبقها:
+    <li>
+      <h4 data-order="3"><bdi>Text Decoration</bdi>:</h4>
+      <p>اتكلمنا عن تزيين النص بخطوط مختلفة:</p>
       <ul>
         <li>
           <bdi>underline</bdi>: خط تحت النص (زي <bdi>&lt;u&gt;</bdi> أو <bdi>&lt;ins&gt;</bdi>).
         </li>
         <li><bdi>overline</bdi>: خط فوق النص.</li>
         <li><bdi>line-through</bdi>: خط في نص الكلمة (زي <bdi>&lt;del&gt;</bdi>).</li>
-        <li><bdi>none</bdi>: تشيل أي خطوط من النص (مفيدة في اللينكات).</li>
+        <li><bdi>none</bdi>: تشيل أي خطوط من النص (مفيدة جدًا في الروابط).</li>
       </ul>
     </li>
 
-    <li data-order="4">
-      <bdi>Font Properties</bdi>: <br />الخصائص اللي بتتحكم في شكل ونوع الخط:
+    <li>
+      <h4 data-order="4"><bdi>Font Properties</bdi>:</h4>
+      <p>الخصائص اللي بتتحكم في شكل ونوع الخط:</p>
       <ul>
         <li><bdi>font-size</bdi>: لتحديد حجم الخط.</li>
         <li>
-          <bdi>font-style</bdi>: لتحديد نمط الكتابة (عادي أو مائل <bdi>italic</bdi> أو
+          <bdi>font-style</bdi>: لتحديد نمط الكتابة (عادي، مائل <bdi>italic</bdi>، أو
           <bdi>oblique</bdi>).
         </li>
         <li>
-          <bdi>font-weight</bdi>: لتحديد سماكة الخط (من 100 لحد 900، أو <bdi>normal/bold</bdi>).
+          <bdi>font-weight</bdi>: لتحديد سماكة الخط (من 100 إلى 900 أو
+          <bdi>normal</bdi>/<bdi>bold</bdi>).
         </li>
-        <li><bdi>font-family</bdi>: لتحديد نوع الخط اللي هيظهر بيه النص.</li>
+        <li><bdi>font-family</bdi>: لتحديد نوع الخط المستخدم.</li>
       </ul>
-      وأخيرًا استخدمنا خاصية <bdi>font</bdi> المختصرة اللي بتجمع كل دول في سطر واحد بالشكل ده:
-      <bdi>font: style weight size family;</bdi>
+      <p>وفي النهاية استخدمنا الخاصية المختصرة <bdi>font</bdi> اللي بتجمع كل ده في سطر واحد:</p>
+      <p><bdi>font: style weight size family;</bdi></p>
     </li>
 
-    <li data-order="5">
-      <bdi>Practical Example</bdi>: <br />في المثال العملي، طبقنا التنسيقات دي على الفقرة اللي فيها
-      <bdi>Lorem ipsum</bdi>
-      علشان نشوف تأثير كل خاصية على شكل النص. جربنا نغيّر المسافات، حجم الخط، ونوعه، وكمان أضفنا
-      خطوط فوق وتحت النص علشان نشوف الفرق.
+    <li>
+      <h4 data-order="5"><bdi>Practical Example</bdi>:</h4>
+      <p>
+        في الجزء العملي، طبّقنا كل الخصائص دي على فقرة فيها <bdi>Lorem ipsum</bdi> علشان نشوف تأثير
+        كل خاصية على شكل النص، وجرّبنا نغيّر المسافات، نوع الخط، وحطينا خطوط فوق وتحت النص علشان
+        نلاحظ الفرق.
+      </p>
     </li>
-  </ul>
-
+  </ol>
   <h3><bdi>Notes</bdi></h3>
-  <p>
-    💡 استخدم <bdi>line-height</bdi> عشان النصوص الطويلة تبقى أسهل في القراءة. <br />🎨 جرب دايمًا
-    أكتر من <bdi>font-family</bdi> لحد ما تلاقي الخط المناسب لتصميمك. <br />⚙️ خاصية
-    <bdi>font</bdi> المختصرة بتوفر وقتك وبتخلي الكود أنضف. <br />🧠 التوازن بين حجم الخط والمسافات
-    بيأثر جدًا على شكل الصفحة واحترافيتها.
-  </p>
+  <ul>
+    <li>💡 استخدم <bdi>line-height</bdi> عشان النصوص الطويلة تبقى أسهل في القراءة.</li>
+    <li>🎨 جرّب أكتر من <bdi>font-family</bdi> لحد ما تلاقي الخط المناسب لتصميمك.</li>
+    <li>⚙️ خاصية <bdi>font</bdi> المختصرة بتخلي الكود أنضف وأسهل.</li>
+    <li>🧠 التوازن بين حجم الخط والمسافات بيفرق جدًا في الشكل العام واحترافية التصميم.</li>
+  </ul>
 </div>

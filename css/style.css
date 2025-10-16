@@ -47,6 +47,13 @@ article h2 {
   font-size: 1rem;
 }
 
+.content h4 {
+  font-size: 1rem;
+  max-width: fit-content;
+  margin-bottom: var(--space-1);
+  border-radius: var(--space-1);
+}
+
 .content ul {
   list-style: square;
   display: flex;
@@ -55,18 +62,22 @@ article h2 {
   padding-right: var(--space-4);
 }
 
-.content > ul {
+.content ol {
   list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  padding-right: var(--space-4);
 }
 
-.content > ul > li {
+.content [data-order] {
   position: relative;
 }
 
-.content > ul > li::before {
+.content [data-order]::before {
   content: attr(data-order);
   position: absolute;
-  top: 0.75rem;
+  top: 50%;
   right: calc(var(--space-4) / -2);
   transform: translate(50%, -50%);
   width: 1rem;
@@ -81,7 +92,6 @@ article h2 {
   font-size: 0.5rem;
 }
 
-.content p,
-.content li {
-  max-width: 600px;
+bdi {
+  background-color: red;
 }

@@ -1,8 +1,8 @@
 // set groups
 const groups = [
-  { end: 16, name: 'HTML & CSS' },
+  { end: 14, name: 'HTML & CSS' },
   { end: 17, name: 'GitHub' },
-  { end: 24, name: 'HTML5 & CSS3' },
+  { end1: 16, end2: 24, name: 'HTML5 & CSS3' },
   { end: 27, name: 'JavaScript' },
 ];
 
@@ -13,8 +13,9 @@ function generateLectures(numberOfLectures) {
     // Determine group based on lecture number
     let group;
     if (i <= groups[0].end) group = groups[0].name;
+    else if (i <= groups[2].end1) group = groups[2].name;
     else if (i <= groups[1].end) group = groups[1].name;
-    else if (i <= groups[2].end) group = groups[2].name;
+    else if (i <= groups[2].end2) group = groups[2].name;
     else if (i <= groups[3].end) group = groups[3].name;
     else group = 'Not Assigned';
 

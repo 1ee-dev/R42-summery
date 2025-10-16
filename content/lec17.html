@@ -1,39 +1,50 @@
 <h2><bdi>Lecture 17</bdi></h2>
 <div class="content" dir="rtl">
   <h3><bdi>Lecture 17: Git &amp; GitHub Basics with Bash</bdi></h3>
+
   <h3><bdi>Summary</bdi></h3>
   <p>
     المحاضرة دي كانت مقدمة قوية عن نظام التحكم في الإصدارات <bdi>Git</bdi> وعن موقع
     <bdi>GitHub</bdi> اللي بنستخدمه لاستضافة المشاريع ومشاركتها أونلاين. اتعلمنا إزاي نستخدم
-    <bdi>Git Bash</bdi> كـ terminal علشان نكتب أوامر تساعدنا نتحكم في المشروع، نحفظ التغييرات،
-    ونرفعها على GitHub. الهدف من المحاضرة إنك تبدأ تستخدم Git في شغلك وتحافظ على كل إصدارات المشروع
-    بسهولة.
+    <bdi>Git Bash</bdi> كـ <bdi>terminal</bdi> علشان نكتب أوامر تساعدنا نتحكم في المشروع، نحفظ
+    التغييرات، ونرفعها على <bdi>GitHub</bdi>. الهدف من المحاضرة إنك تبدأ تستخدم <bdi>Git</bdi> في
+    شغلك وتحافظ على كل إصدارات المشروع بسهولة.
   </p>
+
   <h3><bdi>Key Points</bdi></h3>
-  <ul>
-    <li data-order="1">
-      <bdi>ما هو Git؟</bdi> <br />Git هو نظام لإدارة الإصدارات (Version Control System). فكرته
-      الأساسية إنه بيحتفظ بتاريخ كل تعديل بتعمله في الكود، ويسمحلك ترجع لأي نسخة سابقة في أي وقت.
+  <ol>
+    <li>
+      <h4 data-order="1"><bdi>ما هو Git؟</bdi></h4>
+      <p>
+        <bdi>Git</bdi> هو نظام لإدارة الإصدارات (<bdi>Version Control System</bdi>)، فكرته الأساسية
+        إنه بيحتفظ بتاريخ كل تعديل بتعمله في الكود، ويسمحلك ترجع لأي نسخة سابقة في أي وقت.
+      </p>
       <ul>
         <li>بيساعدك تشتغل بأمان من غير ما تخاف تضيع كودك.</li>
         <li>مفيد جدًا لما تشتغل في فريق.</li>
       </ul>
     </li>
-    <li data-order="2">
-      <bdi>ما هو GitHub؟</bdi>
-      <br />GitHub هو موقع بيخزن المشاريع اللي بتستخدم Git على الإنترنت، وبيخليك تشاركها أو تشتغل
-      عليها مع ناس تانية. ممكن تعتبره زي “سوشيال ميديا للمبرمجين” 😄
+
+    <li>
+      <h4 data-order="2"><bdi>ما هو GitHub؟</bdi></h4>
+      <p>
+        <bdi>GitHub</bdi> هو موقع بيخزن المشاريع اللي بتستخدم <bdi>Git</bdi> على الإنترنت، وبيخليك
+        تشاركها أو تشتغل عليها مع ناس تانية. ممكن تعتبره زي “سوشيال ميديا للمبرمجين” 😄
+      </p>
       <ul>
-        <li>كل مشروع بيبقى في "Repository".</li>
-        <li>ممكن ترفع مشاريعك الخاصة (Private) أو العامة (Public).</li>
+        <li>كل مشروع بيبقى في <bdi>Repository</bdi>.</li>
+        <li>ممكن ترفع مشاريعك الخاصة (<bdi>Private</bdi>) أو العامة (<bdi>Public</bdi>).</li>
       </ul>
     </li>
 
-    <li data-order="3">
-      <bdi>البدء باستخدام Git Bash</bdi>: <br />Git Bash هو تطبيق بيوفر لك بيئة أوامر شبيهة بالـ
-      Linux داخل Windows. بنستخدمه علشان نكتب أوامر Git ونتعامل مع الملفات. أهم الأوامر الأساسية:
+    <li>
+      <h4 data-order="3"><bdi>البدء باستخدام Git Bash</bdi></h4>
+      <p>
+        <bdi>Git Bash</bdi> هو تطبيق بيوفر بيئة أوامر شبيهة بالـ <bdi>Linux</bdi> داخل
+        <bdi>Windows</bdi>. بنستخدمه علشان نكتب أوامر <bdi>Git</bdi> ونتعامل مع الملفات.
+      </p>
       <ul>
-        <li><bdi>pwd</bdi> → بيعرض المسار الحالي (المكان اللي انت فيه).</li>
+        <li><bdi>pwd</bdi> → بيعرض المسار الحالي.</li>
         <li><bdi>ls</bdi> → بيعرض الملفات والمجلدات.</li>
         <li><bdi>cd foldername</bdi> → يفتح مجلد معين.</li>
         <li><bdi>cd ..</bdi> → يرجع خطوة للخلف.</li>
@@ -41,51 +52,57 @@
       </ul>
     </li>
 
-    <li data-order="4">
-      <bdi>إنشاء مشروع جديد وربطه بـ Git</bdi>
-      <br />لما تفتح مجلد المشروع في Git Bash، اكتب الأوامر دي بالترتيب:
+    <li>
+      <h4 data-order="4"><bdi>إنشاء مشروع جديد وربطه بـ Git</bdi></h4>
+      <p>لما تفتح مجلد المشروع في <bdi>Git Bash</bdi>، اكتب الأوامر دي بالترتيب:</p>
       <ol>
-        <li><bdi>git init</bdi> → يهيئ المجلد ويخليه Git repository.</li>
+        <li><bdi>git init</bdi> → يهيئ المجلد ويخليه <bdi>Git repository</bdi>.</li>
         <li><bdi>git status</bdi> → يوريك الملفات المعدلة أو الجديدة.</li>
-        <li><bdi>git add .</bdi> → يضيف كل الملفات للـ staging area.</li>
+        <li><bdi>git add .</bdi> → يضيف كل الملفات للـ <bdi>staging area</bdi>.</li>
         <li><bdi>git commit -m "Initial commit"</bdi> → يحفظ التغييرات برسالة.</li>
       </ol>
-      كده انت خزّنت أول نسخة من مشروعك داخل Git.
+      <p>كده انت خزّنت أول نسخة من مشروعك داخل <bdi>Git</bdi>.</p>
     </li>
 
-    <li data-order="5">
-      <bdi>الربط مع GitHub</bdi>
-      <br />بعد ما تعمل Repository على GitHub (خالي من الملفات)، ارجع لـ Git Bash واكتب:
+    <li>
+      <h4 data-order="5"><bdi>الربط مع GitHub</bdi></h4>
+      <p>
+        بعد ما تعمل <bdi>Repository</bdi> على <bdi>GitHub</bdi> (خالي من الملفات)، ارجع لـ
+        <bdi>Git Bash</bdi> واكتب:
+      </p>
       <ol>
         <li><bdi>git remote add origin https://github.com/username/repo.git</bdi></li>
         <li><bdi>git branch -M main</bdi> → لتحديد الفرع الرئيسي.</li>
-        <li><bdi>git push -u origin main</bdi> → يرفع الملفات إلى GitHub.</li>
+        <li><bdi>git push -u origin main</bdi> → يرفع الملفات إلى <bdi>GitHub</bdi>.</li>
       </ol>
-      كده المشروع بقى أونلاين على حسابك.
+      <p>كده المشروع بقى أونلاين على حسابك.</p>
     </li>
 
-    <li data-order="6">
-      <bdi>أوامر مهمة جدًا لازم تعرفها</bdi>:
+    <li>
+      <h4 data-order="6"><bdi>أوامر مهمة جدًا لازم تعرفها</bdi></h4>
       <ul>
-        <li><bdi>git log</bdi> → يعرض سجل كل الـ commits.</li>
+        <li><bdi>git log</bdi> → يعرض سجل كل الـ <bdi>commits</bdi>.</li>
         <li><bdi>git diff</bdi> → يوريك التغييرات اللي حصلت في الملفات.</li>
-        <li><bdi>git pull</bdi> → يسحب آخر تحديث من GitHub.</li>
-        <li><bdi>git clone [repo link]</bdi> → ينزل مشروع من GitHub لجهازك.</li>
+        <li><bdi>git pull</bdi> → يسحب آخر تحديث من <bdi>GitHub</bdi>.</li>
+        <li><bdi>git clone [repo link]</bdi> → ينزل مشروع من <bdi>GitHub</bdi> لجهازك.</li>
       </ul>
     </li>
 
-    <li data-order="7">
-      <bdi>التعامل مع الأخطاء</bdi>: <br />لو Git Bash طلب منك تسجيل اسمك وإيميلك لأول مرة، لازم
-      تضيفهم كده: <br /><bdi>git config --global user.name "Your Name"</bdi> <br /><bdi
-        >git config --global user.email "your@email.com"</bdi
-      >
+    <li>
+      <h4 data-order="7"><bdi>التعامل مع الأخطاء</bdi></h4>
+      <p>لو <bdi>Git Bash</bdi> طلب منك تسجيل اسمك وإيميلك لأول مرة، استخدم الأوامر دي:</p>
+      <ul>
+        <li><bdi>git config --global user.name "Your Name"</bdi></li>
+        <li><bdi>git config --global user.email "your@email.com"</bdi></li>
+      </ul>
     </li>
-  </ul>
+  </ol>
+
   <h3><bdi>Notes</bdi></h3>
-  <p>
-    💡 استخدم <bdi>git status</bdi> دايمًا قبل أي push علشان تعرف حال الملفات. <br />⚙️ كل
-    <bdi>commit</bdi> لازم يكون له رسالة واضحة تعبر عن التغييرات اللي حصلت. <br />📂 متنساش تعمل
-    <bdi>.gitignore</bdi> علشان تمنع رفع ملفات النظام أو المكتبات الضخمة. <br />🧠 Git مش بس لحفظ
-    الكود — ده أداة بتخليك تتحكم في تاريخ مشروعك بالكامل.
-  </p>
+  <ul>
+    <li>💡 استخدم <bdi>git status</bdi> دايمًا قبل أي <bdi>push</bdi> علشان تعرف حال الملفات.</li>
+    <li>⚙️ كل <bdi>commit</bdi> لازم يكون له رسالة واضحة تعبر عن التغييرات.</li>
+    <li>📂 متنساش تعمل <bdi>.gitignore</bdi> علشان تمنع رفع ملفات النظام أو المكتبات الضخمة.</li>
+    <li>🧠 <bdi>Git</bdi> مش بس لحفظ الكود — ده أداة بتخليك تتحكم في تاريخ مشروعك بالكامل.</li>
+  </ul>
 </div>

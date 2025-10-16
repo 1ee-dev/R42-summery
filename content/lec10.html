@@ -1,79 +1,97 @@
 <h2><bdi>Lecture 10</bdi></h2>
 <div class="content" dir="rtl">
   <h3><bdi>Lecture 10: Relative Position, Padding & Font Awesome Icons</bdi></h3>
-
   <h3><bdi>Summary</bdi></h3>
   <p>
     المحاضرة دي كانت تكملة لموضوع <bdi>position</bdi> اللي بدأناه في المحاضرات اللي قبل، واتكلمنا
     فيها عن الفرق بين <bdi>relative</bdi> و<bdi>absolute</bdi>، وكمان عن خاصية
-    <bdi>padding</bdi> اللي بتعمل مسافة داخل العنصر بين المحتوى والإطار (border). وفي الجزء الأخير،
-    اتعرفنا على مكتبة <bdi>Font Awesome</bdi> لإضافة أيقونات احترافية زي الفيسبوك والإنستجرام.
+    <bdi>padding</bdi> اللي بتعمل مسافة داخل العنصر بين المحتوى والإطار <bdi>(border)</bdi>. وفي
+    الجزء الأخير، اتعرفنا على مكتبة <bdi>Font Awesome</bdi> لإضافة أيقونات احترافية زي الفيسبوك
+    والإنستجرام.
   </p>
-
   <h3><bdi>Key Points</bdi></h3>
-  <ul>
-    <li data-order="1">
-      <bdi>Position: Relative</bdi>: <br />الخاصية دي بتخلّي العنصر يتحرك نسبةً لمكانه الطبيعي في
-      الصفحة. لو استخدمت مثلًا <bdi>top</bdi> أو <bdi>left</bdi>، العنصر هيتزحزح من مكانه الأصلي بس،
-      مش هيخرج من التدفق زي <bdi>absolute</bdi>. <br />كمان لما يكون عنصر الأب (<bdi>parent</bdi>)
-      فيه <bdi>position: relative;</bdi> والعنصر الابن (<bdi>child</bdi>) فيه
-      <bdi>position: absolute;</bdi>، بيبقى التحريك محسوب نسبة للأب مش للصفحة كلها.
+  <ol>
+    <li>
+      <h4 data-order="1"><bdi>Position: Relative</bdi>:</h4>
+      <p>
+        الخاصية دي بتخلّي العنصر يتحرك نسبةً لمكانه الطبيعي في الصفحة. لو استخدمت مثلًا
+        <bdi>top</bdi> أو <bdi>left</bdi>، العنصر هيتزحزح من مكانه الأصلي بس، مش هيخرج من التدفق زي
+        <bdi>absolute</bdi>. <br />
+        كمان لما يكون عنصر الأب <bdi>(parent)</bdi> فيه <bdi>position: relative;</bdi> والعنصر الابن
+        <bdi>(child)</bdi> فيه <bdi>position: absolute;</bdi>، بيبقى التحريك محسوب نسبة للأب مش
+        للصفحة كلها.
+      </p>
     </li>
-
-    <li data-order="2">
-      <bdi>Box Model Concept</bdi>: <br />راجعنا مفهوم الـ<bdi>Box Model</bdi> اللي بيتكوّن من:
+    <li>
+      <h4 data-order="2"><bdi>Box Model Concept</bdi>:</h4>
+      <p>راجعنا مفهوم الـ<bdi>Box Model</bdi> اللي بيتكوّن من:</p>
       <ul>
         <li><bdi>Content</bdi>: المحتوى نفسه (النص أو الصورة).</li>
         <li><bdi>Padding</bdi>: المسافة بين المحتوى والإطار.</li>
         <li><bdi>Border</bdi>: الإطار الخارجي.</li>
         <li><bdi>Margin</bdi>: المسافة بين العنصر والعناصر اللي حواليه.</li>
       </ul>
-      وفهمنا إن <bdi>padding</bdi> بتزود المسافة جوه العنصر نفسه من غير ما تغيّر حجمه الكلي.
+      <p>وفهمنا إن <bdi>padding</bdi> بتزود المسافة جوه العنصر نفسه من غير ما تغيّر حجمه الكلي.</p>
     </li>
 
-    <li data-order="3">
-      <bdi>Padding Property</bdi>: <br />في المثال العملي استخدمنا <bdi>padding-left</bdi> و<bdi
-        >padding-top</bdi
-      >
-      علشان نزود مساحة داخل <bdi>.div10</bdi> حوالين النص والزرار. وشرحنا الفرق بين
-      <bdi>padding</bdi> و<bdi>margin</bdi> — الأولى بتزود مساحة “جوه العنصر”، والتانية بتزود مساحة
-      “برا العنصر”.
+    <li>
+      <h4 data-order="3"><bdi>Padding Property</bdi>:</h4>
+      <p>
+        في المثال العملي استخدمنا <bdi>padding-left</bdi> و<bdi>padding-top</bdi> علشان نزود مساحة
+        داخل <bdi>.div10</bdi> حوالين النص والزرار. وشرحنا الفرق بين <bdi>padding</bdi> و<bdi
+          >margin</bdi
+        >
+        — الأولى بتزود مساحة “جوه العنصر”، والتانية بتزود مساحة “برا العنصر”.
+      </p>
     </li>
 
-    <li data-order="4">
-      <bdi>Border Inheritance</bdi>: <br />في الكود استخدمنا <bdi>border: inherit;</bdi> داخل
-      <bdi>.title10</bdi>، وده معناه إن العنصر هياخد نفس خصائص الإطار (border) من العنصر الأب اللي
-      يحتويه.
+    <li>
+      <h4 data-order="4"><bdi>Border Inheritance</bdi>:</h4>
+      <p>
+        في الكود استخدمنا <bdi>border: inherit;</bdi> داخل <bdi>.title10</bdi>، وده معناه إن العنصر
+        هياخد نفس خصائص الإطار <bdi>(border)</bdi> من العنصر الأب اللي يحتويه.
+      </p>
     </li>
 
-    <li data-order="5">
-      <bdi>Font Awesome Icons</bdi>: <br />اتعلمنا إزاي نضيف مكتبة <bdi>Font Awesome</bdi> الإصدار
-      الخامس (v5) باستخدام السطر ده:
-      <bdi>&lt;link rel="stylesheet" href="css/all.css"&gt;</bdi>
-      وبعدها قدرنا نضيف أيقونات عن طريق تاج <bdi>&lt;i&gt;</bdi> زي:
+    <li>
+      <h4 data-order="5"><bdi>Font Awesome Icons</bdi>:</h4>
+      <p>
+        اتعلمنا إزاي نضيف مكتبة <bdi>Font Awesome</bdi> الإصدار الخامس <bdi>(v5)</bdi> باستخدام
+        السطر ده: <br /><bdi>&lt;link rel="stylesheet" href="css/all.css"&gt;</bdi>
+      </p>
+      <p>بعدها قدرنا نضيف أيقونات عن طريق تاج <bdi>&lt;i&gt;</bdi> زي:</p>
       <ul>
         <li><bdi>&lt;i class="fab fa-facebook-square"&gt;&lt;/i&gt;</bdi> → أيقونة فيسبوك.</li>
         <li><bdi>&lt;i class="fab fa-instagram-square"&gt;&lt;/i&gt;</bdi> → أيقونة إنستجرام.</li>
       </ul>
-      وكمان استخدمنا <bdi>font-size</bdi> و<bdi>color</bdi> لتغيير حجم ولون الأيقونات. 💡 ملحوظة
-      مهمة: علشان الأيقونات تشتغل صح لازم فولدر <bdi>webfonts</bdi> يكون موجود جنب ملف
-      <bdi>all.css</bdi> في مشروعك، لأنه بيحتوي على ملفات الخطوط اللي الأيقونات بتعتمد عليها. ولو
-      شغال أونلاين، ممكن تستخدم CDN مباشر من موقع Font Awesome بدل الملفات المحلية.
+      <p>
+        وكمان استخدمنا <bdi>font-size</bdi> و<bdi>color</bdi> لتغيير حجم ولون الأيقونات. 💡 ملحوظة
+        مهمة: علشان الأيقونات تشتغل صح لازم فولدر <bdi>webfonts</bdi> يكون موجود جنب ملف
+        <bdi>all.css</bdi> في مشروعك، لأنه بيحتوي على ملفات الخطوط اللي الأيقونات بتعتمد عليها. ولو
+        شغال أونلاين، ممكن تستخدم <bdi>CDN</bdi> مباشر من موقع Font Awesome بدل الملفات المحلية.
+      </p>
     </li>
 
-    <li data-order="6">
-      <bdi>Box Sizing</bdi>: <br />في بداية الكود استخدمنا <bdi>box-sizing: border-box;</bdi>
-      عشان نخلي البادينج والحدود (border & padding) يتحسبوا ضمن الحجم الكلي للعنصر، وده بيساعد جدًا
-      في ضبط المقاسات.
+    <li>
+      <h4 data-order="6"><bdi>Box Sizing</bdi>:</h4>
+      <p>
+        في بداية الكود استخدمنا <bdi>box-sizing: border-box;</bdi> عشان نخلي البادينج والحدود
+        <bdi>(border & padding)</bdi> يتحسبوا ضمن الحجم الكلي للعنصر، وده بيساعد جدًا في ضبط
+        المقاسات.
+      </p>
     </li>
-  </ul>
-
+  </ol>
   <h3><bdi>Notes</bdi></h3>
-  <p>
-    💡 استخدم <bdi>position: relative;</bdi> دايمًا على العنصر الأب لما تستخدم
-    <bdi>absolute;</bdi> في الأبناء. <br />🎨 جرّب تغير في قيم <bdi>padding</bdi> عشان تشوف تأثيرها
-    الواضح على شكل العناصر. <br />⚙️ مكتبة <bdi>Font Awesome</bdi> فيها آلاف الأيقونات الجاهزة، تقدر
-    تضيفها لأي تصميم بسهولة عن طريق كلاس بسيط. <br />🧠 افتكر دايمًا إن <bdi>padding</bdi> بيأثر جوه
-    العنصر، و<bdi>margin</bdi> برا العنصر.
-  </p>
+  <ul>
+    <li>
+      💡 استخدم <bdi>position: relative;</bdi> دايمًا على العنصر الأب لما تستخدم
+      <bdi>absolute;</bdi> في الأبناء.
+    </li>
+    <li>🎨 جرّب تغير في قيم <bdi>padding</bdi> عشان تشوف تأثيرها الواضح على شكل العناصر.</li>
+    <li>
+      ⚙️ مكتبة <bdi>Font Awesome</bdi> فيها آلاف الأيقونات الجاهزة، تقدر تضيفها لأي تصميم بسهولة عن
+      طريق كلاس بسيط.
+    </li>
+    <li>🧠 افتكر دايمًا إن <bdi>padding</bdi> بيأثر جوه العنصر، و<bdi>margin</bdi> برا العنصر.</li>
+  </ul>
 </div>

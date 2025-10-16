@@ -1,78 +1,89 @@
 <h2><bdi>Lecture 4</bdi></h2>
 <div class="content" dir="rtl">
   <h3><bdi>Lecture 4: CSS Types, Selectors & Lists</bdi></h3>
-
   <h3><bdi>Summary</bdi></h3>
   <p>
-    المحاضرة دي كانت عن أنواع طرق كتابة تنسيقات <bdi>CSS</bdi> في صفحات الويب، واتكلمنا عن الفرق بين
-    <bdi>inline</bdi> و<bdi>internal</bdi> و<bdi>external</bdi> stylesheets، وإزاي نستخدم
-    <bdi>class</bdi> و<bdi>id</bdi> لتطبيق تنسيقات معينة على عناصر محددة. كمان اتعلمنا إزاي نعمل
-    القوائم (المرتبة وغير المرتبة) باستخدام <bdi>&lt;ul&gt;</bdi> و<bdi>&lt;ol&gt;</bdi>، وأخدنا
-    فكرة عن خصائص زي <bdi>border</bdi> و<bdi>border-radius</bdi> اللي بتدي شكل جميل للعناصر.
+    المحاضرة دي كانت عن الطرق المختلفة لكتابة تنسيقات <bdi>CSS</bdi> في صفحات الويب، واتكلمنا عن
+    الفرق بين <bdi>inline</bdi> و<bdi>internal</bdi> و<bdi>external stylesheets</bdi>، وكمان عرفنا
+    إزاي نستخدم <bdi>class</bdi> و<bdi>id</bdi> لتطبيق تنسيقات معينة على عناصر معينة. بعد كده
+    اتعلمنا إزاي نعمل القوائم (مرتبة وغير مرتبة) باستخدام
+    <bdi>&lt;ul&gt;</bdi> و<bdi>&lt;ol&gt;</bdi>، واتكلمنا عن شوية خصائص زي <bdi>border</bdi> و<bdi
+      >border-radius</bdi
+    >
+    اللي بتدي شكل جميل للعناصر.
   </p>
-
   <h3><bdi>Key Points</bdi></h3>
-  <ul>
-    <li data-order="1">
-      <bdi>CSS Types</bdi>: <br />فيه 3 طرق نكتب بيهم التنسيقات:
+  <ol>
+    <li>
+      <h4 data-order="1"><bdi>CSS Types</bdi>:</h4>
+      <p>فيه 3 طرق نكتب بيهم التنسيقات في <bdi>CSS</bdi>:</p>
       <ul>
-        <li><bdi>Inline</bdi>: التنسيق بيتكتب جوه التاج نفسه باستخدام خاصية <bdi>style</bdi>.</li>
+        <li><bdi>Inline:</bdi> التنسيق بيتكتب جوه التاج نفسه باستخدام خاصية <bdi>style</bdi>.</li>
         <li>
-          <bdi>Internal</bdi>: بيتكتب داخل صفحة <bdi>HTML</bdi> نفسها جوه تاج
+          <bdi>Internal:</bdi> بيتكتب جوه صفحة <bdi>HTML</bdi> نفسها داخل تاج
           <bdi>&lt;style&gt;</bdi>.
         </li>
         <li>
-          <bdi>External</bdi>: بنربط ملف <bdi>.css</bdi> خارجي بالصفحة عن طريق
+          <bdi>External:</bdi> بنربط ملف خارجي <bdi>.css</bdi> بالصفحة عن طريق وسم
           <bdi>&lt;link&gt;</bdi>، ودي أفضل طريقة عشان الكود يكون منظم وسهل التعديل.
         </li>
       </ul>
     </li>
-
-    <li data-order="2">
-      <bdi>Selectors</bdi>: <br />اتكلمنا عن <bdi>class</bdi> و<bdi>id</bdi>:
+    <li>
+      <h4 data-order="2"><bdi>Selectors</bdi>:</h4>
+      <p>اتكلمنا عن طريقتين أساسيّتين لتحديد العناصر في <bdi>CSS</bdi>:</p>
       <ul>
         <li>
-          <bdi>class</bdi> بتستخدم لما عايز تطبق نفس التنسيق على كذا عنصر، وبتتكتب في
-          <bdi>CSS</bdi> بنقطة (.) قبل الاسم.
+          <bdi>class</bdi>: بتستخدم لما عايز تطبق نفس التنسيق على أكتر من عنصر، وبتتكتب بنقطة (.)
+          قبل الاسم.
         </li>
+        <li><bdi>id</bdi>: بتستخدم لو التنسيق لعنصر واحد بس، وبتتكتب بعلامة (#) قبل الاسم.</li>
+      </ul>
+    </li>
+
+    <li>
+      <h4 data-order="3"><bdi>Buttons Styling</bdi>:</h4>
+      <p>اتعلمنا إزاي نغيّر شكل الأزرار باستخدام خصائص مختلفة:</p>
+      <ul>
+        <li><bdi>background-color:</bdi> لتحديد لون الخلفية.</li>
+        <li><bdi>color:</bdi> لتحديد لون النص.</li>
         <li>
-          <bdi>id</bdi> بتستخدم لو عايز تطبق تنسيق على عنصر واحد بس، وبتتكتب في
-          <bdi>CSS</bdi> بعلامة (#) قبل الاسم.
+          <bdi>border:</bdi> لتحديد نوع الإطار (زي <bdi>solid</bdi> أو <bdi>dotted</bdi> أو
+          <bdi>dashed</bdi>).
         </li>
+        <li><bdi>border-radius:</bdi> لتدوير الحواف وتخلي شكل الزرار ناعم أكتر.</li>
       </ul>
     </li>
 
-    <li data-order="3">
-      <bdi>Buttons Styling</bdi>: <br />اتكلمنا عن إزاي نغيّر شكل الأزرار باستخدام خصائص زي:
+    <li>
+      <h4 data-order="4"><bdi>Lists</bdi>:</h4>
+      <p>اتعلمنا نعمل نوعين من القوائم:</p>
       <ul>
-        <li><bdi>background-color</bdi> لتحديد لون الخلفية.</li>
-        <li><bdi>color</bdi> لتحديد لون النص.</li>
-        <li><bdi>border</bdi> لتحديد نوع الإطار (زي solid أو dotted أو dashed).</li>
-        <li><bdi>border-radius</bdi> لتدوير الحواف وتخلي شكل الزرار ناعم أكتر.</li>
+        <li><bdi>&lt;ul&gt; — Unordered List</bdi>: قائمة بنقط.</li>
+        <li><bdi>&lt;ol&gt; — Ordered List</bdi>: قائمة مرقّمة أو بحروف.</li>
       </ul>
+      <p>واستخدمنا خاصية <bdi>type</bdi> لتغيير شكل الترقيم في <bdi>&lt;ol&gt;</bdi>.</p>
     </li>
 
-    <li data-order="4">
-      <bdi>Lists</bdi>: <br />اتعلمنا نعمل نوعين من القوائم:
-      <ul>
-        <li><bdi>&lt;ul&gt;</bdi> – <bdi>Unordered List</bdi>: قائمة بنقط.</li>
-        <li><bdi>&lt;ol&gt;</bdi> – <bdi>Ordered List</bdi>: قائمة مرقّمة أو بحروف.</li>
-      </ul>
-      وشرحنا كمان الخاصية <bdi>type</bdi> اللي بتغيّر شكل الترقيم في <bdi>ol</bdi>.
+    <li>
+      <h4 data-order="5"><bdi>CSS Colors & Backgrounds</bdi>:</h4>
+      <p>
+        اتكلمنا عن خاصيتي <bdi>background-color</bdi> و<bdi>color</bdi>، واللي بنستخدمهم لتغيير
+        خلفية العنصر ولون النص. في الأمثلة استخدمنا ألوان زي الأحمر، الأزرق، والأخضر لتطبيق عملي على
+        العناصر المختلفة.
+      </p>
     </li>
-
-    <li data-order="5">
-      <bdi>CSS Colors & Backgrounds</bdi>: <br />اتكلمنا عن استخدام
-      <bdi>background-color</bdi> لتغيير خلفية العناصر، وكمان عن <bdi>color</bdi> لتغيير لون النصوص.
-      في الأمثلة شفنا ألوان زي الأحمر، الأزرق، والأخضر بتتطبّق على العناوين والأزرار.
-    </li>
-  </ul>
-
+  </ol>
   <h3><bdi>Notes</bdi></h3>
-  <p>
-    💡 حاول دايمًا تشتغل بـ<bdi>external CSS</bdi> عشان التنسيق يكون منفصل وسهل التعديل. <br />⚙️
-    استخدم <bdi>class</bdi> لو هتكرّر نفس التنسيق، و<bdi>id</bdi> لو التنسيق لمرة واحدة. <br />🎨
-    جرب تغيّر في ألوان <bdi>background</bdi> و<bdi>border</bdi> بنفسك عشان تشوف التأثير العملي.
-    <br />🧠 كل محاضرة بتقربك من إنك تبني موقع منسّق واحترافي بالكامل.
-  </p>
+  <ul>
+    <li>💡 اشتغل دايمًا باستخدام <bdi>external CSS</bdi> عشان التنسيق يكون منفصل وسهل التعديل.</li>
+    <li>
+      ⚙️ استخدم <bdi>class</bdi> لو هتكرّر نفس التنسيق على أكتر من عنصر، و<bdi>id</bdi> لو العنصر
+      فريد.
+    </li>
+    <li>
+      🎨 جرّب بنفسك تغيّر في <bdi>background</bdi> و<bdi>border</bdi> عشان تشوف التأثير العملي.
+    </li>
+    <li>🧠 فهمك لأساسيات التنسيق دي هيساعدك تبني صفحات منظمة واحترافية أكتر.</li>
+  </ul>
 </div>

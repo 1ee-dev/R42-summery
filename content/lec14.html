@@ -12,19 +12,23 @@
     <bdi>visibility</bdi> و<bdi>opacity</bdi>.
   </p>
   <h3><bdi>Key Points</bdi></h3>
-  <ul>
-    <li data-order="1">
-      <bdi>Structure Recap</bdi>: <br />التقسيم العام هو نفس اللي استخدمناه قبل:
+  <ol>
+    <li>
+      <h4 data-order="1"><bdi>Structure Recap</bdi>:</h4>
+      <p>التقسيم العام هو نفس اللي استخدمناه قبل:</p>
       <ul>
         <li><bdi>.team-container</bdi> — يحتوي على الكل.</li>
         <li><bdi>.team-parent</bdi> — الأب اللي بيضم كل العناصر.</li>
         <li><bdi>.team-item</bdi> — الكارت اللي فيه الصورة والمعلومات.</li>
       </ul>
-      وكل كارت فيه <bdi>.team-image</bdi> للصورة + <bdi>.team-info</bdi> للاسم والمهنة.
+      <p>وكل كارت فيه <bdi>.team-image</bdi> للصورة و<bdi>.team-info</bdi> للاسم والمهنة.</p>
     </li>
-    <li data-order="2">
-      <bdi>Image Overlay (with Transition)</bdi>: <br />الطبقة الشفافة اللي فوق الصورة اتعملت بعنصر
-      <bdi>.team-icons</bdi> بخلفية سوداء، لكن المميز هنا إننا استخدمنا:
+    <li>
+      <h4 data-order="2"><bdi>Image Overlay (with Transition)</bdi>:</h4>
+      <p>
+        الطبقة الشفافة اللي فوق الصورة اتعملت بعنصر <bdi>.team-icons</bdi> بخلفية سوداء، لكن المميز
+        هنا إننا استخدمنا:
+      </p>
       <ul>
         <li>
           <bdi>visibility: hidden;</bdi> و<bdi>opacity: 0;</bdi> علشان تختفي في الحالة العادية.
@@ -35,56 +39,70 @@
           تدريجيًا مع شفافية.
         </li>
       </ul>
-      النتيجة: تأثير جميل وناعم عند تمرير الماوس.
+      <p>النتيجة: تأثير جميل وناعم عند تمرير الماوس.</p>
     </li>
 
-    <li data-order="3">
-      <bdi>Pseudo Elements (::before & ::after)</bdi>: <br />دي من أهم أجزاء المحاضرة — استخدمناها
-      لعمل تأثيرين لونيين متعاكسين. الكود كان بالشكل ده:
+    <li>
+      <h4 data-order="3"><bdi>Pseudo Elements (::before & ::after)</bdi>:</h4>
+      <p>
+        دي من أهم أجزاء المحاضرة — استخدمناها لعمل تأثيرين لونيين متعاكسين. الكود كان بالشكل ده:
+      </p>
       <ul>
         <li><bdi>::after</bdi> — بيبدأ من الأعلى اليمين بلون <bdi>أحمر</bdi>.</li>
         <li><bdi>::before</bdi> — بيبدأ من الأسفل اليسار بلون <bdi>أخضر</bdi>.</li>
       </ul>
-      الاتنين بيكونوا مخفيين (بعرض وارتفاع صفر)، ولما نعمل <bdi>hover</bdi> على الكارت: <br /><bdi
-        >width</bdi
-      >
-      و<bdi>height</bdi> بيزيدوا تدريجيًا لـ<bdi>100%</bdi> وبيظهروا بخاصية
-      <bdi>transition: 1s;</bdi> عشان الحركة تبقى ناعمة واحترافية.
+      <p>
+        الاتنين بيكونوا مخفيين (بعرض وارتفاع صفر)، ولما نعمل <bdi>hover</bdi> على الكارت:
+        <bdi>width</bdi> و<bdi>height</bdi> بيزيدوا تدريجيًا لـ<bdi>100%</bdi> وبيظهروا بخاصية
+        <bdi>transition: 1s;</bdi> عشان الحركة تبقى ناعمة واحترافية.
+      </p>
     </li>
 
-    <li data-order="4">
-      <bdi>Layer Order & Positioning</bdi>: <br />علشان التأثيرات ما تغطيش النصوص أو الأيقونات بشكل
-      خاطئ، استخدمنا:
+    <li>
+      <h4 data-order="4"><bdi>Layer Order & Positioning</bdi>:</h4>
+      <p>علشان التأثيرات ما تغطيش النصوص أو الأيقونات بشكل خاطئ، استخدمنا:</p>
       <ul>
         <li><bdi>position: relative;</bdi> على العنصر الأب <bdi>.team-item</bdi>.</li>
         <li><bdi>position: absolute;</bdi> على <bdi>::before</bdi> و<bdi>::after</bdi>.</li>
       </ul>
-      ده بيخلي كل التأثيرات تنطبق جوه حدود العنصر نفسه.
+      <p>ده بيخلي كل التأثيرات تنطبق جوه حدود العنصر نفسه.</p>
     </li>
 
-    <li data-order="5">
-      <bdi>Transition & Opacity</bdi>: <br />استخدمنا الدمج بين <bdi>transition</bdi> و<bdi
-        >opacity</bdi
-      >
-      لتنعيم كل التأثيرات. وده بيخلي كل شيء يتحرك بشكل تدريجي بدل من الظهور المفاجئ. كمان التحكم في
-      درجة الشفافية (<bdi>opacity: 0.5;</bdi>) خلّى الطبقة ما تغطيش المحتوى تمامًا.
+    <li>
+      <h4 data-order="5"><bdi>Transition & Opacity</bdi>:</h4>
+      <p>
+        استخدمنا الدمج بين <bdi>transition</bdi> و<bdi>opacity</bdi> لتنعيم كل التأثيرات. وده بيخلي
+        كل شيء يتحرك بشكل تدريجي بدل من الظهور المفاجئ. كمان التحكم في درجة الشفافية (<bdi
+          >opacity: 0.5;</bdi
+        >) خلّى الطبقة ما تغطيش المحتوى تمامًا.
+      </p>
     </li>
 
-    <li data-order="6">
-      <bdi>Text & Hover Colors</bdi>: <br />لما نمرر الماوس على الكارت، بيحصل تغيير في النصوص:
+    <li>
+      <h4 data-order="6"><bdi>Text & Hover Colors</bdi>:</h4>
+      <p>لما نمرر الماوس على الكارت، بيحصل تغيير في النصوص:</p>
       <ul>
         <li><bdi>.team-info-title</bdi> بيتحول لونه لـ<bdi>white</bdi>.</li>
         <li><bdi>.team-info-p</bdi> بيتحول لونه لـ<bdi>blue</bdi>.</li>
       </ul>
-      التأثير ده بيكمل شكل الطبقات اللونية وبيخلي التصميم كله متفاعل وجذاب.
+      <p>التأثير ده بيكمل شكل الطبقات اللونية وبيخلي التصميم كله متفاعل وجذاب.</p>
+    </li>
+  </ol>
+  <h3><bdi>Notes</bdi></h3>
+  <ul>
+    <li>
+      💡 الـ<bdi>::before</bdi> و<bdi>::after</bdi> عناصر وهمية لكنها قوية جدًا في عمل تأثيرات بصرية
+      من غير HTML إضافي.
+    </li>
+    <li>
+      ⚙️ استخدم <bdi>position: relative</bdi> على العنصر الأساسي قبل ما تستخدم العناصر الوهمية جواه.
+    </li>
+    <li>
+      🎨 الدمج بين ألوان مختلفة وشفافية منخفضة (<bdi>opacity</bdi>) بيخلي النتيجة احترافية جدًا.
+    </li>
+    <li>
+      🧠 لو فهمت فكرة الـ<bdi>pseudo elements</bdi> كويس، تقدر تعمل تأثيرات احترافية لأي عنصر في
+      موقعك.
     </li>
   </ul>
-  <h3><bdi>Notes</bdi></h3>
-  <p>
-    💡 الـ<bdi>::before</bdi> و<bdi>::after</bdi> عناصر وهمية لكنها قوية جدًا في عمل تأثيرات بصرية
-    من غير HTML إضافي. <br />⚙️ استخدم <bdi>position: relative</bdi> على العنصر الأساسي قبل ما
-    تستخدم العناصر الوهمية جواه. <br />🎨 الدمج بين ألوان مختلفة وشفافية منخفضة (<bdi>opacity</bdi>)
-    بيخلي النتيجة احترافية جدًا. <br />🧠 لو فهمت فكرة الـ<bdi>pseudo elements</bdi> كويس، تقدر تعمل
-    تأثيرات احترافية لأي عنصر في موقعك.
-  </p>
 </div>
