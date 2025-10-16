@@ -1,8 +1,8 @@
-// set groups (use simple { end, name } entries)
+// set groups
 const groups = [
   { end: 14, name: 'HTML & CSS' },
   { end: 17, name: 'GitHub' },
-  { end: 24, name: 'HTML5 & CSS3' },
+  { end1: 16, end2: 24, name: 'HTML5 & CSS3' },
   { end: 28, name: 'JavaScript' },
 ];
 
@@ -10,13 +10,17 @@ const groups = [
 function generateLectures(numberOfLectures) {
   const lectures = [];
   for (let i = 1; i <= numberOfLectures; i++) {
-    // Determine group by checking the first group whose end >= i
-    const matched = groups.find((g) => i <= g.end);
-    const group = matched ? matched.name : 'Not Assigned';
+    // Determine group based on lecture number
+    let group;
+    if (i <= groups[0].end) group = groups[0].name;
+    else if (i <= groups[2].end1) group = groups[2].name;
+    else if (i <= groups[1].end) group = groups[1].name;
+    else if (i <= groups[2].end2) group = groups[2].name;
+    else if (i <= groups[3].end) group = groups[3].name;
+    else group = 'Not Assigned';
 
-    // Use plain id (no leading '#') so getElementById works and data-id matches
     lectures.push({
-      id: `lec${i}`,
+      id: `#lec${i}`,
       title: `Lecture ${i}`,
       group: group,
       file: `lec${i}.html`,
