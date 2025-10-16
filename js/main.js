@@ -39,6 +39,20 @@ document.addEventListener('contentLoaded', () => {
     if (e.key === 'Escape') hideMenu();
   });
 
+  // open and close menu on mobile swipe
+  let startX = 0;
+  let endX = 0;
+
+  document.addEventListener('touchstart', (e) => {
+    startX = e.touches[0].clientX;
+  });
+
+  document.addEventListener('touchend', (e) => {
+    endX = e.changedTouches[0].clientX;
+    if (startX - endX > 50) hideMenu();
+    else if (endX - startX > 50) openMenu();
+  });
+
   // toggle sidebar list
   const sidebarList = document.querySelectorAll('.sidebar nav > button');
 
