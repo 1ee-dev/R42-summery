@@ -11,7 +11,7 @@ if (!fs.existsSync(contentDir)) {
 }
 
 // Generate lecture files
-for (let i = 1; i <= 28; i++) {
+for (let i = 1; i <= 29; i++) {
   const filePath = path.join(contentDir, `lec${i}.html`);
 
   const content = `<h2>lecture ${i}</h2>

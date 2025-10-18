@@ -1,0 +1,80 @@
+<h2><bdi>Lecture 28</bdi></h2>
+<div class="content" dir="rtl">
+  <h3><bdi>Lecture 28: DOM Manipulation & Event Handling (Shopping List Example)</bdi></h3>
+  <h3><bdi>Summary</bdi></h3>
+  <p>
+    في المحاضرة دي طبقنا عملي على استخدام <bdi>DOM</bdi> و<bdi>Events</bdi> في
+    <bdi>JavaScript</bdi> من خلال مشروع صغير بيحاكي فكرة “سلة التسوق”. اتعلمنا إزاي نختار العناصر من
+    الصفحة، نقرأ القيم منها، ونعدل في الـ<bdi>HTML</bdi> ديناميكيًا باستخدام الجافاسكريبت. كمان
+    استخدمنا الأحداث زي <bdi>onclick</bdi> علشان نضيف تفاعل بين المستخدم والموقع.
+  </p>
+  <h3><bdi>Key Points</bdi></h3>
+  <ol>
+    <li>
+      <h4 data-order="1"><bdi>Querying Elements</bdi>:</h4>
+      <p>
+        استخدمنا <bdi>document.querySelectorAll(".products li")</bdi> علشان نجيب كل عناصر المنتجات
+        الموجودة داخل قائمة الـ<bdi>&lt;ul&gt;</bdi>.
+      </p>
+    </li>
+    <li>
+      <h4 data-order="2"><bdi>Accessing Attributes</bdi>:</h4>
+      <p>كل منتج عنده خاصية <bdi>price</bdi> بتوضح سعره، وقرأناها باستخدام:</p>
+      <p><bdi>item.getAttribute("price")</bdi></p>
+      <p>
+        بعد كده استخدمنا العلامة <bdi>+</bdi> قبل القيمة لتحويلها من نص (<bdi>string</bdi>) إلى رقم
+        (<bdi>number</bdi>) عشان نقدر نجمعها.
+      </p>
+    </li>
+
+    <li>
+      <h4 data-order="3"><bdi>Adding Interactivity with Events</bdi>:</h4>
+      <p>
+        استخدمنا حلقة <bdi>forEach</bdi> نمر بيها على كل منتج، وكل ما المستخدم يضغط على منتج (عن
+        طريق <bdi>onclick</bdi>) بننفذ الآتي:
+      </p>
+      <ul>
+        <li>نجمع سعر المنتج في متغير <bdi>totalPrice</bdi>.</li>
+        <li>نضيف اسم المنتج داخل <bdi>&lt;div id="content"&gt;</bdi>.</li>
+        <li>نظهر الزرار <bdi>Show Price</bdi> بعد أول عملية اختيار.</li>
+      </ul>
+    </li>
+
+    <li>
+      <h4 data-order="4"><bdi>Button Display & Styling</bdi>:</h4>
+      <p>
+        الزرار بيكون مخفي في البداية (<bdi>display: none</bdi>)، وبمجرد ما المستخدم يختار منتج،
+        بيتظهر عن طريق الكود:
+      </p>
+      <p>
+        <bdi>button.style.display = "block";</bdi><br />
+        <bdi>button.style.width = "200px";</bdi><br />
+        <bdi>button.style.height = "50px";</bdi><br />
+        <bdi>button.style.backgroundColor = "red";</bdi>
+      </p>
+      <p>ده بيخلي الزرار شكله واضح ومناسب لواجهة الاستخدام.</p>
+    </li>
+
+    <li>
+      <h4 data-order="5"><bdi>Displaying the Total</bdi>:</h4>
+      <p>
+        لما المستخدم يضغط على زر <bdi>Show Price</bdi>، بيظهر مجموع الأسعار في الكونسول باستخدام:
+      </p>
+      <p><bdi>console.log(totalPrice)</bdi></p>
+      <p>وده مثال عملي بسيط لفكرة جمع القيم وإظهارها.</p>
+    </li>
+  </ol>
+  <h3><bdi>Notes</bdi></h3>
+  <ul>
+    <li>💡 استخدم <bdi>getAttribute</bdi> لما تحب تقرأ قيمة من خاصية في عنصر <bdi>HTML</bdi>.</li>
+    <li>
+      ⚙️ ممكن تستخدم <bdi>textContent</bdi> بدل <bdi>innerHTML</bdi> لو مش محتاج تفسر
+      <bdi>tags</bdi>.
+    </li>
+    <li>
+      🎯 حاول دايمًا تستخدم <bdi>querySelector</bdi> أو <bdi>querySelectorAll</bdi> بدل
+      <bdi>getElementById</bdi> عشان المرونة.
+    </li>
+    <li>🧠 الكود ده ممكن يتطور بسهولة ليكون <bdi>Shopping Cart</bdi> كامل في المستقبل.</li>
+  </ul>
+</div>
